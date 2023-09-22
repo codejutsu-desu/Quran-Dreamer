@@ -2,22 +2,27 @@
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 120px;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   border-bottom: 1px solid #d9d9d9;
 }
 
-img {
-  width: 170px;
+.home {
+  margin-left: 10px;
   height: 100%;
+}
+
+.home img {
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
 }
 
 ul {
   display: flex;
   justify-content: space-evenly;
-  width: 50%;
   list-style: none;
   margin: 0px;
   padding: 0px;

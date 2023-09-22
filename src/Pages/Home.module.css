@@ -1,0 +1,314 @@
+.homeBackground1 {
+  width: 90%;
+  height: 600px;
+  background-image: url(/homeBackground1.jpg);
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  position: relative; /* Needed for absolute positioning of text */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+}
+
+.homeBackground1 p {
+  padding-top: 50px;
+  font-family: "Lato" sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 60px;
+  letter-spacing: 0em;
+  color: white;
+}
+
+.journey {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.homeBackground2 {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  /* border: 5px solid #000000; */
+}
+.homeBackground2 img {
+  width: 100%;
+  height: 100%;
+  filter: blur(7px);
+  object-fit: cover;
+}
+
+.homeBackground2 .container {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  text-align: center;
+}
+
+.beDreamer {
+  position: relative;
+  top: 20px;
+  font-size: 3rem;
+  color: white;
+  font-family: "Lato" sans-serif;
+  font-weight: 900;
+}
+
+.dreamerText {
+  font-size: 1.5rem;
+  width: 70%;
+  margin: auto;
+  position: relative;
+  top: 50px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.explore {
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.circles {
+  width: 80%;
+  height: 550px;
+  border: 1px solid #000000;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.circle1 {
+  background-color: #12e000;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.circle1 .title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+.circle1 .mentor {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+.circle1 .titleText {
+  width: 70%;
+  margin: auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  top: 30px;
+}
+
+.bottomCircles {
+  display: flex;
+  justify-content: space-around;
+}
+.circle2 {
+  background-color: #12e000;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.circle2 .title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+.circle2 .mentor {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+.circle2 .titleText {
+  width: 70%;
+  margin: auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  top: 30px;
+}
+.circle3 {
+  background-color: #12e000;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.circle3 .title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+.circle3 .mentor {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+.circle3 .titleText {
+  width: 70%;
+  margin: auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  top: 30px;
+}
+
+.viewMore {
+  width: 100px;
+  height: 40px;
+  margin: auto;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+  bottom: 30px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.viewMore:hover {
+  background-color: rgb(205, 255, 204);
+}
+.viewMore span {
+  position: relative;
+  top: 10px;
+}
+
+.whatPeopleSay {
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.peopleComments {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.commentBox {
+  width: 300px;
+  height: 350px;
+  border-radius: 15px;
+  border: 2px solid #5bef00;
+  position: relative;
+}
+
+.commentBox .comment {
+  text-align: center;
+}
+
+.circle {
+  height: 150px;
+  width: 150px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 10px;
+  border: 2px solid #000000;
+  /* position: absolute; */
+}
+
+.userIcon {
+  font-size: 70px;
+  position: relative;
+  left: 42px;
+  top: 30px;
+}
+
+.commentBox span {
+  position: absolute;
+  bottom: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+.needHelp {
+  width: 100%;
+  height: 200px;
+  /* background-color: #850000; */
+}
+
+.needHelpText {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0em;
+  margin-top: 50px;
+}
+
+.helpIcons {
+  display: flex;
+  justify-content: center;
+}
+
+.circleOfIcon {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #000000;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

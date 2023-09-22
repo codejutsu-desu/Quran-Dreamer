@@ -7,9 +7,10 @@
 }
 
 .logo {
-  width: 140px;
+  width: 150px;
   height: 70%;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .connect {

@@ -3,7 +3,9 @@ import styles from "./Topbar.module.css";
 function Topbar() {
   return (
     <header className={styles.header}>
-      <img src="/logo.png" alt="" />
+      <NavLink to="/" className={styles.home}>
+        <img src="/logo.png" alt="" />
+      </NavLink>
 
       <ul>
         <NavLink to="about" className={styles.about}>
