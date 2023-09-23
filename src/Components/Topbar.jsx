@@ -8,15 +8,15 @@ function Topbar() {
       </NavLink>
 
       <ul>
-        <NavLink to="about" className={styles.about}>
+        <NavLink to="/about" className={styles.about}>
           <li>About us</li>
         </NavLink>
 
-        <NavLink to="events" className={styles.events}>
+        <NavLink to="/events" className={styles.events}>
           <li>Events</li>
         </NavLink>
 
-        <NavLink to="login" className={styles.login}>
+        <NavLink to="/login" className={styles.login}>
           <li>Login</li>
         </NavLink>
 
