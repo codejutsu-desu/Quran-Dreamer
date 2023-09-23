@@ -1,0 +1,9 @@
+.noteBox {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #12e000;
+  border-radius: 20px;
+  background-image: url(/Studentnote.jpg);
+  background-position: center;
+  background-size: cover;
+}
