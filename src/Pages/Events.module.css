@@ -1,0 +1,25 @@
+.eventBg {
+  max-width: 100%;
+  background-image: url(/eventBackground.jpg);
+  background-position: center;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventBg .mashjid {
+  width: 80%;
+  height: 500px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+.eventTitle {
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: 10px;
+}

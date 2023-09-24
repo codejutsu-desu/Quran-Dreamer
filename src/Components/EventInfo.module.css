@@ -1,0 +1,25 @@
+.eventInfo {
+  width: 60%;
+  background-color: #ffffff;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-family: sans-serif;
+  border: 3px solid #12e000;
+  border-radius: 35px;
+  margin-bottom: 10px;
+}
+
+.eventInfoTop {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.eventInfoBottom {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+}

@@ -7,17 +7,19 @@ import Login from "./Pages/Login";
 import Join from "./Pages/Join";
 import PageNotFound from "./Pages/PageNotFound";
 import Notes from "./Pages/Notes";
+import StudentsNoteFiles from "./Pages/StudentsNoteFiles";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/notes" element={<Notes />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/join" element={<Join />} />
+        <Route path="about" element={<About />} />
+        <Route path="notes" element={<Notes />} />
+        <Route path="files" element={<StudentsNoteFiles />} />
+        <Route path="events" element={<Events />} />
+        <Route path="login" element={<Login />} />
+        <Route path="join" element={<Join />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
