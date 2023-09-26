@@ -1,0 +1,69 @@
+/* SignUpForm.module.css */
+
+.signupTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Lato";
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  border: 3px solid #12e000;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 200px;
+}
+
+.inputGroup {
+  margin-bottom: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: "Laxend";
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #12e000;
+  color: #fff;
+  border: 2px solid #12e000;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #1ac70b;
+}
+
+.alreadyAccount {
+  text-align: center;
+}

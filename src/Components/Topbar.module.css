@@ -1,8 +1,8 @@
 .header {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  height: 100px;
+  width: 100%;
+  height: 80px;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
@@ -11,13 +11,18 @@
 
 .home {
   margin-left: 10px;
-  height: 100%;
+  height: 80%;
 }
 
 .home img {
   width: 150px;
   height: 100%;
   object-fit: cover;
+  /* image-rendering: pixelated; */
+  transition: transform 0.3s ease;
+}
+.home img:hover {
+  transform: scale(1.1);
 }
 
 ul {
@@ -40,9 +45,11 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 li:hover {
   color: #5eb925;
+  text-shadow: 1px 4px 8px rgba(0, 0, 0, 0.37);
 }
 
 ul button {
@@ -59,7 +66,7 @@ ul button {
   text-align: center;
 }
 
-button:hover {
+ul button:hover {
   background-color: #5eb925;
   cursor: pointer;
 }

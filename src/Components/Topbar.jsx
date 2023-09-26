@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Topbar.module.css";
+import JoinUs from "../ui/Dropdown";
 function Topbar() {
   return (
     <header className={styles.header}>
@@ -20,9 +21,7 @@ function Topbar() {
           <li>Login</li>
         </NavLink>
 
-        <NavLink to="/join">
-          <button>Join</button>
-        </NavLink>
+        <JoinUs />
       </ul>
     </header>
   );

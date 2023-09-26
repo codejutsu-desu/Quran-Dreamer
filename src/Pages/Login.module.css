@@ -1,0 +1,126 @@
+/* Login.module.css */
+
+.loginToAccount {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #12e000;
+  font-family: "Lato";
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #12e000;
+  margin-bottom: 10px;
+}
+
+.socialIconsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.socialButtonFb {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-image: url(/FacebookIcon.svg);
+  object-fit: cover;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  background-size: 120%;
+}
+.socialButtonFb:hover {
+  background-color: transparent;
+}
+.socialButtonG {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-image: url(/GoogleIcon.svg);
+  background-position: center;
+  background-color: transparent;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  border: none;
+}
+.socialButtonG:hover {
+  background-color: transparent;
+}
+.socialButtonA {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-image: url(/AppleIIcon.svg);
+  object-fit: cover;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.socialButtonA:hover {
+  background-color: transparent;
+}
+.form {
+  text-align: left;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.forgotPassword {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #5c5050;
+  font-size: 1rem;
+  transition: color 0.2s;
+  font-weight: 700;
+  font-family: "Laxend";
+}
+
+.loginButton {
+  background-color: #12e000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: 2px solid #12e000;
+}
+
+.loginButton:hover {
+  background-color: #12e000; /* Darker shade of blue on hover */
+}
