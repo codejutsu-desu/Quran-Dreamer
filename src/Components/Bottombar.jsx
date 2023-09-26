@@ -8,7 +8,7 @@ function Bottombar() {
         <p>Reach us</p>
         <span className={styles.socialLogos}>
           <span className={styles.socialLogo}>
-            <img src="/Facebook Icon.svg" alt="" />
+            <img src="/FacebookIcon.svg" alt="" />
           </span>
           <span className={styles.socialLogo}>
             <img src="/Instagram Icon.svg" alt="" />

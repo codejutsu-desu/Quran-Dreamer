@@ -1,0 +1,22 @@
+.sideBarContainer {
+  max-width: 250px;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  width: 100px;
+  height: 60px;
+  margin-top: 30px;
+}
+
+.sideBarContainer h2 {
+  font-family: "Lexend";
+  font-weight: 700;
+  color: white;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
