@@ -1,0 +1,113 @@
+.cardContainer {
+  max-width: 300px;
+  max-height: 400px;
+  border: 2px solid #12e000;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.title {
+  display: flex;
+}
+
+.sectionLogo {
+  width: 35px;
+  height: 35px;
+  background-color: #55acee;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.titleName {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.sectionLead {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 17.5px;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+/* progress bar */
+
+.progressBar {
+  width: 100%;
+  margin: 10px 0;
+}
+.membersandpercentage {
+  display: flex;
+  justify-content: space-between;
+}
+.members {
+  padding: 5px;
+  font-weight: bold;
+}
+.percentage {
+  padding: 5px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.progressContainer {
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background-color: #12e000;
+  border-radius: 10px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* bottom info */
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.knowMore {
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 150px;
+  height: 30px;
+  background-color: #12e000;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 800;
+  line-height: 17.5px;
+}
+.daysLeft {
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 150px;
+  height: 30px;
+  background-color: #0000001a;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 800;
+  line-height: 17.5px;
+}

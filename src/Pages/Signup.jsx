@@ -30,6 +30,9 @@ const SignUpForm = () => {
         formData
       );
       console.log(response.data);
+      if (response.data) {
+        window.location.href = "http://localhost:5173/login";
+      } else alert("sign up failed");
       // Handle success, e.g., redirect to a success page
     } catch (error) {
       console.error(error);
@@ -99,8 +102,9 @@ const SignUpForm = () => {
               required
             >
               {/* Options for user type */}
-              <option value="1">Type 1</option>
-              <option value="2">Type 2</option>
+              <option value="0">Admin</option>
+              <option value="1">Student</option>
+              <option value="2">Mentor</option>
               {/* Add more options as needed */}
             </select>
           </div>

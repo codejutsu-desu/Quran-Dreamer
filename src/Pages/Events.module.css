@@ -10,7 +10,7 @@
 
 .eventBg .mashjid {
   width: 80%;
-  height: 500px;
+  max-height: 500px;
   margin-top: 20px;
   object-fit: cover;
 }

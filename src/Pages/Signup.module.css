@@ -49,7 +49,7 @@ textarea {
   border-radius: 4px;
 }
 
-button {
+.inputGroup button {
   background-color: #12e000;
   color: #fff;
   border: 2px solid #12e000;

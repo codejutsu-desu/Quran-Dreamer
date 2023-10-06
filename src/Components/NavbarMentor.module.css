@@ -1,0 +1,39 @@
+.topNavbar {
+  background-color: #12e000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  height: 80px;
+  flex: 1;
+}
+
+.icon img {
+  max-width: 40px;
+  max-height: 40px;
+  margin-top: auto;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userIcon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+.userPosition {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.userName {
+  font-size: 1rem;
+  font-family: "Inter";
+  font-weight: 600;
+  text-align: center;
+}

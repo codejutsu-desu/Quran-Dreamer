@@ -1,0 +1,30 @@
+.circleCardHeader {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  padding: 0 20px 0 20px;
+  margin-top: 10px;
+}
+
+.circleNumbersText {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.circleNumbersOnly {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.selector-container {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.selector {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  color: #12e000;
+  padding: 5px;
+}

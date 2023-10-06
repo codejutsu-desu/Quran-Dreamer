@@ -1,12 +1,16 @@
 import styles from "./StudentsSidebar.module.css";
+import { NavLink } from "react-router-dom";
 function StudentsSidebar() {
   return (
     <div className={styles.sideBarContainer}>
-      <img src="logo.png" alt="" />
-      <h2>Members</h2>
-      <h2>Dashboard</h2>
-      <h2>Students Note</h2>
-      <h2>Notes by Teacher</h2>
+      <NavLink to="/">
+        <img src="/logo.png" alt="" />
+      </NavLink>
+
+      <button>Members</button>
+      <button>Dashboard</button>
+      <button>Students Note</button>
+      <button>Notes by Teacher</button>
     </div>
   );
 }

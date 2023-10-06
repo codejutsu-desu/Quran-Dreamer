@@ -1,0 +1,14 @@
+.aboutContainer {
+  padding: 20px;
+}
+
+.aboutTitle {
+  color: #12e000;
+  margin-right: 10px;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.aboutDetails {
+  margin-top: 30px;
+}

@@ -1,0 +1,37 @@
+.circleGeneralContainer {
+  max-height: 300px;
+}
+.generalInfo {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.generalInfo h2 {
+  font-weight: 800;
+  color: #12e000;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.generalInfoText {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.prerequisite {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.prerequisite h2 {
+  font-weight: 800;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.prerequisiteUl {
+  list-style-type: disc;
+  display: block;
+  padding-left: 20px;
+}

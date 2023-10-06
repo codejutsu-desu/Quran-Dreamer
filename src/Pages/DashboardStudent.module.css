@@ -1,0 +1,26 @@
+.icon img {
+  max-width: 40px;
+  max-height: 40px;
+  margin-top: auto;
+}
+
+.dashboardNav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.title button {
+  border: none;
+  background-color: transparent;
+  margin-left: 20px;
+  font-family: "Lexend";
+  font-weight: 600;
+}
+
+.title button:hover {
+  background-color: none;
+  cursor: pointer;
+}

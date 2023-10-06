@@ -1,0 +1,34 @@
+.insideCircleContainer {
+  display: flex;
+}
+.sideBar {
+  flex-shrink: 1;
+}
+.rightBar {
+  flex: 1;
+}
+.circleTitleNavbar {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.backButtonStyle {
+  width: 100px;
+  height: 50px;
+  border: 1px solid #12e000;
+  background-color: transparent;
+  color: #12e000;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+.backButtonStyle:hover {
+  background-color: transparent;
+  transform: scale(1.2);
+}

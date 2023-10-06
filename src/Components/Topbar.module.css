@@ -18,14 +18,14 @@
   width: 150px;
   height: 100%;
   object-fit: cover;
-  /* image-rendering: pixelated; */
+  margin-top: 0;
   transition: transform 0.3s ease;
 }
 .home img:hover {
   transform: scale(1.1);
 }
 
-ul {
+.homeUl {
   display: flex;
   justify-content: space-evenly;
   list-style: none;
@@ -34,7 +34,7 @@ ul {
   align-items: center;
 }
 
-li {
+.aboutLi {
   width: 165px;
   height: 74px;
   font-size: 24px;
@@ -47,9 +47,9 @@ li {
   align-items: center;
   transition: color 0.3s, text-shadow 0.3s;
 }
-li:hover {
+.aboutLi:hover {
   color: #5eb925;
-  text-shadow: 1px 4px 8px rgba(0, 0, 0, 0.37);
+  cursor: pointer;
 }
 
 ul button {
@@ -70,7 +70,13 @@ ul button:hover {
   background-color: #5eb925;
   cursor: pointer;
 }
+.homeUl li {
+}
+
 .about {
+  text-decoration: none;
+}
+.circles {
   text-decoration: none;
 }
 

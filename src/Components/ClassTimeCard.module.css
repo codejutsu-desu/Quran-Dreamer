@@ -1,0 +1,30 @@
+.classTimeContainer {
+  width: 350px;
+  height: 80px;
+  border: 1px solid #12e000;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.classTimeContainer .top {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #12e000;
+}
+.classTimeContainer .top .category {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.classTimeContainer .bottom {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.classTimeContainer .bottom link {
+  color: blue;
+}

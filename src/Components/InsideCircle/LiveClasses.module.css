@@ -1,0 +1,41 @@
+.liveContainer {
+  max-width: 700px;
+  max-height: 500px;
+  border-radius: 20px;
+  border: 3px solid #12e000;
+  padding: 15px;
+  margin: auto;
+}
+.liveRecord {
+  display: flex;
+}
+
+.live {
+  flex: 1;
+  border-right: 3px solid #12e000;
+}
+
+.live h3 {
+  color: #12e000;
+  text-align: center;
+}
+.record {
+  flex: 1;
+}
+.record h3 {
+  color: #12e000;
+  text-align: center;
+}
+
+.record p {
+  margin-left: 10px;
+}
+
+.discussionForum h3 {
+  text-align: center;
+  color: #12e000;
+}
+
+.discussionForum p {
+  text-align: center;
+}

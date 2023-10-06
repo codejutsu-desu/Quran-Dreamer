@@ -1,5 +1,6 @@
 import { useState } from "react";
-import styles from "./Login.module.css"; // Import your CSS styles for the component
+import styles from "./Login.module.css";
+import axios from "axios";
 import AppLayout from "./AppLayout";
 
 const Login = () => {
@@ -19,13 +20,34 @@ const Login = () => {
   };
 
   // Handler for form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform login logic here
-    console.log("Logging in with:", formData.email, formData.password);
-    // You can send a POST request to your login API endpoint here
-  };
 
+    try {
+      // Make a POST request to your backend API
+      const response = await axios.post(
+        "http://13.126.8.147/api/quran_dreamers/login/",
+        formData
+      );
+
+      console.log(response.data);
+
+      if (response.data.token) {
+        // Save the token to local storage
+        localStorage.setItem("token", response.data.token);
+
+        // If successful, navigate to the home page
+        window.location.href = "http://localhost:5173/dreamCircles/";
+      } else {
+        // If unsuccessful, show an alert
+        alert("Login failed. Please check your credentials.");
+      }
+    } catch (error) {
+      // Handle any errors that occurred during the request
+      console.error("An error occurred:", error);
+      alert("An error occurred while trying to login.");
+    }
+  };
   return (
     <AppLayout>
       <div className={styles.loginToAccount}>Login to your account</div>

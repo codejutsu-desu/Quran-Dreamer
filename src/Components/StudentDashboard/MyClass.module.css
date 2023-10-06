@@ -1,0 +1,10 @@
+.classesContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.upClasses {
+  border-right: 4px solid #000000;
+  padding-right: 200px;
+}
