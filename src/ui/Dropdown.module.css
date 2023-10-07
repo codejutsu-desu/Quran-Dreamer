@@ -17,3 +17,11 @@
   font-weight: 800;
   font-family: sans-serif;
 }
+
+@media only screen and (max-width: 768px) {
+ 
+  .customColor {
+    width:fit-content;
+    margin:auto
+  }
+}
