@@ -1,12 +1,14 @@
 .homeBackground1 {
   width: 90%;
-  height: 600px;
+  height: 60vw;
   background-image: url(/homeBackground1.jpg);
   background-size: cover; /* Adjust as needed */
   background-position: center; /* Adjust as needed */
+  background-color: #999;
+  background-blend-mode: multiply; /* Sets a darker background image */
   position: relative; /* Needed for absolute positioning of text */
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -14,11 +16,12 @@
 }
 
 .homeBackground1 p {
-  padding-top: 50px;
+  padding: 5vw 5vw;
+  text-shadow: 3px 2px 2px black;
   font-family: "Lato" sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  line-height: 60px;
+  line-height: 6vw;
   letter-spacing: 0em;
   color: white;
 }
@@ -27,31 +30,34 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: white;
+  line-height: 0vw;
 }
 
 .homeBackground2 {
   width: 100%;
-  height: 500px;
+  height: 50vw;
   position: relative;
+  text-shadow: 2px 2px 4px black;
   /* border: 5px solid #000000; */
+  
 }
 .homeBackground2 img {
   width: 100%;
   height: 100%;
-  filter: blur(7px);
-  object-fit: cover;
+  filter: blur(7px) brightness(60%);
+  object-fit: cover;  
 }
 
 .homeBackground2 .container {
   position: absolute;
-  z-index: 1;
-  top: 10px;
+  z-index: 0.5;
+  top: 1vw;
   text-align: center;
 }
 
 .beDreamer {
   position: relative;
-  top: 20px;
+  top: 2vw;
   font-size: 3rem;
   color: white;
   font-family: "Lato" sans-serif;
@@ -63,7 +69,7 @@
   width: 70%;
   margin: auto;
   position: relative;
-  top: 50px;
+  top: 5vw;
   color: white;
   font-family: sans-serif;
   font-weight: 500;
@@ -311,4 +317,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .homeBackground1{
+    width:100%
+  }
+  .homeBackground1 p {
+    font-size:1.5rem;
+    padding: 5vw 5vw;
+  }
+  
+  .journey {
+    font-size: 1rem;
+  }
+  .homeBackground2{
+    height:70vw
+  }
+
+  .beDreamer {
+    font-size:1.5rem;
+    height: fit-content;
+  }
+  .dreamerText{
+    font-size:1rem;
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .homeBackground1 p {
+    font-size: 1.5rem;
+  }
+  
+  .journey {
+    font-size: 1rem;
+  }
+  .beDreamer {
+    font-size:1.5rem;
+    height: fit-content;
+  }
+  .dreamerText{
+    font-size:0.7rem;
+    width: 90%;
+  }
 }
