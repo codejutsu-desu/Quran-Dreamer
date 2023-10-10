@@ -99,7 +99,7 @@ ul button:hover {
     padding:4px 12px;
     background-color: #5bef00;
     color:white;
-    position:fixed;
+    position:absolute;
     top:0;
     right:0;
     transform: translate(-100%,60%);
