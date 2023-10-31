@@ -21,6 +21,22 @@
   margin-top: 0;
   transition: transform 0.3s ease;
 }
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .home img {
+    width: 120px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .home {
+    margin-left: 5px;
+  }
+}
+
 .home img:hover {
   transform: scale(1.1);
 }
@@ -47,9 +63,18 @@
   align-items: center;
   transition: color 0.3s, text-shadow 0.3s;
 }
+
 .aboutLi:hover {
   color: #5eb925;
   cursor: pointer;
+}
+
+/* Media queries for smaller screens, adjust as needed */
+@media (max-width: 480px) {
+  .aboutLi {
+    width: 130px;
+    font-size: 20px;
+  }
 }
 
 ul button {
@@ -70,17 +95,19 @@ ul button:hover {
   background-color: #5eb925;
   cursor: pointer;
 }
+
 .homeUl li {
 }
 
 .about {
   text-decoration: none;
 }
+
 .circles {
   text-decoration: none;
 }
 
-.events {
+events {
   text-decoration: none;
 }
 

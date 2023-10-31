@@ -1,4 +1,5 @@
 import styles from "./Bottombar.module.css";
+
 function Bottombar() {
   return (
     <footer className={styles.footer}>
@@ -7,18 +8,22 @@ function Bottombar() {
       <div className={styles.connect}>
         <p>Reach us</p>
         <span className={styles.socialLogos}>
-          <span className={styles.socialLogo}>
-            <img src="/FacebookIcon.svg" alt="" />
-          </span>
-          <span className={styles.socialLogo}>
-            <img src="/Instagram Icon.svg" alt="" />
-          </span>
-          <span className={styles.socialLogo}>
-            <img src="/LinkedIn Icon.svg" alt="" />
-          </span>
-          <span className={styles.socialLogo}>
-            <img src="/Twitter Icon.svg" alt="" />
-          </span>
+          <a
+            href="https://instagram.com/quran.dreamers?igshid=NGVhN2U2NjQ0Yg=="
+            target="_blank"
+            className={styles.socialLogo}
+            rel="noreferrer"
+          >
+            <img src="/Instagram Icon.svg" alt="Instagram" />
+          </a>
+          <a
+            href="https://www.youtube.com/@QuranDreamers/featured"
+            target="_blank"
+            className={styles.socialLogo}
+            rel="noreferrer"
+          >
+            <img src="/youtubeicon.svg" alt="YouTube" />
+          </a>
         </span>
       </div>
       <div>
