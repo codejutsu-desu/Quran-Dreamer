@@ -1,6 +1,6 @@
 import AppLayout from "./AppLayout";
 import styles from "./About.module.css";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 function About() {
   return (
@@ -18,23 +18,33 @@ function About() {
         </p>
       </div>
 
+      {/* Embed the YouTube video here */}
       <div className={styles.ytThumbnail}>
-        <img className={styles.ytimg} src="/youtube.jpg" alt="" />
-        <img className={styles.iconImg} src="/youtubeicon.svg" alt="" />
-        <div className={styles.watchOnYt}>Watch on Youtube</div>
+        <div className={styles.embedContainer}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/MoP5B63pWc0?si=A3XUEiZ5OXgHDYu3"
+            title="YouTube video player"
+            // eslint-disable-next-line react/no-unknown-property
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
 
       <div className={styles.availability}>
-        <p className={styles.onlineAvailability}>
+        {/* <p className={styles.onlineAvailability}>
           <span>Our Online Availability</span>
           <br /> Lorem ipsum dolor sit amet consectetur. diam vivamus tortor
           enim arcu cras eget pellentesque. Ullamcorper eros tincidunt enim
-        </p>
+        </p> */}
 
-        <button>Watch Online</button>
+        {/* <button>Watch Online</button>
         <NavLink to="/notes">
           <button>Student Notes</button>
-        </NavLink>
+        </NavLink> */}
         <div className={styles.communityInfo}>
           <h1>Our Community</h1>
           <h2>

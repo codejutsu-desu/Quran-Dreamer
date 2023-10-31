@@ -1,10 +1,13 @@
+import { NavLink } from "react-router-dom";
 import styles from "./NavbarMentor.module.css";
 import { MdOutlinePersonOutline } from "react-icons/md";
 function NavbarMentor() {
   return (
     <div className={styles.topNavbar}>
       <div className={styles.icon}>
-        <img src="/HomeIcon.svg" alt="Icon" />
+        <NavLink to="/">
+          <img src="/HomeIcon.svg" alt="Icon" />
+        </NavLink>
       </div>
 
       <div className={styles.userInfo}>

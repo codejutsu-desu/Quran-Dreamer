@@ -29,7 +29,7 @@ const SignUpForm = () => {
         "http://13.126.8.147/api/quran_dreamers/signup/",
         formData
       );
-      console.log(response.data);
+      // console.log(response.data);
       if (response.data) {
         window.location.href = "http://localhost:5173/login";
       } else alert("sign up failed");
