@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import NavbarMentor from "../Components/NavbarMentor";
+import NavbarMentor from "../Components/NavbarGeneral";
 import MyCircle from "../Components/StudentDashboard/MyCircle";
 
 import MyClass from "../Components/StudentDashboard/MyClass";

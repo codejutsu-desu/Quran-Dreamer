@@ -4,27 +4,31 @@ import CircleGeneral from "./CircleGeneral";
 import CircleAboutMentor from "./CircleAboutMentor";
 import CircleAboutCircle from "./CircleAboutCircle";
 import styles from "./CircleInfo.module.css";
-import NavbarMentor from "./NavbarMentor";
-import StudentsSidebar from "./StudentsSidebar";
-import { useParams } from "react-router-dom";
+import NavbarMentor from "./NavbarGeneral";
+import StudentsSidebar from "./SidebarGeneral";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function CircleInfo() {
   const { circleId } = useParams();
+  console.log(circleId);
+  const navigate = useNavigate();
   const [circleData, setCircleData] = useState([]);
-
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
+
     if (token) {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      console.log(circleData);
+
       axios
-        .get("http://13.126.8.147/api/quran_dreamers/study_circles/", {
-          headers,
-        })
+        .get(
+          `http://13.126.8.147/api/quran_dreamers/study_circle/${circleId}`,
+          {
+            headers,
+          }
+        )
         .then((response) => {
           setCircleData(response.data);
           console.log(response.data);
@@ -33,8 +37,9 @@ function CircleInfo() {
           console.error("Error fetching data:", error);
         });
     }
-  }, []);
-  const circle = circleData.find((circle) => circle.id === parseInt(circleId));
+  }, [circleId]);
+
+  const circle = circleData[circleId];
 
   const [component, setComponent] = useState("");
 
@@ -51,6 +56,30 @@ function CircleInfo() {
     setComponent("aboutCircle");
   };
 
+  const handleJoinCircle = () => {
+    // Make a GET request to join the circle
+    const token = localStorage.getItem("token");
+    if (token) {
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+
+      axios
+        .get(
+          `http://13.126.8.147/api/quran_dreamers/join_study_circle/study_circle/${circleId}`,
+          {
+            headers,
+          }
+        )
+        .then(() => {
+          navigate(`/insidecircle/${circleId}`);
+        })
+        .catch((error) => {
+          console.error("Error joining the circle:", error);
+        });
+    }
+  };
+
   return (
     <div className={styles.circleInfoContainer}>
       <StudentsSidebar />
@@ -65,19 +94,14 @@ function CircleInfo() {
               <button onClick={circleAboutCircle}>About Circle</button>
             </div>
             <div className={styles.infoHeaderRight}>
-              <button>+Join Circle</button>
+              <button onClick={handleJoinCircle}>+Join Circle</button>
             </div>
           </div>
           {component === "" && <CircleGeneral />}
-
           {component === "general" && <CircleGeneral />}
           {component === "curriculum" && <CircleCurriculum />}
           {component === "aboutMentor" && <CircleAboutMentor />}
           {component === "aboutCircle" && <CircleAboutCircle circle={circle} />}
-          {/* <CircleGeneral /> */}
-          {/* <CircleCurriculum /> */}
-          {/* <CircleAboutMentor /> */}
-          {/* <CircleAboutCircle /> */}
         </div>
       </div>
     </div>

@@ -1,6 +1,8 @@
-import styles from "./NavbarMentor.module.css";
+import PropTypes from "prop-types";
+import styles from "./NavbarGeneral.module.css";
 import { MdOutlinePersonOutline } from "react-icons/md";
-function NavbarMentor() {
+
+function NavbarGeneral({ user, userType }) {
   return (
     <div className={styles.topNavbar}>
       <div className={styles.icon}>
@@ -11,12 +13,17 @@ function NavbarMentor() {
         <MdOutlinePersonOutline className={styles.userIcon} />
 
         <div className={styles.userNameandPosition}>
-          <div className={styles.userPosition}>Adminstrator</div>
-          <div className={styles.userName}>Basit Minhaz</div>
+          <div className={styles.userPosition}>{user}</div>
+          <div className={styles.userName}>{userType}</div>
         </div>
       </div>
     </div>
   );
 }
 
-export default NavbarMentor;
+NavbarGeneral.propTypes = {
+  user: PropTypes.string.isRequired,
+  userType: PropTypes.string.isRequired,
+};
+
+export default NavbarGeneral;

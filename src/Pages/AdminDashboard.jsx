@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NavbarMentor from "../Components/NavbarMentor";
+import NavbarMentor from "../Components/NavbarGeneral";
 import styles from "./AdminDashboard.module.css";
 import AdminAll from "../Components/AdminDashboard/AdminAll";
 import AdminGroups from "../Components/AdminDashboard/AdminGroups";

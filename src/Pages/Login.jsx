@@ -33,10 +33,9 @@ const Login = () => {
       console.log(response.data);
 
       if (response.data.token) {
-        // Save the token to local storage
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", response.data.name);
 
-        // If successful, navigate to the home page
         window.location.href = "http://localhost:5173/dreamCircles/";
       } else {
         // If unsuccessful, show an alert

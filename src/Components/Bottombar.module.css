@@ -7,6 +7,7 @@
 }
 
 .logo {
+  flex-shrink: 3;
   width: 150px;
   height: 70%;
   border-radius: 20px;
@@ -15,6 +16,7 @@
 
 .connect {
   height: 70%;
+  flex-shrink: 0;
 }
 
 .connect p {
@@ -34,8 +36,29 @@
   margin-right: 5px;
   margin-bottom: 10px;
 }
-
 .terms {
+  font-size: 1.5rem;
   color: white;
   font-family: "Lato", sans-serif;
+}
+
+.finalTerms {
+  flex-shrink: 3;
+}
+
+@media (max-width: 768px) {
+  .socialLogo img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .terms {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .terms {
+    font-size: 0.75rem;
+  }
 }

@@ -21,7 +21,7 @@ function Bottombar() {
           </span>
         </span>
       </div>
-      <div>
+      <div className={styles.finalTerms}>
         <p className={styles.terms}>
           Terms of Use | Privacy Policy <br />
           Copyright @ 2023 QuranDreamers

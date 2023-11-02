@@ -52,8 +52,7 @@ function Home() {
             <div className={styles.titleText}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, nisi
               veritatis tempore, hic modi, corporis dolores consectetur id
-              deserunt et facilis. Eos, quis aperiam est facilis quam excepturi
-              dignissimos enim.
+              deserunt et facilis
             </div>
           </div>
           <div className={styles.circle3}>

@@ -14,6 +14,8 @@ import StudyCircleForm from "./Components/CreateCircle/CreateCircle";
 import InsideCircle from "./Components/InsideCircle/InsideCircle";
 import DashboardStudent from "./Pages/DashboardStudent";
 import AdminDashboard from "./Pages/AdminDashboard";
+import DashboardClasses from "./Pages/DashboardClasses";
+
 function App() {
   return (
     <BrowserRouter>
@@ -27,7 +29,8 @@ function App() {
         <Route path="join" element={<Signup />} />
         <Route path="dreamcircles" element={<DreamCirclesList />} />
         <Route path="circleInfo/:circleId" element={<CircleInfo />} />
-        <Route path="insideCircle" element={<InsideCircle />} />
+        <Route path="insideCircle/:circleId" element={<InsideCircle />} />
+        <Route path="studentDashboard" element={<DashboardClasses />} />
         <Route path="createCircle" element={<StudyCircleForm />} />
         <Route path="adminProfile" element={<StudyCircleForm />} />
         <Route path="dashboardStudent" element={<DashboardStudent />} />

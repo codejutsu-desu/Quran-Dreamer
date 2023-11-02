@@ -10,13 +10,14 @@
 }
 
 .home {
-  margin-left: 10px;
   height: 80%;
+  flex: 2;
 }
 
 .home img {
+  margin-left: 10px;
+  height: 80%;
   width: 150px;
-  height: 100%;
   object-fit: cover;
   margin-top: 0;
   transition: transform 0.3s ease;
@@ -26,8 +27,9 @@
 }
 
 .homeUl {
+  flex: 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -35,8 +37,7 @@
 }
 
 .aboutLi {
-  width: 165px;
-  height: 74px;
+  height: 100%;
   font-size: 24px;
   font-weight: 700;
   font-family: "Lato", sans-serif;
@@ -75,6 +76,7 @@ ul button:hover {
 
 .about {
   text-decoration: none;
+  flex-shrink: 1;
 }
 .circles {
   text-decoration: none;
@@ -86,4 +88,15 @@ ul button:hover {
 
 .login {
   text-decoration: none;
+}
+
+/* media */
+
+@media (max-width: 768px) {
+  .header {
+    height: 50px;
+  }
+  .aboutLi {
+    font-size: 1rem;
+  }
 }

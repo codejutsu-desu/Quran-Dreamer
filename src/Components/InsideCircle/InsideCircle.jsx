@@ -1,20 +1,23 @@
-import NavbarMentor from "../NavbarMentor";
+import NavbarMentor from "../NavbarGeneral";
 // import StudentNote from "../StudentNote";
 import TeachersNote from "./TeachersNote";
-import StudentsSidebar from "../StudentsSidebar";
+import StudentsSidebar from "../SidebarGeneral";
 import styles from "./InsideCircle.module.css";
 import LiveClasses from "./LiveClasses";
 import CircleMembers from "./CircleMembers";
-import DashboardClasses from "./DashboardClasses";
+
 import { useState } from "react";
 import StudentNote from "../StudentNote";
+import { useNavigate } from "react-router-dom";
 function InsideCircle() {
   const [component, setComponent] = useState("");
+  const navigate = useNavigate();
+
   const componentMembers = function () {
     setComponent("Members");
   };
   const componentDashboard = function () {
-    setComponent("Dashboard");
+    navigate("/studentDashboard");
   };
   const componentStudentsNote = function () {
     setComponent("StudentsNote");
@@ -31,6 +34,8 @@ function InsideCircle() {
         componentDashboard={componentDashboard}
         componentStudentsNote={componentStudentsNote}
         componentTeachersNote={componentTeachersNote}
+        members="Members"
+        notesByTeachers="Notes by Teacher"
       />
       <div className={styles.rightBar}>
         <NavbarMentor />
@@ -40,13 +45,18 @@ function InsideCircle() {
             <h6>Member 6</h6>
           </div>
           <div className={styles.navBack}>
-            <button className={styles.backButtonStyle}>Back</button>
+            <button
+              className={styles.backButtonStyle}
+              onClick={() => navigate(-1)}
+            >
+              Back
+            </button>
           </div>
         </div>
 
         {component === "" && <LiveClasses />}
         {component === "Members" && <CircleMembers />}
-        {component === "Dashboard" && <DashboardClasses />}
+
         {component === "StudentsNote" && <StudentNote />}
         {component === "TeachersNote" && <TeachersNote />}
       </div>

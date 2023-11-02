@@ -10,8 +10,8 @@ const SignUpForm = () => {
     first_name: "",
     last_name: "",
     about_me: "",
-    user_type: 1,
-    gender: 1,
+    user_type: "1",
+    gender: "1",
   });
 
   const handleChange = (e) => {
@@ -29,7 +29,7 @@ const SignUpForm = () => {
         "http://13.126.8.147/api/quran_dreamers/signup/",
         formData
       );
-      console.log(response.data);
+
       if (response.data) {
         window.location.href = "http://localhost:5173/login";
       } else alert("sign up failed");
@@ -101,11 +101,9 @@ const SignUpForm = () => {
               onChange={handleChange}
               required
             >
-              {/* Options for user type */}
               <option value="0">Admin</option>
               <option value="1">Student</option>
               <option value="2">Mentor</option>
-              {/* Add more options as needed */}
             </select>
           </div>
           <div className={styles.inputGroup}>
@@ -116,10 +114,8 @@ const SignUpForm = () => {
               onChange={handleChange}
               required
             >
-              {/* Options for gender */}
               <option value="1">Male</option>
               <option value="2">Female</option>
-              {/* Add more options as needed */}
             </select>
           </div>
 

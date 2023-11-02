@@ -1,16 +1,26 @@
+import { useState, useEffect } from "react";
 import DreamCircleCards from "../Components/DreamCircleCards";
-// import DreamCircleCard from "../Components/DreamCircleCard";
 import DreamCirclesCardHeader from "../Components/DreamCirclesCardHeader";
-import NavbarMentor from "../Components/NavbarMentor";
-import StudentsSidebar from "../Components/StudentsSidebar";
+import NavbarGeneral from "../Components/NavbarGeneral";
+import SidebarGeneral from "../Components/SidebarGeneral";
 import styles from "./DreamCirclesList.module.css";
 
 function DreamCirclesList() {
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+      setUser(storedUser);
+    }
+  }, []);
+
   return (
     <div className={styles.dreamCirclesContainer}>
-      <StudentsSidebar />
+      <SidebarGeneral />
       <div className={styles.mainContainer}>
-        <NavbarMentor />
+        <NavbarGeneral user={user} userType="Student" />
         <DreamCirclesCardHeader />
         <DreamCircleCards />
       </div>
