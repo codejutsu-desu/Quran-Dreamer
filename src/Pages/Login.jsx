@@ -52,15 +52,15 @@ const Login = () => {
       <div className={styles.loginToAccount}>Login to your account</div>
       <div className={styles.container}>
         <div className={styles.socialIconsContainer}>
-          <button className={styles.socialButtonFb}>
-            {/* <img src="/Facebook Icon.svg" alt="Facebook" /> */}
-          </button>
-          <button className={styles.socialButtonG}>
-            {/* <img src="/GoogleIcon.svg" alt="Google" /> */}
-          </button>
-          <button className={styles.socialButtonA}>
-            {/* <img src="/AppleIIcon.svg" alt="Apple" /> */}
-          </button>
+          {/* <button className={styles.socialButtonFb}> */}
+          {/* <img src="/Facebook Icon.svg" alt="Facebook" /> */}
+          {/* </button> */}
+          {/* <button className={styles.socialButtonG}> */}
+          {/* <img src="/GoogleIcon.svg" alt="Google" /> */}
+          {/* </button> */}
+          {/* <button className={styles.socialButtonA}> */}
+          {/* <img src="/AppleIIcon.svg" alt="Apple" /> */}
+          {/* </button> */}
         </div>
 
         {/* Email and Password Inputs */}

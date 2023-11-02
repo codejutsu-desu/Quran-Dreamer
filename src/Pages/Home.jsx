@@ -2,6 +2,10 @@ import AppLayout from "./AppLayout";
 import styles from "./Home.module.css";
 import { FaUserAlt } from "react-icons/fa";
 
+const customNavLinkStyle = {
+  textDecoration: "none",
+};
+
 function Home() {
   return (
     <AppLayout>
@@ -17,18 +21,16 @@ function Home() {
       <div className={styles.homeBackground2}>
         <img src="/homeBackground2.jpg" alt="" />
         <div className={styles.container}>
-          <div className={styles.beDreamer}>Be a Dreamer With Us!</div>
+          <div className={styles.beDreamer}>Want to be a Mentor ? </div>
 
           <div className={styles.dreamerText}>
-            Lorem ipsum dolor sit amet consectetur. Lobortis in adipiscing massa
-            morbi bibendum risus aliquet sit ut. Risus lacus morbi turpis cursus
-            tellus ut non eu. Velit ligula in leo sit ut tempor sit et. Augue
-            mauris dignissim nibh purus. Dignissim sit eget justo volutpat. Ut
-            habitant penatibus orci ac ipsum ultricies. Aliquet urna mattis
-            suspendisse at. Quis aenean phasellus nibh fames hendrerit
-            facilisis. Nibh dui morbi urna nec pretium sed turpis donec quis.
-            Odio ut diam cras ultricies urna. Nisi eget arcu sit erat quam
-            bibendum feugiat est in.
+            The Prophet said, &quot;The best among you (Muslims) are those who
+            learn the Qur&apos;an and teach it.&quot; We believe that teaching
+            helps to bring our learning to a deeper level. If you also think
+            like this and would like to lead a class circle, please join as a{" "}
+            <a style={customNavLinkStyle} href="join">
+              mentor
+            </a>
           </div>
         </div>
       </div>

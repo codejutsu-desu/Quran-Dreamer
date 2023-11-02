@@ -1,6 +1,12 @@
 import AppLayout from "./AppLayout";
 import styles from "./About.module.css";
-import { NavLink } from "react-router-dom";
+
+// import { NavLink } from "react-router-dom";
+
+const customNavLinkStyle = {
+  textDecoration: "none",
+  color: "#12e000",
+};
 
 function About() {
   return (
@@ -18,33 +24,65 @@ function About() {
         </p>
       </div>
 
+      {/* Embed the YouTube video here */}
       <div className={styles.ytThumbnail}>
-        <img className={styles.ytimg} src="/youtube.jpg" alt="" />
-        <img className={styles.iconImg} src="/youtubeicon.svg" alt="" />
-        <div className={styles.watchOnYt}>Watch on Youtube</div>
+        <div className={styles.embedContainer}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/MoP5B63pWc0?si=A3XUEiZ5OXgHDYu3"
+            title="YouTube video player"
+            // eslint-disable-next-line react/no-unknown-property
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
 
       <div className={styles.availability}>
-        <p className={styles.onlineAvailability}>
+        {/* <p className={styles.onlineAvailability}>
           <span>Our Online Availability</span>
           <br /> Lorem ipsum dolor sit amet consectetur. diam vivamus tortor
           enim arcu cras eget pellentesque. Ullamcorper eros tincidunt enim
-        </p>
+        </p> */}
 
-        <button>Watch Online</button>
+        {/* <button>Watch Online</button>
         <NavLink to="/notes">
           <button>Student Notes</button>
-        </NavLink>
+        </NavLink> */}
         <div className={styles.communityInfo}>
           <h1>Our Community</h1>
           <h2>
-            Lorem ipsum dolor sit amet consectetur. Accumsan aliquet ornare
-            gravida velit erat convallis. Eget enim eu feugiat dis integer est
-            libero nisi mattis. Ac adipiscing interdum aenean eget tincidunt ut
-            accumsan amet. Arcu aliquet amet cras commodo tincidunt velit
-            adipiscing nulla pellentesque. Purus gravida sit viverra libero
-            tristique aliquet nulla eu justo. Id diam risus pharetra tempor
-            congue tellus. Tellus id vitae mattis sit purus et eu id ut.
+            <span dir="rtl">
+              إِنَّا جَعَلْنَـٰهُ قُرْءَٰنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ
+            </span>
+            <br />
+            We have caused it to be a discourse in the Arabic tongue, so that
+            you might encompass it with your reason۔
+            <br />
+            <br />
+            We are the students of Ustadh{" "}
+            <a
+              style={customNavLinkStyle}
+              href="https://www.facebook.com/noumanbayyinah/"
+            >
+              Nouman Ali Khan
+            </a>{" "}
+            of the{" "}
+            <a style={customNavLinkStyle} href="https://www.bayyinahtv.com/">
+              Bayyinah Institute{" "}
+            </a>{" "}
+            who teaches Quranic Arabic in the{" "}
+            <a style={customNavLinkStyle} href="https://dream.bayyinahtv.com/">
+              Dream Program.
+            </a>{" "}
+            We have come together to create a platform for fellow students to
+            benefit from a larger group of Dreamers. We have student teachers
+            (we call Mentors) who lead classes, teachers aide and fellow
+            students who help each other in the course of navigating the Dream
+            Program. Please go to Bayyinah TV website for the official full
+            course.
           </h2>
         </div>
       </div>

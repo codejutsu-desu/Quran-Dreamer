@@ -1,15 +1,26 @@
+/* Bottombar.module.css */
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background-color: #5bef00;
-  height: 80px;
+  height: 15vh;
 }
 
 .logo {
+<<<<<<< HEAD
   flex-shrink: 3;
   width: 150px;
   height: 70%;
+=======
+  width: 150px; /* Adjust the width of the logo as needed */
+  height: auto; /* Let the height adjust automatically */
+  max-height: 70px; /* Set a maximum height for the logo */
+>>>>>>> 136ee6dbc52a2968f7acada541b69c188141a489
   border-radius: 20px;
   object-fit: cover;
 }
@@ -42,6 +53,7 @@
   font-family: "Lato", sans-serif;
 }
 
+<<<<<<< HEAD
 .finalTerms {
   flex-shrink: 3;
 }
@@ -60,5 +72,62 @@
 @media (max-width: 480px) {
   .terms {
     font-size: 0.75rem;
+=======
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+    border-radius: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    object-fit: contain;
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #5bef00;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 5px;
+    margin-right: 0;
+  }
+
+  .connect {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .connect p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .socialLogo img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Media queries for smaller screens, adjust as needed */
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;
+  }
+
+  .connect p {
+    font-size: 14px;
+  }
+
+  .socialLogo img {
+    width: 25px;
+    height: 25px;
+>>>>>>> 136ee6dbc52a2968f7acada541b69c188141a489
   }
 }

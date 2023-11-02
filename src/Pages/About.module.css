@@ -121,9 +121,11 @@
   background-color: #fcfcfc;
   margin: auto;
   margin-top: 70px;
-  margin-bottom: 20px;
+  margin-bottom: 150px;
   border: 1px solid #12e000;
   border-radius: 25px;
+  text-align: left;
+  padding: 20px;
 }
 
 .communityInfo h1 {
@@ -132,6 +134,7 @@
   font-weight: 700;
   line-height: 43px;
   color: #12e000;
+  text-align: center;
 }
 
 .communityInfo h2 {
@@ -141,4 +144,9 @@
   width: 80%;
   margin: auto;
   text-align: justify;
+}
+
+.communityInfo h2 span[dir="rtl"] {
+  display: block;
+  text-align: right; /* Set text-align to right for the Arabic text */
 }

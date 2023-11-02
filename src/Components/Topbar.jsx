@@ -23,9 +23,9 @@ function Topbar() {
 
         {token ? (
           <>
-            <NavLink to="/events" className={styles.events}>
+            {/* <NavLink to="/events" className={styles.events}>
               <li className={styles.aboutLi}>Events</li>
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/dreamCircles" className={styles.circles}>
               <li className={styles.aboutLi}>All Circles</li>
             </NavLink>
