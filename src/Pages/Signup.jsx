@@ -1,16 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 import styles from "./Signup.module.css";
 import AppLayout from "./AppLayout";
 
 const SignUpForm = () => {
+  const { user_type } = useParams(); // Use useParams to get the user_type parameter
+  const isMentor = user_type === "1";
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     first_name: "",
     last_name: "",
     about_me: "",
-    user_type: "1",
+    user_type: user_type || "1", // Set the user type from the URL parameter or default to "1"
     gender: "1",
   });
 
@@ -29,11 +32,7 @@ const SignUpForm = () => {
         "http://13.126.8.147/api/quran_dreamers/signup/",
         formData
       );
-<<<<<<< HEAD
 
-=======
-      // console.log(response.data);
->>>>>>> 136ee6dbc52a2968f7acada541b69c188141a489
       if (response.data) {
         window.location.href = "http://localhost:5173/login";
       } else alert("sign up failed");
@@ -46,7 +45,9 @@ const SignUpForm = () => {
 
   return (
     <AppLayout>
-      <div className={styles.signupTitle}>Sign Up</div>
+      <div className={styles.signupTitle}>
+        Sign Up As {isMentor ? "Mentor" : "Student"}
+      </div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
@@ -97,19 +98,7 @@ const SignUpForm = () => {
               onChange={handleChange}
             />
           </div>
-          <div className={styles.inputGroup}>
-            <label>User Type:</label>
-            <select
-              name="user_type"
-              value={formData.user_type}
-              onChange={handleChange}
-              required
-            >
-              <option value="0">Admin</option>
-              <option value="1">Student</option>
-              <option value="2">Mentor</option>
-            </select>
-          </div>
+
           <div className={styles.inputGroup}>
             <label>Gender:</label>
             <select

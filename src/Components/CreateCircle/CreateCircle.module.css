@@ -1,0 +1,56 @@
+.mainContainer {
+  margin: 20px;
+  padding: 10px;
+  border: 3px solid #12e000;
+  border-radius: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.mainContainer input,
+select,
+textarea {
+  border: 2px solid #12e000;
+}
+
+.mainContainer h2 {
+  text-align: center;
+}
+
+.dateFields {
+  display: flex;
+  align-items: center;
+}
+
+.dateLabel {
+  margin-right: 10px;
+}
+
+.classTimingFields {
+  display: flex;
+  align-items: center;
+}
+
+.classTimingLabel {
+  margin-right: 10px;
+}
+
+.classTimingSeparator {
+  margin: 0 10px;
+}
+
+.about_circle {
+  height: 5rem;
+  width: 100%;
+  padding: 5px;
+  vertical-align: top;
+}
+
+.mainContainer button {
+  background-color: #12e000;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Lexend";
+}

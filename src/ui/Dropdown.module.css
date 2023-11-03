@@ -33,10 +33,10 @@
 .dropdownMenu li {
   padding: 10px;
   color: #12e000;
+  text-decoration: none;
 }
 
 .dropdown li a {
-  text-decoration: none;
 }
 
 .overlay {

@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import styles from "./Login.module.css";
 import axios from "axios";
 import AppLayout from "./AppLayout";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   // State to manage form input values
   const [formData, setFormData] = useState({
     email: "",
@@ -30,13 +34,15 @@ const Login = () => {
         formData
       );
 
-      console.log(response.data);
-
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user", response.data.name);
 
-        window.location.href = "http://localhost:5173/dreamCircles/";
+        if (response.data.user_type === 2) {
+          navigate("/dreamCircles"); // Navigate to dreamCircles
+        } else if (response.data.user_type === 1) {
+          navigate("/createCircle"); // Navigate to createCircle
+        }
       } else {
         // If unsuccessful, show an alert
         alert("Login failed. Please check your credentials.");

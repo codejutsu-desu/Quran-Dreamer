@@ -1,0 +1,7 @@
+.dreamCirclesContainer {
+  display: flex;
+}
+
+.mainContainer {
+  flex: 1;
+}

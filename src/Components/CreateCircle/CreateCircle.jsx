@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import styles from "./CreateCircle.module.css";
 
 const StudyCircleForm = () => {
   const [formData, setFormData] = useState({
@@ -8,8 +9,8 @@ const StudyCircleForm = () => {
     to_date: "2023-06-29",
     times: ["14:00"],
     pre_requisites: [],
-    about_circle: "This circle is about nahaw",
-    class_link: "www.zoomlinkhere.com",
+    about_circle: "",
+    class_link: "",
     number_of_students: 0,
     maximim_students: [],
   });
@@ -73,66 +74,93 @@ const StudyCircleForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <h2>Create Study Circle</h2>
       <form onSubmit={handleSubmit}>
+        <label className={styles.category}>
+          Select your circle category:
+          <select
+            name="category"
+            value={formData.category}
+            onChange={handleInputChange}
+          >
+            <option value="">Select category</option>
+            <option value="1">Nahw Basics</option>
+            <option value="2">Nahw Advance</option>
+            <option value="3">Reader Basics</option>
+            <option value="4">Reader Basics</option>
+            <option value="5">Sarf Basics</option>
+            <option value="6">Sarf Advanced</option>
+          </select>
+        </label>
         <label>
-          Days:
+          Select Days:
           <select
             multiple
             name="days"
             value={formData.days}
             onChange={handleInputChange}
           >
-            <option value="1">Monday</option>
-            <option value="2">Tuesday</option>
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
           </select>
         </label>
+
         <label>
-          From Date:
-          <input
-            type="text"
-            name="from_date"
-            value={formData.from_date}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          To Date:
-          <input
-            type="text"
-            name="to_date"
-            value={formData.to_date}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Times:
-          <input
-            type="text"
-            name="times"
-            value={formData.times}
-            onChange={handleInputChange}
-          />
-        </label>
-        {/* <label>
           Pre-requisites (one per line):
           <textarea
             name="pre_requisites"
             value={formData.pre_requisites.join("\n")}
-            onChange={handleInputChange}
-          />
-        </label> */}
-
-        <label>
-          About Circle:
-          <input
-            type="text"
-            name="about_circle"
-            value={formData.about_circle}
-            onChange={handleInputChange}
+            onChange={(e) => {
+              const prerequisites = e.target.value.split("\n");
+              setFormData({ ...formData, pre_requisites: prerequisites });
+            }}
           />
         </label>
+        <div className={styles.dateFields}>
+          <label className={styles.dateLabel}>
+            From Date:
+            <input
+              type="text"
+              name="from_date"
+              value={formData.from_date}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label className={styles.dateLabel}>
+            To Date:
+            <input
+              type="text"
+              name="to_date"
+              value={formData.to_date}
+              onChange={handleInputChange}
+            />
+          </label>
+        </div>
+        <div className={styles.classTimingFields}>
+          <label className={styles.classTimingLabel}>Class Timing:</label>
+          <input
+            type="text"
+            name="class_timing_from"
+            placeholder="From"
+            value={formData.class_timing_from}
+            onChange={handleInputChange}
+          />
+          <span className={styles.classTimingSeparator}>to</span>
+          <input
+            type="text"
+            name="class_timing_to"
+            placeholder="To"
+            value={formData.class_timing_to}
+            onChange={handleInputChange}
+          />
+        </div>
+
         <label>
           Class Link:
           <input
@@ -161,7 +189,16 @@ const StudyCircleForm = () => {
           />
         </label>
 
-        <button type="submit">Create Circle</button>
+        <label>
+          Write about your circle (100-150 Characters)
+          <textarea
+            className={styles.about_circle}
+            name="about_circle"
+            value={formData.about_circle}
+            onChange={handleInputChange}
+          />
+        </label>
+        <button type="submit">Next</button>
       </form>
     </div>
   );

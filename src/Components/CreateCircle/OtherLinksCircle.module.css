@@ -1,0 +1,17 @@
+.mainContainer {
+  margin: 20px;
+}
+.mainContainer button {
+  background-color: #12e000;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-family: "Laxend";
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.mainContainer .inputField {
+  border: 2px solid #12e000;
+  border-radius: 10px;
+}

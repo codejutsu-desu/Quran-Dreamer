@@ -15,6 +15,8 @@ import InsideCircle from "./Components/InsideCircle/InsideCircle";
 import DashboardStudent from "./Pages/DashboardStudent";
 import AdminDashboard from "./Pages/AdminDashboard";
 import DashboardClasses from "./Pages/DashboardClasses";
+import MentorCreateCircle from "./Pages/MentorCreateCircle";
+import FinalCreateCircle from "./Components/CreateCircle/FinalCreateCircle";
 
 function App() {
   return (
@@ -26,15 +28,17 @@ function App() {
         <Route path="files" element={<StudentsNoteFiles />} />
         <Route path="events" element={<Events />} />
         <Route path="login" element={<Login />} />
-        <Route path="join" element={<Signup />} />
+        <Route path="join/:user_type" element={<Signup />} />
         <Route path="dreamcircles" element={<DreamCirclesList />} />
         <Route path="circleInfo/:circleId" element={<CircleInfo />} />
         <Route path="insideCircle/:circleId" element={<InsideCircle />} />
         <Route path="studentDashboard" element={<DashboardClasses />} />
-        <Route path="createCircle" element={<StudyCircleForm />} />
         <Route path="adminProfile" element={<StudyCircleForm />} />
         <Route path="dashboardStudent" element={<DashboardStudent />} />
         <Route path="dashboardAdmin" element={<AdminDashboard />} />
+        <Route path="createCircle" element={<MentorCreateCircle />} />
+        <Route path="finalCreateCircle" element={<FinalCreateCircle />} />
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>

@@ -29,6 +29,10 @@
   gap: 10px;
 }
 
+.infoHeaderLeft .active {
+  border-bottom: 3px solid #12e000;
+}
+
 .infoHeaderLeft button {
   font-weight: 600;
   background-color: transparent;

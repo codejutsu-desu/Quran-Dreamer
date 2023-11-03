@@ -1,32 +1,19 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchStudyCircles } from "../actions"; // Import your action here
 import DreamCircleCard from "./DreamCircleCard";
 import styles from "./DreamCircleCards.module.css";
 
 function DreamCircleCards() {
-  const [circleData, setCircleData] = useState([]);
+  const dispatch = useDispatch();
+  const circleData = useSelector((state) => state.studyCircles);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
     if (token) {
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
-      console.log(circleData);
-      axios
-        .get("http://13.126.8.147/api/quran_dreamers/study_circles/", {
-          headers,
-        })
-        .then((response) => {
-          setCircleData(response.data);
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
+      dispatch(fetchStudyCircles(token));
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles.cardContainer}>

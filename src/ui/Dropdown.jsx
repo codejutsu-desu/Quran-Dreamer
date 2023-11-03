@@ -22,12 +22,14 @@ function JoinUs() {
         Join
       </button>
       {isOpen && (
-        <NavLink to="/join" onClick={closeDropdown}>
-          <ul className={styles.dropdownMenu}>
+        <ul className={styles.dropdownMenu}>
+          <NavLink to="/join/2" onClick={closeDropdown}>
             <li>Student</li>
+          </NavLink>
+          <NavLink to="/join/1" onClick={closeDropdown}>
             <li>Mentor</li>
-          </ul>
-        </NavLink>
+          </NavLink>
+        </ul>
       )}
       {isOpen && <div className={styles.overlay} onClick={closeDropdown}></div>}
     </div>
