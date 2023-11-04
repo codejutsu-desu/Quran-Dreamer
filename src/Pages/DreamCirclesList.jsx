@@ -7,6 +7,7 @@ import styles from "./DreamCirclesList.module.css";
 
 function DreamCirclesList() {
   const [user, setUser] = useState("");
+  const [nonJoinedCircles, setNonJoinedCircles] = useState([]); // Add state for nonJoinedCircles
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -21,8 +22,10 @@ function DreamCirclesList() {
       <SidebarGeneral />
       <div className={styles.mainContainer}>
         <NavbarGeneral user={user} userType="Student" />
-        <DreamCirclesCardHeader />
-        <DreamCircleCards />
+        <DreamCirclesCardHeader nonJoinedCircles={nonJoinedCircles} />
+        {/* Pass nonJoinedCircles as a prop */}
+        <DreamCircleCards setNonJoinedCircles={setNonJoinedCircles} />
+        {/* Pass a function to set nonJoinedCircles as a prop */}
       </div>
     </div>
   );

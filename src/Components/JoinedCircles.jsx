@@ -1,31 +1,9 @@
-import { useEffect, useState } from "react";
 import styles from "./JoinedCircles.module.css";
-import axios from "axios";
-import JoinedCircle from "./JoinedCircle";
-function JoinedCircles() {
-  const [circleData, setCircleData] = useState([]);
+import PropTypes from "prop-types"; // Import PropTypes
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    console.log(token);
-    if (token) {
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
-      console.log(circleData);
-      axios
-        .get("http://13.126.8.147/api/quran_dreamers/study_circles_joined", {
-          headers,
-        })
-        .then((response) => {
-          setCircleData(response.data);
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    }
-  }, []);
+import JoinedCircle from "./JoinedCircle";
+
+function JoinedCircles({ circleData }) {
   return (
     <div className={styles.cardContainer}>
       {circleData.map((circle) => (
@@ -34,5 +12,9 @@ function JoinedCircles() {
     </div>
   );
 }
+
+JoinedCircles.propTypes = {
+  circleData: PropTypes.array.isRequired, // Assuming circleData is an array
+};
 
 export default JoinedCircles;

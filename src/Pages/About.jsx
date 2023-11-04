@@ -30,7 +30,7 @@ function About() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/MoP5B63pWc0?si=A3XUEiZ5OXgHDYu3"
+            src="https://www.youtube.com/embed/Spm3QqF6_q8"
             title="YouTube video player"
             // eslint-disable-next-line react/no-unknown-property
             frameborder="0"
@@ -57,26 +57,26 @@ function About() {
             <span dir="rtl">
               إِنَّا جَعَلْنَـٰهُ قُرْءَٰنًا عَرَبِيًّا لَّعَلَّكُمْ تَعْقِلُونَ
             </span>
-            <br />
-            We have caused it to be a discourse in the Arabic tongue, so that
-            you might encompass it with your reason۔
-            <br />
+            <span className={styles.englishTranslation}>
+              We have caused it to be a discourse in the Arabic tongue, so that
+              you might encompass it with your reason- Quran
+            </span>
             <br />
             We are the students of Ustadh{" "}
             <a
               style={customNavLinkStyle}
               href="https://www.facebook.com/noumanbayyinah/"
             >
-              Nouman Ali Khan
-            </a>{" "}
+              Nouman Ali Khan{" "}
+            </a>
             of the{" "}
             <a style={customNavLinkStyle} href="https://www.bayyinahtv.com/">
               Bayyinah Institute{" "}
-            </a>{" "}
+            </a>
             who teaches Quranic Arabic in the{" "}
             <a style={customNavLinkStyle} href="https://dream.bayyinahtv.com/">
-              Dream Program.
-            </a>{" "}
+              Dream Program.{" "}
+            </a>
             We have come together to create a platform for fellow students to
             benefit from a larger group of Dreamers. We have student teachers
             (we call Mentors) who lead classes, teachers aide and fellow

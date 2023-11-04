@@ -1,45 +1,45 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { fetchCircleData } from "../actions";
+// import { FETCH_CIRCLE_DATA } from "../actions"; // Import the action type
+import NavbarGeneral from "./NavbarGeneral";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import CircleCurriculum from "./CircleCurriculum";
 import CircleGeneral from "./CircleGeneral";
 import CircleAboutMentor from "./CircleAboutMentor";
 import CircleAboutCircle from "./CircleAboutCircle";
 import styles from "./CircleInfo.module.css";
 import StudentsSidebar from "./SidebarGeneral";
-import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
-import NavbarGeneral from "./NavbarGeneral";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the Toastify CSS
+
+const categoryNames = {
+  0: "Nahw Basics",
+  1: "Sarf Basic",
+  2: "Intermediate Nahw",
+  3: "Advance Nahw",
+  4: "Advanced Sarf",
+  5: "Basic Reader",
+  6: "Intermediate Reader",
+  7: "Advanced Reader",
+};
 
 function CircleInfo() {
-  const { circleId } = useParams();
   const navigate = useNavigate();
-  const [circleData, setCircleData] = useState([]);
+  const { circleId } = useParams();
+  const dispatch = useDispatch(); // Get the dispatch function
+
+  // Dispatch the action to fetch circle data
   useEffect(() => {
     const token = localStorage.getItem("token");
-
     if (token) {
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
-
-      axios
-        .get(
-          `http://13.126.8.147/api/quran_dreamers/study_circle/${circleId}`,
-          {
-            headers,
-          }
-        )
-        .then((response) => {
-          setCircleData(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
+      dispatch(fetchCircleData(token, circleId));
     }
-  }, [circleId]);
+  }, [dispatch, circleId]);
 
-  const circle = circleData[circleId];
+  const circleData = useSelector((state) => state.circleData);
+  const categoryName = categoryNames[circleData.category];
 
   const [component, setComponent] = useState("general"); // Set the default component to 'general'
 
@@ -99,6 +99,16 @@ function CircleInfo() {
       <StudentsSidebar />
       <div className={styles.navMentor}>
         <NavbarGeneral />
+        <div className={styles.circleInfoHeader}>
+          Dream Circle/ {categoryName}
+          <button
+            className={styles.backButtonStyle}
+            onClick={() => navigate(-1)}
+          >
+            Back
+          </button>
+        </div>
+
         <div className={styles.circleInfo}>
           <div className={styles.infoHeader}>
             <div className={styles.infoHeaderLeft}>
@@ -131,10 +141,16 @@ function CircleInfo() {
               <button onClick={handleJoinCircle}>+Join Circle</button>
             </div>
           </div>
-          {component === "general" && <CircleGeneral />}
-          {component === "curriculum" && <CircleCurriculum />}
-          {component === "aboutMentor" && <CircleAboutMentor />}
-          {component === "aboutCircle" && <CircleAboutCircle circle={circle} />}
+          {component === "general" && <CircleGeneral circle={circleData} />}
+          {component === "curriculum" && (
+            <CircleCurriculum circle={circleData} />
+          )}
+          {component === "aboutMentor" && (
+            <CircleAboutMentor circle={circleData} />
+          )}
+          {component === "aboutCircle" && (
+            <CircleAboutCircle circle={circleData} />
+          )}
         </div>
       </div>
       <ToastContainer />

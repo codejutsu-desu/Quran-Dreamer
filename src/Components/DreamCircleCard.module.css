@@ -83,6 +83,10 @@
   justify-content: space-between;
   margin-top: 10px;
 }
+
+.cardBottom .knowMoreLink {
+  text-decoration: none;
+}
 .knowMore {
   padding-left: 5px;
   padding-right: 5px;

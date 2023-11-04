@@ -1,0 +1,9 @@
+.mainLink {
+  font-size: 1.5rem;
+  font-family: "Laxend", sans-serif;
+  padding: 10px;
+}
+
+.mainLink span {
+  font-weight: 700;
+}
