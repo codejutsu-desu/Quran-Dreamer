@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../auth";
 import { useNavigate } from "react-router-dom";
@@ -30,28 +30,27 @@ const Login = () => {
     e.preventDefault();
 
     // Dispatch the loginUser action
-    dispatch(loginUser(formData))
-      .then(() => {
-        const token = response.token;
-        if (token) {
-          localStorage.setItem("token", token);
-          localStorage.setItem("user", response.name);
-          localStorage.setItem("user_type", response.user_type);
-
-          if (response.user_type === 2) {
-            navigate("/dreamCircles");
-          } else if (response.user_type === 1) {
-            navigate("/appLayoutMentor");
-          }
-        } else {
-          alert("Login failed. Please check your credentials.");
-        }
-      })
-      .catch((error) => {
-        console.error("An error occurred:", error);
-        alert("An error occurred while trying to login.");
-      });
+    dispatch(loginUser(formData));
   };
+
+  useEffect(() => {
+    // Handle redirection and local storage update when the loginSuccess action is dispatched
+    if (response.isAuthenticated) {
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("user", response.name);
+      localStorage.setItem("user_type", response.user_type);
+
+      if (response.user_type === 2) {
+        navigate("/dreamCircles");
+      } else if (response.user_type === 1) {
+        navigate("/appLayoutMentor");
+      } else {
+        alert("Invalid user type");
+      }
+    } else if (response.error) {
+      alert("Login failed. Please check your credentials.");
+    }
+  }, [response, navigate]);
 
   return (
     <AppLayout>
