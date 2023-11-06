@@ -7,6 +7,7 @@ const initialState = {
   circleData: {}, // Set circleData as an empty object
   classRecordings: [],
   joinedCircles: [],
+  createdCircles: [],
 };
 
 // Reducer for studyCircles
@@ -54,7 +55,7 @@ const joinedCirclesReducer = (state = initialState.joinedCircles, action) => {
 };
 
 // Reducer for joinedCircles
-const createdCirclesReducer = (state = initialState.joinedCircles, action) => {
+const createdCirclesReducer = (state = initialState.createdCircles, action) => {
   switch (action.type) {
     case "FETCH_CREATED_CIRCLE": // Use the new action type
       return action.data;
