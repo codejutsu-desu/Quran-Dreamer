@@ -19,8 +19,6 @@ const SignUpForm = () => {
     gender: "1",
   });
 
-  const [error, setError] = useState(null);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -41,12 +39,15 @@ const SignUpForm = () => {
       if (response.data) {
         alert("Sign up successful.");
         navigate("/login");
-      } else {
-        setError("Sign up failed. Input Invalid.");
       }
     } catch (error) {
-      console.error(error);
-      setError("Sign up failed. An error occurred.");
+      if (error.response.data.email) {
+        alert("Sign up failed: " + error.response.data.email[0]);
+      } else if (error.response.data.non_field_errors) {
+        alert("Sign up failed: " + error.response.data.non_field_errors[0]);
+      } else {
+        alert("Sign up failed for some reason");
+      }
     }
   };
 
@@ -57,7 +58,6 @@ const SignUpForm = () => {
       </div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
-          {error && <div className={styles.error}>{error}</div>}
           <div className={styles.inputGroup}>
             <label>Email:</label>
             <input

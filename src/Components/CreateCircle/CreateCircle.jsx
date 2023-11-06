@@ -177,8 +177,8 @@ const StudyCircleForm = () => {
               <input
                 type="checkbox"
                 name="days"
-                value={index + 1}
-                checked={formData.days.includes(index + 1)}
+                value={index}
+                checked={formData.days.includes(index)}
                 onChange={handleInputChange}
               />
               {day}
