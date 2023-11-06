@@ -7,6 +7,7 @@ const initialState = {
   circleData: {}, // Set circleData as an empty object
   classRecordings: [],
   joinedCircles: [],
+  createdCircles: [],
 };
 
 // Reducer for studyCircles
@@ -53,12 +54,23 @@ const joinedCirclesReducer = (state = initialState.joinedCircles, action) => {
   }
 };
 
+// Reducer for joinedCircles
+const createdCirclesReducer = (state = initialState.createdCircles, action) => {
+  switch (action.type) {
+    case "FETCH_CREATED_CIRCLE": // Use the new action type
+      return action.data;
+    default:
+      return state;
+  }
+};
+
 // Combine reducers if you have multiple reducers
 const rootReducer = combineReducers({
   studyCircles: studyCirclesReducer,
   circleData: circleReducer, // Use the correct property name
   classRecordings: classRecordingsReducer,
   joinedCircles: joinedCirclesReducer,
+  createdCircles: createdCirclesReducer,
 
   // Add more reducers here if needed
 });

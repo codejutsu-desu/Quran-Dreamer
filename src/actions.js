@@ -83,3 +83,28 @@ export const fetchJoinedCircle = (token) => async (dispatch) => {
     console.error("Error fetching joined circles:", error);
   }
 };
+
+// Define action types
+export const FETCH_CREATED_CIRCLE = "FETCH_CREATED_CIRCLE"; // Rename the action type
+
+// Action creator for fetching created circles
+export const fetchCreatedCircle = (token) => async (dispatch) => {
+  try {
+    const headers = {
+      Authorization: `Bearer ${token}`,
+    };
+
+    // Make the GET request to your API endpoint
+    const response = await axios.get(
+      "http://13.126.8.147/api/quran_dreamers/study_circles_created",
+      {
+        headers,
+      }
+    );
+
+    // Dispatch the fetched data
+    dispatch({ type: FETCH_CREATED_CIRCLE, data: response.data }); // Update the action type
+  } catch (error) {
+    console.error("Error fetching created circles:", error);
+  }
+};
