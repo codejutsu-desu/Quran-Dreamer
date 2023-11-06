@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { supabase } from "../../client"; // Import your Supabase client
 import styles from "./Signup.module.css";
 import AppLayout from "./AppLayout";
-import axios from "axios"; // Import axios
+import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 const SignUpForm = () => {
@@ -20,6 +19,8 @@ const SignUpForm = () => {
     gender: "1",
   });
 
+  const [error, setError] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -32,40 +33,20 @@ const SignUpForm = () => {
     e.preventDefault();
 
     try {
-      const { user, error } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        data: {
-          first_name: formData.first_name,
-          last_name: formData.last_name,
-          about_me: formData.about_me,
-          gender: formData.gender,
-          sendVerificationEmail: "1", // This will trigger email verification
-        },
-      });
+      const response = await axios.post(
+        "http://13.126.8.147/api/quran_dreamers/signup/",
+        formData
+      );
 
-      if (error) {
-        alert("Sign up failed: " + error.message);
+      if (response.data) {
+        alert("Sign up successful.");
+        navigate("/login");
       } else {
-        alert("Sign up successful. A verification email has been sent.");
-
-        // Make a POST request to your API endpoint
-        const response = await axios.post(
-          "http://13.126.8.147/api/quran_dreamers/signup/",
-          formData
-        );
-
-        if (response.data) {
-          navigate("/login");
-        } else {
-          alert("Input Invalid");
-        }
-
-        // Redirect to a success page or perform other actions as needed.
+        setError("Sign up failed. Input Invalid.");
       }
     } catch (error) {
       console.error(error);
-      // Handle error, e.g., display an error message
+      setError("Sign up failed. An error occurred.");
     }
   };
 
@@ -76,6 +57,7 @@ const SignUpForm = () => {
       </div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
+          {error && <div className={styles.error}>{error}</div>}
           <div className={styles.inputGroup}>
             <label>Email:</label>
             <input
