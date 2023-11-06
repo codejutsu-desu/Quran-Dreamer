@@ -16,7 +16,7 @@ function DreamCirclesList() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("token = ", token);
+
     if (token) {
       dispatch(fetchStudyCircles(token));
       dispatch(fetchJoinedCircle(token));
