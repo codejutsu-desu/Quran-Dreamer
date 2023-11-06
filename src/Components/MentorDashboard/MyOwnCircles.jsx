@@ -7,7 +7,7 @@ import styles from "./MyOwnCircles.module.css";
 function MyOwnCircles() {
   const dispatch = useDispatch();
   const token = localStorage.getItem("token"); // Get user token from local storage
-  const user = localStorage.getItem("user"); // Get user from local storage
+  // const user = localStorage.getItem("user"); // Get user from local storage
 
   useEffect(() => {
     if (token) {
@@ -17,11 +17,11 @@ function MyOwnCircles() {
 
   const studyCircles = useSelector((state) => state.createdCircles);
 
-  const myCircles = studyCircles.filter((circle) => circle.owner_name === user);
+  // const myCircles = studyCircles.filter((circle) => circle.owner_name === user);
 
   return (
     <div className={styles.cardContainer}>
-      {myCircles.map((circle) => (
+      {studyCircles.map((circle) => (
         <MyOwnCircle key={circle.id} circle={circle} />
       ))}
     </div>
