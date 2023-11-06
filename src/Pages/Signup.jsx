@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { supabase } from "../../client"; // Import your Supabase client
 import styles from "./Signup.module.css";
 import AppLayout from "./AppLayout";
 import axios from "axios"; // Import axios
@@ -32,36 +31,16 @@ const SignUpForm = () => {
     e.preventDefault();
 
     try {
-      const { user, error } = await supabase.auth.signUp({
-        email: formData.email,
-        password: formData.password,
-        data: {
-          first_name: formData.first_name,
-          last_name: formData.last_name,
-          about_me: formData.about_me,
-          gender: formData.gender,
-          sendVerificationEmail: "1", // This will trigger email verification
-        },
-      });
+      // Make a POST request to your API endpoint
+      const response = await axios.post(
+        "http://13.126.8.147/api/quran_dreamers/signup/",
+        formData
+      );
 
-      if (error) {
-        alert("Sign up failed: " + error.message);
+      if (response.data) {
+        navigate("/login");
       } else {
-        alert("Sign up successful. A verification email has been sent.");
-
-        // Make a POST request to your API endpoint
-        const response = await axios.post(
-          "http://13.126.8.147/api/quran_dreamers/signup/",
-          formData
-        );
-
-        if (response.data) {
-          navigate("/login");
-        } else {
-          alert("Input Invalid");
-        }
-
-        // Redirect to a success page or perform other actions as needed.
+        alert("Input Invalid");
       }
     } catch (error) {
       console.error(error);
