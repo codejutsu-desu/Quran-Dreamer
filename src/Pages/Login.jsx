@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../auth";
 import { useNavigate } from "react-router-dom";
-
 import styles from "./Login.module.css";
-import axios from "axios";
 import AppLayout from "./AppLayout";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const response = useSelector((state) => state.auth);
 
   // State to manage form input values
   const [formData, setFormData] = useState({
@@ -24,53 +26,37 @@ const Login = () => {
   };
 
   // Handler for form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      // Make a POST request to your backend API
-      const response = await axios.post(
-        "http://13.126.8.147/api/quran_dreamers/login/",
-        formData
-      );
+    // Dispatch the loginUser action
+    dispatch(loginUser(formData))
+      .then(() => {
+        const token = response.token;
+        if (token) {
+          localStorage.setItem("token", token);
+          localStorage.setItem("user", response.name);
+          localStorage.setItem("user_type", response.user_type);
 
-      if (response.data.token) {
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", response.data.name);
-        localStorage.setItem("user_type", response.data.user_type);
-
-        if (response.data.user_type === 2) {
-          navigate("/dreamCircles"); // Navigate to dreamCircles
-        } else if (response.data.user_type === 1) {
-          navigate("/appLayoutMentor"); // Navigate to createCircle
+          if (response.user_type === 2) {
+            navigate("/dreamCircles");
+          } else if (response.user_type === 1) {
+            navigate("/appLayoutMentor");
+          }
+        } else {
+          alert("Login failed. Please check your credentials.");
         }
-      } else {
-        // If unsuccessful, show an alert
-        alert("Login failed. Please check your credentials.");
-      }
-    } catch (error) {
-      // Handle any errors that occurred during the request
-      console.error("An error occurred:", error);
-      alert("An error occurred while trying to login.");
-    }
+      })
+      .catch((error) => {
+        console.error("An error occurred:", error);
+        alert("An error occurred while trying to login.");
+      });
   };
+
   return (
     <AppLayout>
       <div className={styles.loginToAccount}>Login to your account</div>
       <div className={styles.container}>
-        {/* <div className={styles.socialIconsContainer}>
-          <button className={styles.socialButtonFb}>
-            <img src="/Facebook Icon.svg" alt="Facebook" />
-          </button>
-          <button className={styles.socialButtonG}>
-            <img src="/GoogleIcon.svg" alt="Google" />
-          </button>
-          <button className={styles.socialButtonA}>
-            <img src="/AppleIIcon.svg" alt="Apple" />
-          </button>
-        </div> */}
-
-        {/* Email and Password Inputs */}
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
             <label>Email:</label>
@@ -98,7 +84,6 @@ const Login = () => {
             <a href="#">Forgot password?</a>
           </div>
 
-          {/* Login Button */}
           <div className={styles.inputGroup}>
             <button type="submit" className={styles.loginButton}>
               Login
