@@ -1,6 +1,6 @@
-import styles from "./JoinedCircle.module.css";
-import PropTypes from "prop-types";
+import styles from "./MyOwnCircle.module.css";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const categoryNames = {
   0: "Nahw Basics",
@@ -53,7 +53,7 @@ function calculateDaysLeft(toDate) {
   return `${daysLeft} days left`;
 }
 
-function JoinedCircle({ circle }) {
+function MyOwnCircle({ circle }) {
   const {
     owner_name,
     about_circle,
@@ -62,6 +62,7 @@ function JoinedCircle({ circle }) {
     to_date,
     num_joined_users,
   } = circle;
+
   const categoryName = categoryNames[category];
   const logoInitials = extractInitials(categoryName);
   const percentage = calculateTimePercentage(from_date, to_date);
@@ -103,9 +104,8 @@ function JoinedCircle({ circle }) {
     </div>
   );
 }
-
-JoinedCircle.propTypes = {
+MyOwnCircle.propTypes = {
   circle: PropTypes.object.isRequired,
 };
 
-export default JoinedCircle;
+export default MyOwnCircle;

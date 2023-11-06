@@ -14,7 +14,7 @@ function DashboardClasses() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
+
     if (token) {
       dispatch(fetchJoinedCircle(token));
     }
@@ -31,8 +31,8 @@ function DashboardClasses() {
 
   useEffect(() => {
     const storedComponent = localStorage.getItem("selectedComponent");
-    if (storedComponent) {
-      setComponent(storedComponent); // Set newComponent to the value from local storage
+    if (storedComponent === "+ Join a Circle") {
+      setComponent("My Circles"); // Set newComponent to the value from local storage
     }
   }, []); // Empty dependency array to run this effect only once, after the initial render
 

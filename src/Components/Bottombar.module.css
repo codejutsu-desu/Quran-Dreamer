@@ -44,9 +44,18 @@
 }
 
 .terms {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: white;
   font-family: "Lato", sans-serif;
+}
+
+.terms a {
+  color: white;
+  transition: font-size 0.2s;
+}
+
+.terms a:hover {
+  font-size: 110%;
 }
 
 .finalTerms {

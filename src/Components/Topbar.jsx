@@ -6,7 +6,7 @@ function Topbar() {
   const token = localStorage.getItem("token");
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.clear();
     window.location.href = "http://localhost:5173/";
   };
 

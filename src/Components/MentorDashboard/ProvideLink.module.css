@@ -1,0 +1,28 @@
+.linkContainer {
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.linkInput {
+  margin-bottom: 10px;
+}
+
+.linkInput input {
+  width: 80%;
+  padding: 5px;
+  border: 2px solid #12e000;
+  border-radius: 10px;
+}
+
+.linkContainer .doneButton {
+  background-color: #12e000;
+  padding: 5px;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  margin-left: auto;
+  cursor: pointer;
+}

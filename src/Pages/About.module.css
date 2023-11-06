@@ -23,8 +23,8 @@
 }
 
 .visionText {
-  font-family: sans-serif;
-  max-width: 400px;
+  font-family: "Lato", sans-serif;
+  max-width: 50%;
   height: 120px;
   margin: auto;
   font-size: 1.5rem;

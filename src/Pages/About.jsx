@@ -19,8 +19,11 @@ function About() {
           <span>Our Vision</span> is to
         </p>
         <p className={styles.visionText}>
-          Lorem ipsum dolor sit amet consec tetur. diam vivamus tortor enim arcu
-          cras eget pellentesque. Ullamcorper eros tincidunt enim
+          Our vision is to provide a global platform that serves as a central
+          hub of information for Bayyinah students, particularly the Dreamers.
+          This platform will support their Arabic journey, enhance their skills,
+          and facilitate the spread of knowledge and spirit of the Quran to the
+          Muslim communities world wide.
         </p>
       </div>
 

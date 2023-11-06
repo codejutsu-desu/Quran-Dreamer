@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchStudyCircles, fetchJoinedCircle } from "../actions";
 import DreamCircleCards from "../Components/DreamCircleCards";
 import DreamCirclesCardHeader from "../Components/DreamCirclesCardHeader";
 import NavbarGeneral from "../Components/NavbarGeneral";
@@ -6,8 +8,24 @@ import SidebarGeneral from "../Components/SidebarGeneral";
 import styles from "./DreamCirclesList.module.css";
 
 function DreamCirclesList() {
+  const dispatch = useDispatch();
+  const circleData = useSelector((state) => state.studyCircles);
+  const joinedCircles = useSelector((state) => state.joinedCircles);
+
   const [user, setUser] = useState("");
-  const [nonJoinedCircles, setNonJoinedCircles] = useState([]); // Add state for nonJoinedCircles
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(fetchStudyCircles(token));
+      dispatch(fetchJoinedCircle(token));
+    }
+  }, [dispatch]);
+
+  // Filter out joined circles
+  const nonJoinedCircles = circleData.filter((circle) => {
+    return !joinedCircles.some((joinedCircle) => joinedCircle.id === circle.id);
+  });
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -24,7 +42,7 @@ function DreamCirclesList() {
         <NavbarGeneral user={user} userType="Student" />
         <DreamCirclesCardHeader nonJoinedCircles={nonJoinedCircles} />
         {/* Pass nonJoinedCircles as a prop */}
-        <DreamCircleCards setNonJoinedCircles={setNonJoinedCircles} />
+        <DreamCircleCards nonJoinedCircles={nonJoinedCircles} />
         {/* Pass a function to set nonJoinedCircles as a prop */}
       </div>
     </div>

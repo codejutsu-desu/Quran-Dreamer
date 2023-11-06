@@ -24,3 +24,6 @@ local-config.txt
 *.njsproj
 *.sln
 *.sw?
+
+# Exclude .env.local
+.env.local

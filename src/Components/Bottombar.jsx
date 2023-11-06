@@ -28,7 +28,14 @@ function Bottombar() {
       </div>
       <div className={styles.finalTerms}>
         <p className={styles.terms}>
-          Terms of Use | Privacy Policy <br />
+          Terms of Use |
+          <a
+            href="https://s3.ap-south-1.amazonaws.com/www.qurandreamers.com/QdPP+ver.3.pdf"
+            target="blank"
+          >
+            Privacy Policy
+          </a>
+          <br />
           Copyright @ 2023 QuranDreamers
         </p>
       </div>

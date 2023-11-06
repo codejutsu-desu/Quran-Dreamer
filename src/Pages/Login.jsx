@@ -37,11 +37,12 @@ const Login = () => {
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user", response.data.name);
+        localStorage.setItem("user_type", response.data.user_type);
 
         if (response.data.user_type === 2) {
           navigate("/dreamCircles"); // Navigate to dreamCircles
         } else if (response.data.user_type === 1) {
-          navigate("/createCircle"); // Navigate to createCircle
+          navigate("/appLayoutMentor"); // Navigate to createCircle
         }
       } else {
         // If unsuccessful, show an alert

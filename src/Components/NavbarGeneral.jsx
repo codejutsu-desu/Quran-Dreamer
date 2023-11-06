@@ -5,14 +5,23 @@ import { useEffect, useState } from "react";
 
 function NavbarGeneral() {
   const [user, setUser] = useState("");
+  const [userType, setUserType] = useState("");
 
   useEffect(() => {
     // Fetch user and userType from local storage
     const storedUser = localStorage.getItem("user");
+    const storedUserType = localStorage.getItem("user_type");
     if (storedUser) {
       setUser(storedUser);
+      // Set userType based on the storedUserType value
+      if (storedUserType === "1") {
+        setUserType("Mentor");
+      } else if (storedUserType === "2") {
+        setUserType("Student");
+      }
     }
   }, []);
+
   return (
     <div className={styles.topNavbar}>
       <div className={styles.icon}>
@@ -20,13 +29,14 @@ function NavbarGeneral() {
           <img src="/HomeIcon.svg" alt="Icon" />
         </NavLink>
       </div>
-
+      <h2>Dashboard</h2>
       <div className={styles.userInfo}>
         <MdOutlinePersonOutline className={styles.userIcon} />
 
         <div className={styles.userNameandPosition}>
-          <div className={styles.userPosition}>{user}</div>
-          <div className={styles.userName}>Student</div>
+          <div className={styles.userPosition}>{userType}</div>
+          {/* Remove "Student" and display only the user position (Mentor/Student) */}
+          <div className={styles.userName}>{user}</div>
         </div>
       </div>
     </div>

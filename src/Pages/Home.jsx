@@ -40,7 +40,7 @@ function Home() {
       <div className={styles.circles}>
         <div className={styles.circle1}>
           <div className={styles.title}>Reader Basic</div>
-          <div className={styles.mentor}>Sr Maryam</div>
+          <div className={styles.mentor}>COMING SOON</div>
           <div className={styles.titleText}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
             aliquam possimus ut non dolor sapiente laboriosam error aspernatur
@@ -51,7 +51,7 @@ function Home() {
         <div className={styles.bottomCircles}>
           <div className={styles.circle2}>
             <div className={styles.title}>Nahw Basic</div>
-            <div className={styles.mentor}>Sr Nida</div>
+            <div className={styles.mentor}>COMING SOON</div>
             <div className={styles.titleText}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, nisi
               veritatis tempore, hic modi, corporis dolores consectetur id
@@ -60,7 +60,7 @@ function Home() {
           </div>
           <div className={styles.circle3}>
             <div className={styles.title}>Sarf Advance</div>
-            <div className={styles.mentor}>Sr Hana</div>
+            <div className={styles.mentor}>COMING SOON</div>
             <div className={styles.titleText}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
               veniam repellendus dolorem nulla minima debitis deleniti voluptas
@@ -83,31 +83,46 @@ function Home() {
             <FaUserAlt className={styles.userIcon} />
           </div>
           <p className={styles.comment}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            harum quibusdam ipsa reiciendis porro.
+            I am thrilled to be part of this innovative Quranic Arabic learning
+            platform that brings together mentors, teachers, and students from
+            all around the world. What sets this platform apart is its
+            inclusivity. It welcomes individuals with varying levels of Arabic
+            language knowledge, making the Quran accessible to all. I am
+            confident that this website will evolve into a vibrant and
+            supportive Quranic Arabic learning community, nurturing a deeper
+            understanding of the Quran for people of all backgrounds.
           </p>
-          <span>Haider Ali Khan</span>
+          <span>Sister Lakshmi</span>
         </div>
         <div className={styles.commentBox}>
           <div className={styles.circle}>
             <FaUserAlt className={styles.userIcon} />
           </div>
           <p className={styles.comment}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            harum quibusdam ipsa reiciendis porro.
+            I am delighted to be a part of this groundbreaking Quranic Arabic
+            learning website, which unites mentors, teachers, and students from
+            across the globe. What truly distinguishes this website is its
+            inclusive approach, catering to individuals of all Arabic language
+            proficiency levels, making the Quran accessible to everyone. I
+            wholeheartedly recommend it to those looking to enhance their
+            Quranic Arabic skills and deepen their faith.
           </p>
-          <span>Haider Ali Khan</span>
+          <span>Sister Noorjahan</span>
         </div>
         <div className={styles.commentBox}>
           <div className={styles.circle}>
             <FaUserAlt className={styles.userIcon} />
           </div>
           <p className={styles.comment}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            harum quibusdam ipsa reiciendis porro.
+            Thank you for providing the Dreamers with this website. As a mentor,
+            I am thrilled to have a place where I can contribute sharing the
+            knowledge we have learned in a more directed and sistematic way,
+            while at the same time cone my teaching skill. With various options
+            of study levels, times and languages, I really recommend this
+            website for the Dreamers to continue their Quranic Arabic journey.
           </p>
 
-          <span>Haider Ali Khan</span>
+          <span>Sister Hana Cho</span>
         </div>
       </div>
       <div className={styles.needHelp}>

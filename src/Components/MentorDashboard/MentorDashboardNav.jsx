@@ -1,8 +1,8 @@
+import styles from "./MentorDashboardNav.module.css";
 import { useState } from "react";
-import styles from "./StudentDashboardNav.module.css";
 import { useNavigate } from "react-router-dom";
 
-function StudentDashboardNav() {
+function MentorDashboardNav() {
   const [activeButton, setActiveButton] = useState("My Circles");
   const navigate = useNavigate();
 
@@ -10,10 +10,11 @@ function StudentDashboardNav() {
     setActiveButton(buttonName);
 
     if (buttonName === "My Circles") {
-      navigate("/studentDashboard/joinedCircles");
+      navigate("/dashboardMentorLayout/myCircles");
     } else if (buttonName === "My Classes") {
-      navigate("/studentDashboard/myClasses");
-    }
+      navigate("/dashboardMentorLayout/myOwnCircles");
+    } else if (buttonName === "Links")
+      navigate("/dashboardMentorLayout/myLinks");
   };
 
   return (
@@ -31,9 +32,17 @@ function StudentDashboardNav() {
       >
         My Classes
       </button>
-      <button onClick={() => navigate("/dreamcircles")}>+ Join a Circle</button>
+      <button
+        className={activeButton === "Links" ? styles.active : ""}
+        onClick={() => handleButtonClick("Links")}
+      >
+        Links
+      </button>
+      <button onClick={() => navigate("/appLayoutMentor")}>
+        Create a new circle
+      </button>
     </div>
   );
 }
 
-export default StudentDashboardNav;
+export default MentorDashboardNav;
