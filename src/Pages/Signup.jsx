@@ -135,7 +135,7 @@ const SignUpForm = () => {
               className={styles.gender}
             >
               <option value="1">Male</option>
-              <option value="2">Female</option>
+              <option value="0">Female</option>
             </select>
           </div>
           <div className={styles.inputGroup}>
