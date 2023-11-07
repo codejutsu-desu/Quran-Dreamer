@@ -9,11 +9,24 @@
 
 .container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinnerContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Set a higher z-index */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .form {
+  position: relative;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;

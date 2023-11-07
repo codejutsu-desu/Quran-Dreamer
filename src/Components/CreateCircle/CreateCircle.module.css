@@ -9,6 +9,21 @@
   gap: 5px;
 }
 
+.mainContainer form {
+  position: relative;
+}
+
+.spinnerContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Set a higher z-index */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .category label {
   display: flex;
   align-items: center;

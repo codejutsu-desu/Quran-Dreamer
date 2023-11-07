@@ -4,6 +4,7 @@ import { loginUser } from "../auth";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import AppLayout from "./AppLayout";
+import Spinner from "../ui/Spinner";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const Login = () => {
       if (response.user_type === 2) {
         navigate("/dreamCircles");
       } else if (response.user_type === 1) {
-        navigate("/appLayoutMentor");
+        navigate("/dashboardMentorLayout");
       } else {
         alert("Invalid user type");
       }
@@ -57,6 +58,9 @@ const Login = () => {
       <div className={styles.loginToAccount}>Login to your account</div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.spinnerContainer}>
+            {response.isLoading && <Spinner />}
+          </div>
           <div className={styles.inputGroup}>
             <label>Email:</label>
             <input

@@ -23,6 +23,21 @@
   margin-bottom: 10px;
 }
 
+.spinnerContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Set a higher z-index */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  position: relative;
+}
+
 .socialIconsContainer {
   display: flex;
   justify-content: center;

@@ -4,9 +4,11 @@ import styles from "./CreateCircle.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../../ui/Spinner";
 
 const StudyCircleForm = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const daysOfWeek = [
     "Sunday",
@@ -103,6 +105,7 @@ const StudyCircleForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     if (!accessToken) {
       console.error("Access token not found in local storage");
@@ -120,7 +123,7 @@ const StudyCircleForm = () => {
           },
         }
       );
-
+      setIsLoading(false);
       console.log(response.data);
 
       toast.success("Circle created successfully");
@@ -143,6 +146,7 @@ const StudyCircleForm = () => {
 
       navigate("/appLayoutMentor/approvalPending");
     } catch (error) {
+      setIsLoading(false);
       console.error("Error creating circle:", error);
     }
   };
@@ -151,6 +155,9 @@ const StudyCircleForm = () => {
     <div className={styles.mainContainer}>
       <h2>Create Study Circle</h2>
       <form onSubmit={handleSubmit}>
+        <div className={styles.spinnerContainer}>
+          {isLoading && <Spinner />}
+        </div>
         <div className={`${styles.category} ${styles.formField}`}>
           <label>Select your circle category:</label>
           <select

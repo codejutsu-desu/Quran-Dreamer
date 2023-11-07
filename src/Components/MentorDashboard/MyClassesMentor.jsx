@@ -1,7 +1,7 @@
 import styles from "./MyClassesMentor.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchStudyCircles } from "../../actions"; // Import your action
+import { fetchJoinedCircle } from "../../actions"; // Import your action
 import MyOwnCircle from "./MyOwnCircle";
 
 function MyClassesMentor() {
@@ -10,15 +10,15 @@ function MyClassesMentor() {
 
   useEffect(() => {
     if (token) {
-      dispatch(fetchStudyCircles(token)); // Dispatch the action to fetch study circles
+      dispatch(fetchJoinedCircle(token)); // Dispatch the action to fetch study circles
     }
   }, [dispatch, token]);
 
-  const studyCircles = useSelector((state) => state.studyCircles);
+  const joinedCircles = useSelector((state) => state.joinedCircles);
 
   return (
     <div className={styles.cardContainer}>
-      {studyCircles.map((circle) => (
+      {joinedCircles.map((circle) => (
         <MyOwnCircle key={circle.id} circle={circle} />
       ))}
     </div>

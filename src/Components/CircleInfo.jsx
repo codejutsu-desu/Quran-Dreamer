@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { fetchCircleData } from "../actions";
-// import { FETCH_CIRCLE_DATA } from "../actions"; // Import the action type
+import { fetchCircleData, fetchJoinedCircle } from "../actions";
 import NavbarGeneral from "./NavbarGeneral";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,9 +34,11 @@ function CircleInfo() {
     const token = localStorage.getItem("token");
     if (token) {
       dispatch(fetchCircleData(token, circleId));
+      dispatch(fetchJoinedCircle(token, circleId));
     }
   }, [dispatch, circleId]);
 
+  const joinedCircles = useSelector((state) => state.joinedCircles);
   const circleData = useSelector((state) => state.circleData);
   const categoryName = categoryNames[circleData.category];
 
