@@ -4,8 +4,6 @@ import styles from "./CircleCurriculum.module.css";
 function CircleCurriculum({ circle }) {
   const { category } = circle;
 
-  console.log(category);
-
   const renderCategoryItems = () => {
     switch (category) {
       case 0:

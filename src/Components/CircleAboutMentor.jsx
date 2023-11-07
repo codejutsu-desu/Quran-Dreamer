@@ -15,7 +15,7 @@ function CircleAboutMentor({ circle }) {
 }
 
 CircleAboutMentor.propTypes = {
-  circle: PropTypes.func.isRequired,
+  circle: PropTypes.object.isRequired,
 };
 
 export default CircleAboutMentor;

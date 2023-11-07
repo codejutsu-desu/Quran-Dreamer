@@ -16,7 +16,7 @@ const SignUpForm = () => {
     last_name: "",
     about_me: "",
     user_type: user_type || "1",
-    gender: "1",
+    gender: "0",
   });
 
   const handleChange = (e) => {
@@ -116,8 +116,8 @@ const SignUpForm = () => {
               required
               className={styles.gender}
             >
-              <option value="1">Male</option>
-              <option value="0">Female</option>
+              <option value="0">Male</option>
+              <option value="1">Female</option>
             </select>
           </div>
           <div className={styles.inputGroup}>

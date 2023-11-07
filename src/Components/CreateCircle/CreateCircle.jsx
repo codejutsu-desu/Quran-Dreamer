@@ -2,20 +2,20 @@ import { useState } from "react";
 import axios from "axios";
 import styles from "./CreateCircle.module.css";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS
+import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 const StudyCircleForm = () => {
   const navigate = useNavigate();
 
   const daysOfWeek = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
 
   const prerequisites = [
@@ -41,7 +41,7 @@ const StudyCircleForm = () => {
     category: "",
     is_sister_only: false,
     is_exercised_based: false,
-    language: "1",
+    language: "0",
     is_approved: true,
   });
 
@@ -287,10 +287,10 @@ const StudyCircleForm = () => {
             value={formData.language}
             onChange={handleInputChange}
           >
-            <option value="1">English</option>
-            <option value="2">Uzbek</option>
-            <option value="3">Urdu</option>
-            <option value="4">Indonesian</option>
+            <option value="0">English</option>
+            <option value="1">Urdu</option>
+            <option value="2">Indonesian</option>
+            <option value="3">Uzbek</option>
           </select>
         </label>
 
