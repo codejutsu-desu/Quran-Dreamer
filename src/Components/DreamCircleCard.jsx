@@ -62,10 +62,22 @@ function DreamCircleCard({ circle }) {
     to_date,
     num_joined_users,
   } = circle;
+
+  console.log(to_date, from_date);
   const categoryName = categoryNames[category];
   const logoInitials = extractInitials(categoryName);
   const percentage = calculateTimePercentage(from_date, to_date);
   const daysLeft = calculateDaysLeft(to_date);
+
+  let knowMoreLink = null;
+
+  if (daysLeft !== "Session Expired") {
+    knowMoreLink = (
+      <NavLink to={`/circleInfo/${circle.id}`} className={styles.knowMoreLink}>
+        <div className={styles.knowMore}> Know More</div>
+      </NavLink>
+    );
+  }
 
   return (
     <div className={styles.cardContainer}>
@@ -80,8 +92,8 @@ function DreamCircleCard({ circle }) {
 
       <div className={styles.progresBar}>
         <div className={styles.membersandpercentage}>
-          <div className={styles.members}>{num_joined_users}</div>
-          <div className={styles.percentage}>`{percentage}%`</div>
+          <div className={styles.members}>{num_joined_users} Members</div>
+          <div className={styles.percentage}>{percentage}%</div>
         </div>
         <div className={styles.progressContainer}>
           <div
@@ -92,12 +104,7 @@ function DreamCircleCard({ circle }) {
       </div>
 
       <div className={styles.cardBottom}>
-        <NavLink
-          to={`/circleInfo/${circle.id}`}
-          className={styles.knowMoreLink}
-        >
-          <div className={styles.knowMore}> Know More</div>
-        </NavLink>
+        {knowMoreLink}
         <div className={styles.daysLeft}>{daysLeft}</div>
       </div>
     </div>

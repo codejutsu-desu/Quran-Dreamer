@@ -9,6 +9,12 @@
   gap: 5px;
 }
 
+.timeField {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .mainContainer form {
   position: relative;
 }

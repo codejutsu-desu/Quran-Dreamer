@@ -40,6 +40,11 @@ function CircleInfo() {
 
   const joinedCircles = useSelector((state) => state.joinedCircles);
   const circleData = useSelector((state) => state.circleData);
+
+  const isCircleJoined = joinedCircles.some(
+    (joinedCircle) => joinedCircle.id === Number(circleId)
+  );
+
   const categoryName = categoryNames[circleData.category];
 
   const [component, setComponent] = useState("general"); // Set the default component to 'general'
@@ -139,7 +144,15 @@ function CircleInfo() {
               </button>
             </div>
             <div className={styles.infoHeaderRight}>
-              <button onClick={handleJoinCircle}>+Join Circle</button>
+              <div className={styles.infoHeaderRight}>
+                {isCircleJoined ? (
+                  <button onClick={() => navigate(`/insidecircle/${circleId}`)}>
+                    Joined- Know More
+                  </button>
+                ) : (
+                  <button onClick={handleJoinCircle}>+Join Circle</button>
+                )}
+              </div>
             </div>
           </div>
           {component === "general" && <CircleGeneral circle={circleData} />}

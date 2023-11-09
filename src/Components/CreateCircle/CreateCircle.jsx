@@ -124,7 +124,7 @@ const StudyCircleForm = () => {
         }
       );
       setIsLoading(false);
-      console.log(response.data);
+      console.log(response);
 
       toast.success("Circle created successfully");
 
@@ -168,12 +168,7 @@ const StudyCircleForm = () => {
             <option value="">Select category</option>
             <option value="0">Nahw Basics</option>
             <option value="1">Sarf Basics</option>
-            <option value="2">Intermediate Nahw</option>
-            <option value="3">Advance Nahw</option>
-            <option value="4">Advanced Sarf</option>
-            <option value="5">Basic Reader</option>
-            <option value="6">Intermediate Reader</option>
-            <option value="7">Advanced Reader</option>
+            {/* Add other options as needed */}
           </select>
         </div>
 
@@ -229,25 +224,24 @@ const StudyCircleForm = () => {
             placeholder="YYYY-MM-DD"
           />
         </div>
-        <div className={`${styles.classTimingFields} ${styles.formField}`}>
+
+        <div className={styles.timeField}>
           <label className={`${styles.classTimingLabel}`}>Class Timing:</label>
-          <input
-            type="time"
-            name="class_timing_from"
-            placeholder="From"
-            value={formData.times[0]}
-            onChange={handleInputChange}
-            step="3600"
-          />
-          <span className={`${styles.classTimingSeparator}`}>to</span>
-          <input
-            type="time"
-            name="class_timing_to"
-            placeholder="To"
-            value={formData.times[1]}
-            onChange={handleInputChange}
-            step="60"
-          />
+          <div className="time-input">
+            <input
+              type="time"
+              name="class_timing_from"
+              value={formData.times[0]}
+              onChange={handleInputChange}
+            />
+            <span>to</span>
+            <input
+              type="time"
+              name="class_timing_to"
+              value={formData.times[1]}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
 
         <label className={styles.formField}>

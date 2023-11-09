@@ -68,6 +68,16 @@ function MyOwnCircle({ circle }) {
   const percentage = calculateTimePercentage(from_date, to_date);
   const daysLeft = calculateDaysLeft(to_date);
 
+  let knowMoreLink = null;
+
+  if (daysLeft !== "Session Expired") {
+    knowMoreLink = (
+      <NavLink to={`/circleInfo/${circle.id}`} className={styles.knowMoreLink}>
+        <div className={styles.knowMore}> Know More</div>
+      </NavLink>
+    );
+  }
+
   return (
     <div className={styles.cardContainer}>
       <div className={styles.title}>
@@ -93,12 +103,7 @@ function MyOwnCircle({ circle }) {
       </div>
 
       <div className={styles.cardBottom}>
-        <NavLink
-          to={`/circleInfo/${circle.id}`}
-          className={styles.knowMoreLink}
-        >
-          <div className={styles.knowMore}> Know More</div>
-        </NavLink>
+        {knowMoreLink}
         <div className={styles.daysLeft}>{daysLeft}</div>
       </div>
     </div>

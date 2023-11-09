@@ -81,8 +81,11 @@
   padding: 10px;
   color: white;
   font-weight: 600;
+  transition: transform 0.2s;
+  cursor: pointer;
 }
 
-.infoHeaderRight button {
+.infoHeaderRight button:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }

@@ -10,7 +10,7 @@ function calculateTimeDuration(startTime, endTime) {
   const endSeconds =
     endTimeParts[0] * 3600 + endTimeParts[1] * 60 + endTimeParts[2];
 
-  const durationSeconds = endSeconds - startSeconds;
+  const durationSeconds = Math.abs(endSeconds - startSeconds);
 
   const hours = Math.floor(durationSeconds / 3600);
   const minutes = Math.floor((durationSeconds % 3600) / 60);
@@ -28,11 +28,12 @@ function getDayName(dayNumber) {
     "Friday",
     "Saturday",
   ];
-  return dayNames[dayNumber - 1]; // Subtract 1 to match array index
+  return dayNames[dayNumber];
 }
 
 function CircleGeneral({ circle }) {
   const { from_date, to_date, about_circle, days, times } = circle;
+  console.log(times, days);
   const classDays = Array.isArray(days)
     ? days.map((dayNumber) => getDayName(dayNumber)).join(", ")
     : "N/A";
@@ -56,7 +57,7 @@ function CircleGeneral({ circle }) {
         </div>
         <div className={styles.generalInfoText}>
           <div>Class timing</div>
-          <div>Upcoming-</div>
+          <div> Class starts from {times[0].slice(0, 5)} </div>
         </div>
         <div className={styles.generalInfoText}>
           <div>Class length</div>

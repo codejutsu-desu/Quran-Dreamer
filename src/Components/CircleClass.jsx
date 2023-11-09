@@ -13,11 +13,12 @@ const categoryNames = {
 };
 
 function CircleClass({ circle }) {
-  const { class_link, category } = circle;
+  const { class_link, category, owner_name } = circle;
   const categoryName = categoryNames[category];
 
   return (
     <div className={styles.mainLink}>
+      <h3>Class mentor- {owner_name}</h3>
       <span>{categoryName}</span>- <a href={class_link}>{class_link}</a>
     </div>
   );

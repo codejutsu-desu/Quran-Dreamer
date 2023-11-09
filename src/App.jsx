@@ -28,6 +28,7 @@ import CreateCircleMentor from "./Components/MentorDashboard/CreateCircleMentor"
 import JoinedCircles from "./Components/JoinedCircles";
 import MyClasses from "./Components/MyClasses";
 import DashboardLayoutStudent from "./Components/StudentDashboard/DashboardLayoutStudent";
+import FeatureComingSoon from "./FeatureComing";
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
         <Route path="insideCircle/:circleId" element={<InsideCircle />} />
         <Route path="adminProfile" element={<StudyCircleForm />} />
         <Route path="dashboardAdmin" element={<AdminDashboard />} />
+
+        {/* Feature Coming */}
+        <Route path="notAvailable" element={<FeatureComingSoon />} />
 
         {/* dashboard for student */}
 

@@ -19,7 +19,7 @@ function SidebarGeneral() {
           <button>Dashboard</button>
         </NavLink>
       )}
-      <NavLink to="/studentsNote">
+      <NavLink to="/notAvailable">
         <button>Students Note</button>
       </NavLink>
     </div>
