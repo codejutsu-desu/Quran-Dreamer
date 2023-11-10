@@ -26,17 +26,19 @@ function DreamCirclesCardHeader({ nonJoinedCircles }) {
       </div>
       <div className={styles["selector-container"]}>
         <div className={styles["filter-by-language"]}>
+          <label>Language</label>
           <select id="language" className={styles.selector}>
             <option value="all">All Languages</option>
-            <option value="uzbek">Uzbek</option>
-            <option value="urdu">Urdu</option>
-            <option value="bangla">Bangla</option>
-            <option value="indonesian">Indonesian</option>
+            <option value="0">English</option>
+            <option value="1">Urdu</option>
+            <option value="2">Indonesian</option>
+            <option value="3">Uzbek</option>
           </select>
         </div>
         <div className={styles["filter-by-gender"]}>
+          <label>Gender</label>
           <select id="gender" className={styles.selector}>
-            <option value="0">Filter by gender</option>
+            <option value="0">Both</option>
             <option value="1">Male</option>
             <option value="2">Female</option>
           </select>

@@ -6,6 +6,10 @@
   margin-top: 10px;
 }
 
+.selector-container label {
+  font-family: "Lato";
+}
+
 .circleNumbersText {
   font-weight: 700;
   font-size: 2rem;

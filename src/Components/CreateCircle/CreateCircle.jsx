@@ -21,6 +21,7 @@ const StudyCircleForm = () => {
   ];
 
   const prerequisites = [
+    "Can Read Qur'an",
     "Nahw Basics",
     "Sarf Basics",
     "Intermediate Nahw",
@@ -147,7 +148,18 @@ const StudyCircleForm = () => {
       navigate("/appLayoutMentor/approvalPending");
     } catch (error) {
       setIsLoading(false);
-      console.error("Error creating circle:", error);
+      let data = error.response.data;
+      let first_error = Object.values(data)[0];
+
+      if (first_error && first_error.length > 0) {
+        // Display the first error
+        console.log(first_error[0]);
+        alert("Error creating circle: " + first_error[0]);
+      } else {
+        // Handle the case where there are no errors or the structure is unexpected
+        console.error("Unexpected error response structure:", data);
+        alert("Unexpected error creating circle.");
+      }
     }
   };
 
@@ -168,7 +180,12 @@ const StudyCircleForm = () => {
             <option value="">Select category</option>
             <option value="0">Nahw Basics</option>
             <option value="1">Sarf Basics</option>
-            {/* Add other options as needed */}
+            <option value="2">Intermediate Nahw</option>
+            <option value="3">Advance Nahw</option>
+            <option value="4">Advanced Sarf </option>
+            <option value="5">Basic Reader</option>
+            <option value="6">Intermediate Reader</option>
+            <option value="7">Advanced Reader</option>
           </select>
         </div>
 
