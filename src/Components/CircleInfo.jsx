@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { fetchCircleData, fetchJoinedCircle } from "../actions";
-import NavbarGeneral from "./NavbarGeneral";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CircleCurriculum from "./CircleCurriculum";
@@ -11,7 +10,6 @@ import CircleGeneral from "./CircleGeneral";
 import CircleAboutMentor from "./CircleAboutMentor";
 import CircleAboutCircle from "./CircleAboutCircle";
 import styles from "./CircleInfo.module.css";
-import StudentsSidebar from "./SidebarGeneral";
 
 const categoryNames = {
   0: "Nahw Basics",
@@ -80,8 +78,8 @@ function CircleInfo() {
         .then(() => {
           // Navigate after 3 seconds
           setTimeout(() => {
-            toast.dismiss(); // Dismiss the loading notification
-            navigate(`/insidecircle/${circleId}`);
+            toast.dismiss();
+            navigate(`/appLayoutStudent/insideCircle/${circleId}`);
           }, 3000);
         })
         .catch((error) => {
@@ -101,74 +99,69 @@ function CircleInfo() {
   };
 
   return (
-    <div className={styles.circleInfoContainer}>
-      <StudentsSidebar />
-      <div className={styles.navMentor}>
-        <NavbarGeneral />
-        <div className={styles.circleInfoHeader}>
-          Dream Circle/ {categoryName}
-          <button
-            className={styles.backButtonStyle}
-            onClick={() => navigate(-1)}
-          >
-            Back
-          </button>
-        </div>
+    <>
+      <div className={styles.circleInfoHeader}>
+        Dream Circle/ {categoryName}
+        <button className={styles.backButtonStyle} onClick={() => navigate(-1)}>
+          Back
+        </button>
+      </div>
 
-        <div className={styles.circleInfo}>
-          <div className={styles.infoHeader}>
-            <div className={styles.infoHeaderLeft}>
-              <button
-                onClick={() => handleTabClick("general")}
-                className={component === "general" ? styles.active : ""}
-              >
-                General
-              </button>
-              <button
-                onClick={() => handleTabClick("curriculum")}
-                className={component === "curriculum" ? styles.active : ""}
-              >
-                Curriculum
-              </button>
-              <button
-                onClick={() => handleTabClick("aboutMentor")}
-                className={component === "aboutMentor" ? styles.active : ""}
-              >
-                About Mentor
-              </button>
-              <button
-                onClick={() => handleTabClick("aboutCircle")}
-                className={component === "aboutCircle" ? styles.active : ""}
-              >
-                About Circle
-              </button>
-            </div>
+      <div className={styles.circleInfo}>
+        <div className={styles.infoHeader}>
+          <div className={styles.infoHeaderLeft}>
+            <button
+              onClick={() => handleTabClick("general")}
+              className={component === "general" ? styles.active : ""}
+            >
+              General
+            </button>
+            <button
+              onClick={() => handleTabClick("curriculum")}
+              className={component === "curriculum" ? styles.active : ""}
+            >
+              Curriculum
+            </button>
+            <button
+              onClick={() => handleTabClick("aboutMentor")}
+              className={component === "aboutMentor" ? styles.active : ""}
+            >
+              About Mentor
+            </button>
+            <button
+              onClick={() => handleTabClick("aboutCircle")}
+              className={component === "aboutCircle" ? styles.active : ""}
+            >
+              About Circle
+            </button>
+          </div>
+          <div className={styles.infoHeaderRight}>
             <div className={styles.infoHeaderRight}>
-              <div className={styles.infoHeaderRight}>
-                {isCircleJoined ? (
-                  <button onClick={() => navigate(`/insidecircle/${circleId}`)}>
-                    Joined- Know More
-                  </button>
-                ) : (
-                  <button onClick={handleJoinCircle}>+Join Circle</button>
-                )}
-              </div>
+              {isCircleJoined ? (
+                <button
+                  onClick={() =>
+                    navigate(`/appLayoutStudent/insideCircle/${circleId}`)
+                  }
+                >
+                  Joined- Know More
+                </button>
+              ) : (
+                <button onClick={handleJoinCircle}>+Join Circle</button>
+              )}
             </div>
           </div>
-          {component === "general" && <CircleGeneral circle={circleData} />}
-          {component === "curriculum" && (
-            <CircleCurriculum circle={circleData} />
-          )}
-          {component === "aboutMentor" && (
-            <CircleAboutMentor circle={circleData} />
-          )}
-          {component === "aboutCircle" && (
-            <CircleAboutCircle circle={circleData} />
-          )}
         </div>
+        {component === "general" && <CircleGeneral circle={circleData} />}
+        {component === "curriculum" && <CircleCurriculum circle={circleData} />}
+        {component === "aboutMentor" && (
+          <CircleAboutMentor circle={circleData} />
+        )}
+        {component === "aboutCircle" && (
+          <CircleAboutCircle circle={circleData} />
+        )}
+        <ToastContainer />
       </div>
-      <ToastContainer />
-    </div>
+    </>
   );
 }
 

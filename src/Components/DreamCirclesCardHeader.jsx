@@ -1,20 +1,25 @@
 import styles from "./DreamCirclesCardHeader.module.css";
-import PropTypes from "prop-types";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchStudyCircles, fetchJoinedCircle } from "../actions";
 
-// import { useSelector, useDispatch } from "react-redux";
-// import { fetchStudyCircles } from "../actions"; // Import your action here
-// import { useEffect } from "react";
+function DreamCirclesCardHeader() {
+  const dispatch = useDispatch();
+  const circleData = useSelector((state) => state.studyCircles);
+  const joinedCircles = useSelector((state) => state.joinedCircles);
 
-function DreamCirclesCardHeader({ nonJoinedCircles }) {
-  // const dispatch = useDispatch();
-  // const circleData = useSelector((state) => state.studyCircles);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(fetchStudyCircles(token));
+      dispatch(fetchJoinedCircle(token));
+    }
+  }, [dispatch]);
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (token) {
-  //     dispatch(fetchStudyCircles(token));
-  //   }
-  // }, [dispatch]);
+  // Filter out joined circles
+  const nonJoinedCircles = circleData.filter((circle) => {
+    return !joinedCircles.some((joinedCircle) => joinedCircle.id === circle.id);
+  });
 
   return (
     <div className={styles.circleCardHeader}>
@@ -47,9 +52,5 @@ function DreamCirclesCardHeader({ nonJoinedCircles }) {
     </div>
   );
 }
-
-DreamCirclesCardHeader.propTypes = {
-  nonJoinedCircles: PropTypes.array.isRequired,
-};
 
 export default DreamCirclesCardHeader;

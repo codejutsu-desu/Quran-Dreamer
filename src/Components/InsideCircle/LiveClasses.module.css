@@ -5,6 +5,7 @@
   border: 3px solid #12e000;
   padding: 15px;
   margin: auto;
+  margin-top: 20px;
 }
 .liveRecord {
   display: flex;

@@ -1,17 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCircleData } from "../../actions";
-
-import NavbarMentor from "../NavbarGeneral";
-// import StudentNote from "../StudentNote";
-import TeachersNote from "./TeachersNote";
-import StudentsSidebar from "../SidebarGeneral";
 import styles from "./InsideCircle.module.css";
-import LiveClasses from "./LiveClasses";
-import CircleMembers from "./CircleMembers";
-
-import { useEffect, useState } from "react";
-import StudentNote from "../StudentNote";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import LiveClasses from "./LiveClasses";
 
 const categoryNames = {
   0: "Nahw Basics",
@@ -25,7 +17,6 @@ const categoryNames = {
 };
 
 function InsideCircle() {
-  const [component, setComponent] = useState("");
   const navigate = useNavigate();
   const { circleId } = useParams();
   const dispatch = useDispatch();
@@ -40,32 +31,9 @@ function InsideCircle() {
   const circleData = useSelector((state) => state.circleData);
   const categoryName = categoryNames[circleData.category];
 
-  const componentMembers = function () {
-    setComponent("Members");
-  };
-  const componentDashboard = function () {
-    navigate("/studentDashboard");
-  };
-  const componentStudentsNote = function () {
-    setComponent("StudentsNote");
-  };
-  const componentTeachersNote = function () {
-    setComponent("TeachersNote");
-  };
-
   return (
-    <div className={styles.insideCircleContainer}>
-      <StudentsSidebar
-        className={styles.sideBar}
-        componentMembers={componentMembers}
-        componentDashboard={componentDashboard}
-        componentStudentsNote={componentStudentsNote}
-        componentTeachersNote={componentTeachersNote}
-        members="Members"
-        notesByTeachers="Notes by Teacher"
-      />
+    <>
       <div className={styles.rightBar}>
-        <NavbarMentor />
         <div className={styles.circleTitleNavbar}>
           <div className={styles.circleInfoHeader}>
             Dream Circle/ {categoryName}
@@ -79,14 +47,9 @@ function InsideCircle() {
             </button>
           </div>
         </div>
-
-        {component === "" && <LiveClasses circle={circleData} />}
-        {component === "Members" && <CircleMembers />}
-
-        {component === "StudentsNote" && <StudentNote />}
-        {component === "TeachersNote" && <TeachersNote />}
+        <LiveClasses circle={circleData} />
       </div>
-    </div>
+    </>
   );
 }
 

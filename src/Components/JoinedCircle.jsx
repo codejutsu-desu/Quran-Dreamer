@@ -81,7 +81,7 @@ function JoinedCircle({ circle }) {
       <div className={styles.progresBar}>
         <div className={styles.membersandpercentage}>
           <div className={styles.members}>{num_joined_users}</div>
-          <div className={styles.percentage}>`{percentage}%`</div>
+          <div className={styles.percentage}>{percentage}%</div>
         </div>
         <div className={styles.progressContainer}>
           <div
@@ -93,11 +93,12 @@ function JoinedCircle({ circle }) {
 
       <div className={styles.cardBottom}>
         <NavLink
-          to={`/circleInfo/${circle.id}`}
+          to={`/appLayoutStudent/circleInfo/${circle.id}`}
           className={styles.knowMoreLink}
         >
           <div className={styles.knowMore}> Know More</div>
         </NavLink>
+
         <div className={styles.daysLeft}>{daysLeft}</div>
       </div>
     </div>

@@ -72,7 +72,10 @@ function DreamCircleCard({ circle }) {
 
   if (daysLeft !== "Session Expired") {
     knowMoreLink = (
-      <NavLink to={`/circleInfo/${circle.id}`} className={styles.knowMoreLink}>
+      <NavLink
+        to={`/appLayoutStudent/circleInfo/${circle.id}`}
+        className={styles.knowMoreLink}
+      >
         <div className={styles.knowMore}> Know More</div>
       </NavLink>
     );

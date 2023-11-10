@@ -30,20 +30,15 @@
   cursor: pointer;
 }
 
-.navMentor {
-  flex: auto;
-  display: flex;
-  flex-direction: column;
-  /* height: 100vh; */
-}
 .circleInfo {
-  width: 800px;
+  width: 80%;
   height: 500px;
   border: 3px solid #12e000;
   border-radius: 20px;
   padding: 10px 0px 10px 0px;
   align-self: center;
   margin-top: 20px;
+  margin: 20px auto 0 auto;
 }
 
 .infoHeader {

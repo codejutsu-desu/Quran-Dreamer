@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Events from "./Pages/Events";
@@ -8,14 +8,10 @@ import PageNotFound from "./Pages/PageNotFound";
 import Notes from "./Pages/Notes";
 import StudentsNoteFiles from "./Pages/StudentsNoteFiles";
 import Signup from "./Pages/Signup";
-import DreamCirclesList from "./Pages/DreamCirclesList";
 import CircleInfo from "./Components/CircleInfo";
 import StudyCircleForm from "./Components/CreateCircle/CreateCircle";
 import InsideCircle from "./Components/InsideCircle/InsideCircle";
-// import DashboardStudent from "./Pages/DashboardStudent";
 import AdminDashboard from "./Pages/AdminDashboard";
-// import DashboardClasses from "./Pages/DashboardClasses";
-
 import FinalCreateCircle from "./Components/CreateCircle/FinalCreateCircle";
 import AppLayoutMentor from "./Components/MentorDashboard/AppLayoutMentor";
 import ProvideLink from "./Components/MentorDashboard/ProvideLink";
@@ -29,25 +25,41 @@ import JoinedCircles from "./Components/JoinedCircles";
 import MyClasses from "./Components/MyClasses";
 import DashboardLayoutStudent from "./Components/StudentDashboard/DashboardLayoutStudent";
 import FeatureComingSoon from "./FeatureComing";
+import AppLayoutStudent from "./Components/StudentDashboard/AppLayoutStudent";
+import DreamCirclesBody from "./Components/StudentDashboard/DreamCirclesBody";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* guest routes */}
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+
+        {/* login and signup */}
+
+        <Route path="login" element={<Login />} />
+        <Route path="join/:user_type" element={<Signup />} />
+
+        {/* miscellaneous routes */}
         <Route path="notes" element={<Notes />} />
         <Route path="files" element={<StudentsNoteFiles />} />
         <Route path="events" element={<Events />} />
-        <Route path="login" element={<Login />} />
-        <Route path="join/:user_type" element={<Signup />} />
-        <Route path="dreamcircles" element={<DreamCirclesList />} />
-        <Route path="circleInfo/:circleId" element={<CircleInfo />} />
-        <Route path="insideCircle/:circleId" element={<InsideCircle />} />
-        <Route path="adminProfile" element={<StudyCircleForm />} />
+
+        {/* Admin route */}
+
         <Route path="dashboardAdmin" element={<AdminDashboard />} />
 
+        {/* App Layout for student */}
+
+        <Route path="appLayoutStudent" element={<AppLayoutStudent />}>
+          <Route index element={<DreamCirclesBody />} />
+          <Route path="circleInfo/:circleId" element={<CircleInfo />} />
+          <Route path="insideCircle/:circleId" element={<InsideCircle />} />
+        </Route>
+
         {/* Feature Coming */}
+
         <Route path="notAvailable" element={<FeatureComingSoon />} />
 
         {/* dashboard for student */}
