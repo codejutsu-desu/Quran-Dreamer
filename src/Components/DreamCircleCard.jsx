@@ -63,7 +63,6 @@ function DreamCircleCard({ circle }) {
     num_joined_users,
   } = circle;
 
-  console.log(to_date, from_date);
   const categoryName = categoryNames[category];
   const logoInitials = extractInitials(categoryName);
   const percentage = calculateTimePercentage(from_date, to_date);
