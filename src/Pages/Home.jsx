@@ -1,11 +1,7 @@
+import { NavLink } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import styles from "./Home.module.css";
 import { FaUserAlt } from "react-icons/fa";
-
-const customNavLinkStyle = {
-  textDecoration: "none",
-  color: "blue",
-};
 
 function Home() {
   return (
@@ -29,9 +25,9 @@ function Home() {
             learn the Qur&apos;an and teach it.&quot; We believe that teaching
             helps to bring our learning to a deeper level. If you also think
             like this and would like to lead a class circle, please join as a{" "}
-            <a style={customNavLinkStyle} href="/join/1">
-              mentor.
-            </a>
+            <NavLink to="/login">
+              <button>mentor.</button>
+            </NavLink>
           </div>
         </div>
       </div>

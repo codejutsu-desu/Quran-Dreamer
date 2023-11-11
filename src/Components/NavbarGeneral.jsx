@@ -18,6 +18,8 @@ function NavbarGeneral() {
         setUserType("Mentor");
       } else if (storedUserType === "2") {
         setUserType("Student");
+      } else if (storedUserType === "0") {
+        setUserType("Admin");
       }
     }
   }, []);

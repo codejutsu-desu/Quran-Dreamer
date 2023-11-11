@@ -43,13 +43,17 @@
 }
 
 .homeUl {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   justify-content: space-between;
   list-style: none;
   margin: 0px;
   padding: 0px;
   align-items: center;
+}
+
+.homeU1 li {
+  margin-right: 10px;
 }
 
 .aboutLi {

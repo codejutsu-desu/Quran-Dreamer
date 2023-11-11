@@ -16,10 +16,14 @@
 }
 
 .eventTitle {
-  color: white;
+  background-color: rgb(19, 22, 17);
+  padding: 5px;
+  color: #ffffff;
   font-size: 3rem;
-  font-weight: 800;
-  font-family: sans-serif;
+  font-weight: 900;
+  font-family: "Lato";
   text-align: center;
   margin-top: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }

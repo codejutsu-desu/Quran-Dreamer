@@ -42,9 +42,11 @@ const Login = () => {
       localStorage.setItem("user_type", response.user_type);
 
       if (response.user_type === 2) {
-        navigate("/dreamCircles");
+        navigate("/appLayoutStudent");
       } else if (response.user_type === 1) {
-        navigate("/dashboardMentorLayout");
+        navigate("/appLayoutMentor");
+      } else if (response.user_type === 0) {
+        navigate("/adminDashboardLayout");
       } else {
         alert("Invalid user type");
       }

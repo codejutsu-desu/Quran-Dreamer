@@ -70,6 +70,22 @@
   line-height: 30px;
 }
 
+.dreamerText button {
+  padding: 5px;
+  font-family: "Lato";
+  font-size: 1.5rem;
+  color: black;
+  font-style: italic;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dreamerText button:hover {
+  background-color: white;
+}
+
 .explore {
   font-family: "Lexend", sans-serif;
   font-size: 40px;

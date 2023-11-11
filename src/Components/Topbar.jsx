@@ -4,6 +4,7 @@ import JoinUs from "../ui/Dropdown";
 
 function Topbar() {
   const token = localStorage.getItem("token");
+  const user_type = localStorage.getItem("user_type");
 
   const handleLogout = () => {
     localStorage.clear();
@@ -23,12 +24,14 @@ function Topbar() {
 
         {token ? (
           <>
-            {/* <NavLink to="/events" className={styles.events}>
+            <NavLink to="/events" className={styles.events}>
               <li className={styles.aboutLi}>Events</li>
-            </NavLink> */}
-            <NavLink to="/dreamCircles" className={styles.circles}>
-              <li className={styles.aboutLi}>All Circles</li>
             </NavLink>
+            {user_type !== "0" && (
+              <NavLink to="/appLayoutStudent" className={styles.circles}>
+                <li className={styles.aboutLi}>All Circles</li>
+              </NavLink>
+            )}
             <li className={styles.aboutLi} onClick={handleLogout}>
               Logout
             </li>

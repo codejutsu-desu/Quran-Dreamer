@@ -11,6 +11,7 @@ function Events() {
 
         <EventInfo />
         <EventInfo />
+        <EventInfo />
       </div>
     </AppLayout>
   );

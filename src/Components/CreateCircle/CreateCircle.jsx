@@ -148,6 +148,7 @@ const StudyCircleForm = () => {
       navigate("/appLayoutMentor/approvalPending");
     } catch (error) {
       setIsLoading(false);
+      console.error(error);
       let data = error.response.data;
       let first_error = Object.values(data)[0];
 

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  gap: 30px;
+  margin: 10px;
+}
+
+.container button {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.container button.active {
+  border-bottom: 2px solid #12e000;
+}

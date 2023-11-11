@@ -8,7 +8,19 @@ import Spinner from "../ui/Spinner";
 const SignUpForm = () => {
   const { user_type } = useParams();
   const navigate = useNavigate();
-  const isMentor = user_type === "1";
+  let userType;
+
+  switch (user_type) {
+    case "1":
+      userType = "Mentor";
+      break;
+    case "0":
+      userType = "Admin";
+      break;
+    case "2":
+      userType = "Student";
+      break;
+  }
 
   const [formData, setFormData] = useState({
     email: "",
@@ -16,7 +28,7 @@ const SignUpForm = () => {
     first_name: "",
     last_name: "",
     about_me: "",
-    user_type: user_type || "1",
+    user_type: user_type,
     gender: "0",
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -59,9 +71,7 @@ const SignUpForm = () => {
 
   return (
     <AppLayout>
-      <div className={styles.signupTitle}>
-        Sign Up As {isMentor ? "Mentor" : "Student"}
-      </div>
+      <div className={styles.signupTitle}>Sign Up As {userType}</div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.spinnerContainer}>

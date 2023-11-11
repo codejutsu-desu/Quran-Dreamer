@@ -31,7 +31,9 @@ function StudentDashboardNav() {
       >
         My Classes
       </button>
-      <button onClick={() => navigate("/dreamcircles")}>+ Join a Circle</button>
+      <button onClick={() => navigate("/appLayoutStudent")}>
+        + Join a Circle
+      </button>
     </div>
   );
 }

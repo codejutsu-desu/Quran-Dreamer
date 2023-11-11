@@ -11,7 +11,7 @@ import Signup from "./Pages/Signup";
 import CircleInfo from "./Components/CircleInfo";
 import StudyCircleForm from "./Components/CreateCircle/CreateCircle";
 import InsideCircle from "./Components/InsideCircle/InsideCircle";
-import AdminDashboard from "./Pages/AdminDashboard";
+
 import FinalCreateCircle from "./Components/CreateCircle/FinalCreateCircle";
 import AppLayoutMentor from "./Components/MentorDashboard/AppLayoutMentor";
 import ProvideLink from "./Components/MentorDashboard/ProvideLink";
@@ -27,6 +27,11 @@ import DashboardLayoutStudent from "./Components/StudentDashboard/DashboardLayou
 import FeatureComingSoon from "./FeatureComing";
 import AppLayoutStudent from "./Components/StudentDashboard/AppLayoutStudent";
 import DreamCirclesBody from "./Components/StudentDashboard/DreamCirclesBody";
+import AdminDashboardLayout from "./Components/AdminDashboard/AdminDashboardLayout";
+import AdminMain from "./Components/AdminDashboard/AdminMain";
+import AdminRequests from "./Components/AdminDashboard/AdminRequests";
+import AdminAll from "./Components/AdminDashboard/AdminAll";
+import AdminGroups from "./Components/AdminDashboard/AdminGroups";
 
 function App() {
   return (
@@ -45,10 +50,6 @@ function App() {
         <Route path="notes" element={<Notes />} />
         <Route path="files" element={<StudentsNoteFiles />} />
         <Route path="events" element={<Events />} />
-
-        {/* Admin route */}
-
-        <Route path="dashboardAdmin" element={<AdminDashboard />} />
 
         {/* App Layout for student */}
 
@@ -86,6 +87,14 @@ function App() {
           <Route path="myOwnCircles" element={<MyOwnCircles />} />
           <Route path="myCircles" element={<MyClassesMentor />} />
           <Route path="myLinks" element={<MyLinkMentor />} />
+        </Route>
+
+        <Route path="adminDashboardLayout" element={<AdminDashboardLayout />}>
+          <Route index element={<AdminMain />} />
+          <Route path="main" element={<AdminMain />} />
+          <Route path="requests" element={<AdminRequests />} />
+          <Route path="adminAll" element={<AdminAll />} />
+          <Route path="adminGroups" element={<AdminGroups />} />
         </Route>
 
         <Route path="finalCreateCircle" element={<FinalCreateCircle />} />
