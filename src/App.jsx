@@ -89,6 +89,8 @@ function App() {
           <Route path="myLinks" element={<MyLinkMentor />} />
         </Route>
 
+        {/* Admin Dashboard */}
+
         <Route path="adminDashboardLayout" element={<AdminDashboardLayout />}>
           <Route index element={<AdminMain />} />
           <Route path="main" element={<AdminMain />} />

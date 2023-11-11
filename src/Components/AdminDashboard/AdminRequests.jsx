@@ -1,10 +1,33 @@
-import styles from "./AdminRequests.module.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import AdminRequest from "./AdminRequest";
+import { useSelector } from "react-redux";
+
 function AdminRequests() {
+  const [requests, setRequests] = useState([]);
+  const token = useSelector((state) => state.auth.token);
+  console.log(token);
+
+  useEffect(() => {
+    axios
+      .get("http://13.126.8.147/api/quran_dreamers/admin_requests/", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setRequests(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, [token]);
+
   return (
-    <div className={styles.requestContainer}>
-      <div className={styles.circle}>1</div>
-      <div className={styles.text}>File upload from Sister Hana</div>
-      <button className={styles.viewButton}>View</button>
+    <div>
+      {requests.map((request, index) => (
+        <AdminRequest key={index} request={request} serialNumber={index + 1} />
+      ))}
     </div>
   );
 }
