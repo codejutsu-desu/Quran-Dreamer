@@ -37,7 +37,6 @@ function NavbarGeneral() {
 
         <div className={styles.userNameandPosition}>
           <div className={styles.userPosition}>{userType}</div>
-          {/* Remove "Student" and display only the user position (Mentor/Student) */}
           <div className={styles.userName}>{user}</div>
         </div>
       </div>

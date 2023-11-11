@@ -1,39 +1,40 @@
 import styles from "./DreamCirclesCardHeader.module.css";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchStudyCircles, fetchJoinedCircle } from "../actions";
 
-function DreamCirclesCardHeader() {
-  const dispatch = useDispatch();
-  const circleData = useSelector((state) => state.studyCircles);
-  const joinedCircles = useSelector((state) => state.joinedCircles);
+import PropTypes from "prop-types";
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      dispatch(fetchStudyCircles(token));
-      dispatch(fetchJoinedCircle(token));
-    }
-  }, [dispatch]);
+function DreamCirclesCardHeader({
+  selectedLanguage,
+  selectedGender,
+  onLanguageChange,
+  onGenderChange,
+  filteredCircles,
+}) {
+  const handleLanguageChange = (e) => {
+    onLanguageChange(e.target.value);
+  };
 
-  // Filter out joined circles
-  const nonJoinedCircles = circleData.filter((circle) => {
-    return !joinedCircles.some((joinedCircle) => joinedCircle.id === circle.id);
-  });
+  const handleGenderChange = (e) => {
+    onGenderChange(e.target.value);
+  };
 
   return (
     <div className={styles.circleCardHeader}>
       <div className={styles.circleNumbers}>
         <div className={styles.circleNumbersText}>Dream Circles</div>
         <div className={styles.circleNumbersOnly}>
-          There are only {nonJoinedCircles.length} dream circles available
+          There are only {filteredCircles.length} dream circles available
         </div>
       </div>
       <div className={styles["selector-container"]}>
         <div className={styles["filter-by-language"]}>
           <label>Language</label>
-          <select id="language" className={styles.selector}>
-            <option value="all">All Languages</option>
+          <select
+            id="language"
+            className={styles.selector}
+            value={selectedLanguage}
+            onChange={handleLanguageChange}
+          >
+            <option value="4">All Languages</option>
             <option value="0">English</option>
             <option value="1">Urdu</option>
             <option value="2">Indonesian</option>
@@ -42,15 +43,27 @@ function DreamCirclesCardHeader() {
         </div>
         <div className={styles["filter-by-gender"]}>
           <label>Gender</label>
-          <select id="gender" className={styles.selector}>
-            <option value="0">Both</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
+          <select
+            id="gender"
+            className={styles.selector}
+            value={selectedGender}
+            onChange={handleGenderChange}
+          >
+            <option value="2">Both</option>
+            <option value="1">Sisters only</option>
           </select>
         </div>
       </div>
     </div>
   );
 }
+
+DreamCirclesCardHeader.propTypes = {
+  selectedLanguage: PropTypes.number.isRequired,
+  selectedGender: PropTypes.number.isRequired,
+  filteredCircles: PropTypes.array.isRequired,
+  onLanguageChange: PropTypes.func.isRequired,
+  onGenderChange: PropTypes.func.isRequired,
+};
 
 export default DreamCirclesCardHeader;
