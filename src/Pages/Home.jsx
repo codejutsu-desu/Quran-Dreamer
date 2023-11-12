@@ -4,6 +4,10 @@ import styles from "./Home.module.css";
 import { FaUserAlt } from "react-icons/fa";
 
 function Home() {
+  const handleContactUsClick = () => {
+    window.location.href = "mailto:contact.qurandreamers@gmail.com";
+  };
+
   return (
     <AppLayout>
       <div className={styles.homeBackground1}>
@@ -126,12 +130,16 @@ function Home() {
         <div className={styles.helpIcons}>
           <div className={styles.qaIcon}>
             <div className={styles.circleOfIcon}>
-              <img src="/Mail Icon (homepage).svg" alt="" />
+              <a href="mailto:contact.qurandreamers@gmail.com">
+                <img src="/Mail Icon (homepage).svg" alt="Email" />
+              </a>
             </div>
           </div>
           <div className={styles.mailIcon}>
             <div className={styles.circleOfIcon}>
-              <img src="/Q.A (homepage icon).svg" alt="" />
+              <a href="mailto:contact.qurandreamers@gmail.com">
+                <img src="/Q.A (homepage icon).svg" alt="Email" />
+              </a>
             </div>
           </div>
         </div>
