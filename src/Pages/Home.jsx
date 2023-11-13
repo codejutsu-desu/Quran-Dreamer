@@ -4,10 +4,6 @@ import styles from "./Home.module.css";
 import { FaUserAlt } from "react-icons/fa";
 
 function Home() {
-  const handleContactUsClick = () => {
-    window.location.href = "mailto:contact.qurandreamers@gmail.com";
-  };
-
   return (
     <AppLayout>
       <div className={styles.homeBackground1}>

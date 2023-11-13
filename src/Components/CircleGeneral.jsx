@@ -37,6 +37,11 @@ function getDayName(dayNumber) {
   return dayNames[dayNumber];
 }
 
+function formatTime(time) {
+  const [hours, minutes] = time.split(":");
+  return `${hours}:${minutes}`;
+}
+
 function CircleGeneral({ circle }) {
   const { from_date, to_date, about_circle, days, times } = circle;
 
@@ -48,6 +53,11 @@ function CircleGeneral({ circle }) {
     Array.isArray(times) && times.length >= 2
       ? calculateTimeDuration(times[0], times[1])
       : "N/A";
+
+  const startTime =
+    Array.isArray(times) && times.length > 0 ? formatTime(times[0]) : "N/A";
+  const endTime =
+    Array.isArray(times) && times.length > 1 ? formatTime(times[1]) : "N/A";
 
   return (
     <div className={styles.circleGeneralContainer}>
@@ -64,8 +74,7 @@ function CircleGeneral({ circle }) {
         <div className={styles.generalInfoText}>
           <div>Class timing</div>
           <div>
-            Class starts from{" "}
-            {times && times.length > 0 ? times[0].slice(0, 5) : "N/A"}
+            Class starts from {startTime} to {endTime}
           </div>
         </div>
         <div className={styles.generalInfoText}>
