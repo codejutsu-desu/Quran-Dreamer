@@ -1,21 +1,18 @@
 import styles from "./CircleGeneral.module.css";
 import PropTypes from "prop-types";
+import { DateTime } from "luxon";
 
 function calculateTimeDuration(startTime, endTime) {
-  const startTimeParts = startTime.split(":").map(Number);
-  const endTimeParts = endTime.split(":").map(Number);
+  const start = DateTime.fromISO(startTime);
+  const end = DateTime.fromISO(endTime);
 
-  const startSeconds =
-    startTimeParts[0] * 3600 + startTimeParts[1] * 60 + startTimeParts[2];
-  const endSeconds =
-    endTimeParts[0] * 3600 + endTimeParts[1] * 60 + endTimeParts[2];
+  const diff = end.diff(start, ["hours", "minutes"]);
+  const hours = Math.floor(diff.hours);
+  const minutes = Math.round(diff.minutes);
 
-  const durationSeconds = Math.abs(endSeconds - startSeconds);
-
-  const hours = Math.floor(durationSeconds / 3600);
-  const minutes = Math.floor((durationSeconds % 3600) / 60);
-
-  if (minutes === 0) {
+  if (hours === 0) {
+    return `${minutes} minute${minutes !== 1 ? "s" : ""}`;
+  } else if (minutes === 0) {
     return `${hours} hour${hours !== 1 ? "s" : ""}`;
   } else {
     return `${hours} hour${hours !== 1 ? "s" : ""} ${minutes} minute${
@@ -37,14 +34,15 @@ function getDayName(dayNumber) {
   return dayNames[dayNumber];
 }
 
-function formatTime(time) {
-  const [hours, minutes] = time.split(":");
-  return `${hours}:${minutes}`;
+function convertToUserLocalTime(time, timezone) {
+  const start = DateTime.fromISO(time);
+  const localTime = start.setZone(timezone);
+  return localTime.toLocaleString(DateTime.TIME_SIMPLE);
 }
 
 function CircleGeneral({ circle }) {
   const { from_date, to_date, about_circle, days, times } = circle;
-
+  console.log(times);
   const classDays = Array.isArray(days)
     ? days.map((dayNumber) => getDayName(dayNumber)).join(", ")
     : "N/A";
@@ -55,9 +53,16 @@ function CircleGeneral({ circle }) {
       : "N/A";
 
   const startTime =
-    Array.isArray(times) && times.length > 0 ? formatTime(times[0]) : "N/A";
+    Array.isArray(times) && times.length > 0
+      ? convertToUserLocalTime(times[0], circle.timezone)
+      : "N/A";
+
   const endTime =
-    Array.isArray(times) && times.length > 1 ? formatTime(times[1]) : "N/A";
+    Array.isArray(times) && times.length > 1
+      ? convertToUserLocalTime(times[1], circle.timezone)
+      : "N/A";
+
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
     <div className={styles.circleGeneralContainer}>
@@ -74,13 +79,13 @@ function CircleGeneral({ circle }) {
         <div className={styles.generalInfoText}>
           <div>Class timing</div>
           <div>
-            Class starts from {startTime} to {endTime}
+            {from_date} to {to_date}
           </div>
         </div>
         <div className={styles.generalInfoText}>
           <div>Class length</div>
           <div>
-            From {from_date} to {to_date}
+            {startTime} to {endTime}, {userTimezone}
           </div>
         </div>
         <div className={styles.generalInfoText}>
