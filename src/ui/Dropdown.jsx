@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./Dropdown.module.css"; // Import your CSS styles here
 
 function JoinUs() {
   const [isOpen, setIsOpen] = useState(false);

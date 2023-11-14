@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Laxend", "Lato";
-}
-
-a {
-  text-decoration: none;
+.custom-button {
+  border-radius: 20px;
+  max-height: 1.5rem;
+  max-width: 2rem;
+  color: white;
+  background-color: theme; /* Uses the "theme" color from Tailwind config */
+  font-family: sans;
+  /* Additional custom styles if needed */
 }

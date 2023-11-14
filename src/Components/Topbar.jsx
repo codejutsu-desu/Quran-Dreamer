@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styles from "./Topbar.module.css";
-import JoinUs from "../ui/Dropdown";
+import Dropdown from "../ui/DropdownTailwind";
 
 function Topbar() {
   const token = localStorage.getItem("token");
@@ -12,36 +11,35 @@ function Topbar() {
   };
 
   return (
-    <header className={styles.header}>
-      <NavLink to="/" className={styles.home}>
-        <img src="/logo.png" alt="" />
+    <header className="flex h-auto items-center justify-between border-b border-solid  border-gray-300 p-2">
+      <NavLink to="/">
+        <img
+          src="/logo.png"
+          alt=""
+          className=" hover:scale-120 object-covers h-20 w-auto transform cursor-pointer rounded-2xl transition-transform"
+        />
       </NavLink>
 
-      <ul className={styles.homeUl}>
-        <NavLink to="/about" className={styles.about}>
-          <li className={styles.aboutLi}>About us</li>
+      <ul className="  text-theme flex space-x-8 text-lg font-semibold">
+        <NavLink to="/about">
+          <li>About us</li>
         </NavLink>
 
         {token ? (
           <>
-            <NavLink to="/events" className={styles.events}>
-              <li className={styles.aboutLi}>Events</li>
-            </NavLink>
             {user_type !== "0" && (
-              <NavLink to="/appLayoutStudent" className={styles.circles}>
-                <li className={styles.aboutLi}>All Circles</li>
+              <NavLink to="/appLayoutStudent">
+                <li>All Circles</li>
               </NavLink>
             )}
-            <li className={styles.aboutLi} onClick={handleLogout}>
-              Logout
-            </li>
+            <li onClick={handleLogout}>Logout</li>
           </>
         ) : (
           <>
-            <NavLink to="/login" className={styles.login}>
-              <li className={styles.aboutLi}>Login</li>
+            <NavLink to="/login">
+              <li>Login</li>
             </NavLink>
-            <JoinUs />
+            <Dropdown />
           </>
         )}
       </ul>

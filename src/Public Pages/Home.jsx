@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import AppLayout from "./AppLayout";
+import AppLayout from "../Pages/AppLayout";
 import styles from "./Home.module.css";
 import { FaUserAlt } from "react-icons/fa";
 
