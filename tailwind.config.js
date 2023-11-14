@@ -9,6 +9,7 @@ export default {
       colors: {
         theme: "#10b981",
         white: "#FFFFFF",
+        black: "#0f172a",
       },
     },
   },

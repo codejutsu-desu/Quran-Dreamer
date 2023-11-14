@@ -11,8 +11,8 @@ function Topbar() {
   };
 
   return (
-    <header className="flex h-auto items-center justify-between border-b border-solid  border-gray-300 p-2">
-      <NavLink to="/">
+    <header className="flex h-auto items-center justify-between border-b border-solid  border-gray-300 p-2 font-sans">
+      <NavLink to="/" className="h-full">
         <img
           src="/logo.png"
           alt=""
@@ -21,14 +21,14 @@ function Topbar() {
       </NavLink>
 
       <ul className="  text-theme flex space-x-8 text-lg font-semibold">
-        <NavLink to="/about">
+        <NavLink to="/about" className="flex items-center">
           <li>About us</li>
         </NavLink>
 
         {token ? (
           <>
             {user_type !== "0" && (
-              <NavLink to="/appLayoutStudent">
+              <NavLink to="/appLayoutStudent" className="flex items-center">
                 <li>All Circles</li>
               </NavLink>
             )}
@@ -36,7 +36,7 @@ function Topbar() {
           </>
         ) : (
           <>
-            <NavLink to="/login">
+            <NavLink to="/login" className="flex items-center">
               <li>Login</li>
             </NavLink>
             <Dropdown />
