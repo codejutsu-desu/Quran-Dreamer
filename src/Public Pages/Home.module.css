@@ -243,17 +243,6 @@
   top: 10px;
 }
 
-.whatPeopleSay {
-  font-family: "Lexend", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 50px;
-  letter-spacing: 0em;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .peopleComments {
   display: flex;
   justify-content: space-around;

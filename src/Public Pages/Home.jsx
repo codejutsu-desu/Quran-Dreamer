@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import AppLayout from "../Pages/AppLayout";
 import styles from "./Home.module.css";
 import PeoplesComment from "../PublicPagesComponents/PeoplesComment";
+import CircleCard from "../Components/Reusable Components/CircleCard";
 
 function Home() {
   return (
@@ -14,7 +15,6 @@ function Home() {
           </span>
         </p>
       </div>
-
       <div className={styles.homeBackground2}>
         <img src="/homeBackground2.jpg" alt="" />
         <div className={styles.container}>
@@ -31,51 +31,25 @@ function Home() {
           </div>
         </div>
       </div>
-
-      <div className={styles.explore}>Explore our circle</div>
-      <div className={styles.circles}>
-        <div className={styles.circle1}>
-          <div className={styles.title}>Reader Basic</div>
-          <div className={styles.mentor}>COMING SOON</div>
-          <div className={styles.titleText}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            aliquam possimus ut non dolor sapiente laboriosam error aspernatur
-            assumenda placeat veniam nisi cum, saepe distinctio provident natus
-            aut fuga ipsam.
-          </div>
+      <div className=" item-center flex flex-col items-center justify-between rounded-lg border-2 border-solid border-theme pb-2 ">
+        <div className="text-center font-sans text-3xl font-semibold text-black">
+          Explore our circle
         </div>
-        <div className={styles.bottomCircles}>
-          <div className={styles.circle2}>
-            <div className={styles.title}>Nahw Basic</div>
-            <div className={styles.mentor}>COMING SOON</div>
-            <div className={styles.titleText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, nisi
-              veritatis tempore, hic modi, corporis dolores consectetur id
-              deserunt et facilis
-            </div>
-          </div>
-          <div className={styles.circle3}>
-            <div className={styles.title}>Sarf Advance</div>
-            <div className={styles.mentor}>COMING SOON</div>
-            <div className={styles.titleText}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              veniam repellendus dolorem nulla minima debitis deleniti voluptas
-              quam a iure incidunt.
-            </div>
-          </div>
+        <div className="flex justify-between">
+          <CircleCard />
+          <CircleCard />
+          <CircleCard />
         </div>
-
-        <div className={styles.viewMore}>
-          <span>View More</span>
-        </div>
+        <button className=" w-20  rounded  border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white">
+          Join!
+        </button>
       </div>
-      <div className={styles.whatPeopleSay}>
+      <div className="text-center font-sans text-2xl font-semibold text-black">
         What People Say About QuranDreamers
       </div>
-
       <div className={styles.peopleComments}>
-        <PeoplesComment name={"Sister Lakshmi"} />
-        <PeoplesComment name={""} />
+        <PeoplesComment />
+        <PeoplesComment />
       </div>
       <div className={styles.needHelp}>
         <div className={styles.needHelpText}>Need Help?</div>
