@@ -1,7 +1,7 @@
 function Bottombar() {
   return (
-    <footer className="text bg-theme flex h-20  items-center justify-between border-t border-solid border-gray-300  p-2 font-bold text-white">
-      <div className="h-full w-20 ">
+    <footer className="text flex h-20 items-center  justify-between border-t border-solid border-gray-300 bg-theme  p-2 font-bold text-white">
+      <div className="md:w-15 h-3/4  w-10 xl:h-full xl:w-20">
         <img
           src="/logo.png"
           alt=""
@@ -38,7 +38,7 @@ function Bottombar() {
           </a>
         </span>
       </div>
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 text-xs md:text-sm lg:text-base xl:text-lg">
         <p>
           Terms of Use |
           <a

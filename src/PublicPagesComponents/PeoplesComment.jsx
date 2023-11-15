@@ -1,7 +1,7 @@
 import UserIcon from "../Icons/UserIcon";
 function PeoplesComment() {
   return (
-    <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl border-2 border-solid border-theme bg-transparent bg-clip-border pl-2 pr-2 text-black shadow-none">
+    <div className="relative  w-full max-w-[26rem] shrink flex-col rounded-xl border-2 border-solid border-theme bg-transparent bg-clip-border pl-2 pr-2 text-black shadow-none">
       <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pb-3 pt-0 shadow-none">
         <UserIcon
           alt="DreamUser"
@@ -31,13 +31,13 @@ function PeoplesComment() {
               ))}
             </div>
           </div>
-          <p className="font- text-normal block font-sans leading-relaxed text-black antialiased">
+          <p className=" block font-sans text-base leading-relaxed text-black antialiased">
             Mentor @ Quran Dreamers
           </p>
         </div>
       </div>
       <div className="mb-6 p-0">
-        <p className="block text-justify font-sans text-sm font-light leading-relaxed text-inherit antialiased lg:text-xl">
+        <p className="block text-justify font-sans text-xs font-normal  text-inherit antialiased lg:text-xl">
           I am thrilled to be part of this innovative Quranic Arabic learning
           platform that brings together mentors, teachers, and students from all
           around the world. What sets this platform apart is its inclusivity. It

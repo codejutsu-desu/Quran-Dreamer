@@ -5,11 +5,15 @@ function CircleCard() {
       <div className={styles.title}>
         <div className={styles.sectionLogo}>NB</div>
         <div className={styles.titleName}>
-          <div className={styles.sectionTitle}>Nahw Basic</div>
-          <div className={styles.sectionLead}>Sister Hana</div>
+          <div className="font-sans text-sm font-semibold md:text-lg xl:text-xl">
+            Nahw Basic
+          </div>
+          <div className="font-sans text-xs sm:text-base md:text-lg">
+            Sister Hana
+          </div>
         </div>
       </div>
-      <div className={styles.description}>
+      <div className="mt-2 text-sm md:text-lg xl:text-xl">
         The study covers all the basics of Nahw
       </div>
 
@@ -24,7 +28,7 @@ function CircleCard() {
       </div>
 
       <div className={styles.cardBottom}>
-        <button className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white">
+        <button className="rounded border border-theme bg-transparent px-1 py-1 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-4 xl:py-4">
           Know More
         </button>
         <div className={styles.daysLeft}>26 Members</div>
