@@ -11,16 +11,16 @@ function Topbar() {
   };
 
   return (
-    <header className="flex h-auto items-center justify-between border-b border-solid  border-gray-300 p-2 font-sans">
-      <NavLink to="/" className="h-full">
+    <header className="xl-h-[100px] flex h-10 items-center justify-between border-b border-solid border-gray-300 p-1  font-sans sm:h-[60px] lg:h-[80px]">
+      <NavLink to="/" className="h-full ">
         <img
           src="/logo.png"
           alt=""
-          className=" hover:scale-120 object-covers h-20 w-auto transform cursor-pointer rounded-2xl transition-transform"
+          className=" hover:scale-120 object-covers h-full w-auto transform cursor-pointer rounded-2xl transition-transform"
         />
       </NavLink>
 
-      <ul className="  text-theme flex space-x-8 text-lg font-semibold">
+      <ul className="   flex space-x-8 text-base font-semibold text-theme sm:text-2xl">
         <NavLink to="/about" className="flex items-center">
           <li>About us</li>
         </NavLink>

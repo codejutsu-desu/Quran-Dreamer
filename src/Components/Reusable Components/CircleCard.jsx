@@ -1,7 +1,7 @@
 import styles from "./CircleCard.module.css";
 function CircleCard() {
   return (
-    <div className={styles.cardContainer}>
+    <div className="relative flex  max-w-2xl flex-col space-x-2 rounded-xl border-2 border-solid border-theme bg-transparent bg-clip-border p-4 pl-2 pr-2 text-black shadow-none">
       <div className={styles.title}>
         <div className={styles.sectionLogo}>NB</div>
         <div className={styles.titleName}>
