@@ -16,7 +16,7 @@ function Home() {
     <AppLayout>
       <div
         className="m-4 h-[300px] bg-cover bg-center bg-no-repeat sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px]"
-        style={{ backgroundImage: 'url("public/homeBackground1.jpg")' }}
+        style={{ backgroundImage: 'url("/homeBackground1.jpg")' }}
       >
         <div className=" pt-2 text-center text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
           Welcome Quran Dreamers! <br />
@@ -27,7 +27,7 @@ function Home() {
       </div>
       <div
         className="h-[300px] bg-cover bg-center bg-no-repeat sm:h-[400px] lg:h-[500px] xl:h-[600px]"
-        style={{ backgroundImage: 'url("public/homeBackground2.jpg")' }}
+        style={{ backgroundImage: 'url("/homeBackground2.jpg")' }}
       >
         <div className=" inset-0  flex h-full flex-col items-center backdrop-blur backdrop-filter">
           <div className=" pt-2 text-center text-xl font-semibold text-white md:text-3xl xl:text-5xl">

@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from "./Pages/About";
+import About from "./Public Pages/About";
 import Home from "./Public Pages/Home";
 import Events from "./Pages/Events";
-import Login from "./Pages/Login";
+import Login from "./Public Pages/Login";
 import PageNotFound from "./Pages/PageNotFound";
 import Notes from "./Pages/Notes";
 import StudentsNoteFiles from "./Pages/StudentsNoteFiles";

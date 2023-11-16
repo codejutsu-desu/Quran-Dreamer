@@ -8,8 +8,10 @@ export default {
       },
       colors: {
         theme: "#10b981",
+        hoverTheme: "#047857",
         white: "#FFFFFF",
         black: "#0f172a",
+        link: "#4338ca",
       },
     },
   },

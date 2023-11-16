@@ -10,7 +10,7 @@ function PeoplesComment() {
         <div className="flex w-full flex-col gap-0.5">
           <div className="flex items-center justify-between">
             <h5 className="block font-sans text-xl font-bold leading-snug tracking-normal text-black antialiased">
-              Sister Lakshmi
+              Sister Noorjahan
             </h5>
             <div className="5 flex items-center gap-0">
               {[...Array(5)].map((_, index) => (
@@ -38,14 +38,13 @@ function PeoplesComment() {
       </div>
       <div className="mb-6 p-0">
         <p className="block text-justify font-sans text-xs font-normal  text-inherit antialiased lg:text-xl">
-          I am thrilled to be part of this innovative Quranic Arabic learning
-          platform that brings together mentors, teachers, and students from all
-          around the world. What sets this platform apart is its inclusivity. It
-          welcomes individuals with varying levels of Arabic language knowledge,
-          making the Quran accessible to all. I am confident that this website
-          will evolve into a vibrant and supportive Quranic Arabic learning
-          community, nurturing a deeper understanding of the Quran for people of
-          all backgrounds.
+          I am delighted to be a part of this groundbreaking Quranic Arabic
+          learning website, which unites mentors, teachers, and students from
+          across the globe. What truly distinguishes this website is its
+          inclusive approach, catering to individuals of all Arabic language
+          proficiency levels, making the Quran accessible to everyone. I
+          wholeheartedly recommend it to those looking to enhance their Quranic
+          Arabic skills and deepen their faith.
         </p>
       </div>
     </div>
