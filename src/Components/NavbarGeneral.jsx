@@ -25,15 +25,15 @@ function NavbarGeneral() {
   }, []);
 
   return (
-    <div className={styles.topNavbar}>
-      <div className={styles.icon}>
+    <div className="flex items-center justify-between bg-theme p-2 text-white">
+      <div className="h-full">
         <NavLink to="/">
           <img src="/HomeIcon.svg" alt="Icon" />
         </NavLink>
       </div>
-      <h2>Dashboard</h2>
+      <div className="text-2xl font-bold text-white">Dashboard</div>
       <div className={styles.userInfo}>
-        <MdOutlinePersonOutline className={styles.userIcon} />
+        <MdOutlinePersonOutline className="h-full w-12 font-sans" />
 
         <div className={styles.userNameandPosition}>
           <div className={styles.userPosition}>{userType}</div>

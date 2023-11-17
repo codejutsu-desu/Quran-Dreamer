@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./StudentDashboardNav.module.css";
+
 import { useNavigate } from "react-router-dom";
 
 function StudentDashboardNav() {
@@ -17,16 +17,24 @@ function StudentDashboardNav() {
   };
 
   return (
-    <div className={styles.container}>
-      <img src="/greenHomeIcon.svg" alt="" />
+    <div className="flex items-center justify-start space-x-3 p-2 font-sans font-extrabold ">
+      {/* <img src="/greenHomeIcon.svg" alt="" /> */}
       <button
-        className={activeButton === "My Circles" ? styles.active : ""}
+        className={
+          activeButton === "My Circles"
+            ? `ml-5 border-b-2 border-solid border-theme`
+            : ""
+        }
         onClick={() => handleButtonClick("My Circles")}
       >
         My Circles
       </button>
       <button
-        className={activeButton === "My Classes" ? styles.active : ""}
+        className={
+          activeButton === "My Classes"
+            ? `border-b-2 border-solid border-theme`
+            : ""
+        }
         onClick={() => handleButtonClick("My Classes")}
       >
         My Classes
