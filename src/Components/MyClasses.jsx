@@ -1,5 +1,5 @@
 import CircleClass from "./CircleClass";
-import styles from "./MyClasses.module.css";
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJoinedCircle } from "../actions";
@@ -15,8 +15,10 @@ function MyClasses() {
     }
   }, [dispatch]);
   return (
-    <div className={styles.mainContainer}>
-      <p>You Class links are listed here</p>
+    <div className="ml-auto mr-auto max-w-full rounded-xl border-2 border-solid border-theme">
+      <div className=" flex justify-center border-b-2 border-theme py-4 font-sans text-2xl font-bold text-black">
+        You Class links are listed here
+      </div>
 
       {circleData.map((circle) => (
         <CircleClass circle={circle} key={circle.id} />

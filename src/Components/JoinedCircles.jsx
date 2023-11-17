@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJoinedCircle } from "../actions";
-import styles from "./JoinedCircles.module.css";
 import JoinedCircle from "./JoinedCircle";
 
 function JoinedCircles() {
@@ -16,7 +15,7 @@ function JoinedCircles() {
   }, [dispatch]);
 
   return (
-    <div className={styles.cardContainer}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {circleData.map((circle) => (
         <JoinedCircle key={circle.id} circle={circle} />
       ))}

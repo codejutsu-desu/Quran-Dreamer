@@ -1,4 +1,3 @@
-import styles from "./DreamCircleCard.module.css";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
@@ -72,42 +71,45 @@ function DreamCircleCard({ circle }) {
 
   if (daysLeft !== "Session Expired") {
     knowMoreLink = (
-      <NavLink
-        to={`/appLayoutStudent/circleInfo/${circle.id}`}
-        className={styles.knowMoreLink}
-      >
-        <div className={styles.knowMore}> Know More</div>
+      <NavLink to={`/appLayoutStudent/circleInfo/${circle.id}`}>
+        <div className="bg-hoverTheme flex h-7 w-[100px] items-center justify-center rounded-lg  px-1 text-sm font-bold text-white">
+          Know More
+        </div>
       </NavLink>
     );
   }
 
   return (
-    <div className={styles.cardContainer}>
-      <div className={styles.title}>
-        <div className={styles.sectionLogo}>{logoInitials}</div>
-        <div className={styles.titleName}>
-          <div className={styles.sectionTitle}>{categoryName}</div>
-          <div className={styles.sectionLead}>{owner_name}</div>
+    <div className="m-4 flex max-h-[400px] max-w-[300px] flex-col justify-between rounded-lg border-2 border-solid border-theme p-2 ">
+      <div className="flex items-center justify-start">
+        <div className="mr-3 flex h-10 max-w-[32px] items-center justify-center rounded-lg bg-theme px-2 font-bold text-white">
+          {logoInitials}
+        </div>
+        <div>
+          <div className="text-xl font-bold">{categoryName}</div>
+          <div className="text-lg font-normal">{owner_name}</div>
         </div>
       </div>
-      <div className={styles.description}>{about_circle}</div>
+      <div className="mt-3">{about_circle}</div>
 
-      <div className={styles.progresBar}>
-        <div className={styles.membersandpercentage}>
-          <div className={styles.members}>{num_joined_users} Members</div>
-          <div className={styles.percentage}>{percentage}%</div>
+      <div className="w-full">
+        <div className="flex justify-between">
+          <div className="p-2 font-bold">{num_joined_users}</div>
+          <div className="p-2 text-right font-bold">{percentage}%</div>
         </div>
-        <div className={styles.progressContainer}>
+        <div className="relative h-5 rounded-lg bg-green-100">
           <div
-            className={styles.progress}
+            className="h-full  rounded-lg bg-theme"
             style={{ width: `${percentage}%` }}
           ></div>
         </div>
       </div>
 
-      <div className={styles.cardBottom}>
+      <div className="mt-3 flex justify-between">
         {knowMoreLink}
-        <div className={styles.daysLeft}>{daysLeft}</div>
+        <div className="flex h-7 w-[100px] items-center justify-center rounded-lg bg-gray-300  px-1 text-xs font-bold text-black">
+          {daysLeft}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-import styles from "./CircleClass.module.css";
 import PropTypes from "prop-types";
 
 const categoryNames = {
@@ -17,9 +16,12 @@ function CircleClass({ circle }) {
   const categoryName = categoryNames[category];
 
   return (
-    <div className={styles.mainLink}>
-      <h3>Class mentor- {owner_name}</h3>
-      <span>{categoryName}</span>- <a href={class_link}>{class_link}</a>
+    <div className="border-b border-black py-2 text-2xl">
+      <h3 className="text-center">Class mentor- {owner_name}</h3>
+      <div className="flex justify-center">
+        <span className="font-bold">{categoryName}</span>-
+        <a href={class_link}>{class_link}</a>
+      </div>
     </div>
   );
 }

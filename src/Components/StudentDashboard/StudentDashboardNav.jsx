@@ -17,12 +17,12 @@ function StudentDashboardNav() {
   };
 
   return (
-    <div className="flex items-center justify-start space-x-3 p-2 font-sans font-extrabold ">
+    <div className="flex items-center justify-start space-x-3 p-2 pl-5 font-sans font-extrabold ">
       {/* <img src="/greenHomeIcon.svg" alt="" /> */}
       <button
         className={
           activeButton === "My Circles"
-            ? `ml-5 border-b-2 border-solid border-theme`
+            ? ` border-b-2 border-solid border-theme`
             : ""
         }
         onClick={() => handleButtonClick("My Circles")}

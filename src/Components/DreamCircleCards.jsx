@@ -1,11 +1,10 @@
 import DreamCircleCard from "./DreamCircleCard";
-import styles from "./DreamCircleCards.module.css";
 
 import PropTypes from "prop-types";
 
 function DreamCircleCards({ filteredCircles }) {
   return (
-    <div className={styles.cardContainer}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {filteredCircles.map((circle) => (
         <DreamCircleCard key={circle.id} circle={circle} />
       ))}

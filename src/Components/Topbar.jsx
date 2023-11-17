@@ -32,7 +32,9 @@ function Topbar() {
                 <li>All Circles</li>
               </NavLink>
             )}
-            <li onClick={handleLogout}>Logout</li>
+            <li className="cursor-pointer" onClick={handleLogout}>
+              Logout
+            </li>
           </>
         ) : (
           <>

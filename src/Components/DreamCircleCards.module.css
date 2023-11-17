@@ -1,6 +1,0 @@
-.cardContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  max-height: 75vh;
-  overflow-y: auto; /* Add vertical scroll when content overflows */
-}

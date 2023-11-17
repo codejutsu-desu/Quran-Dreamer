@@ -8,7 +8,6 @@ function DashboardLayoutStudent() {
   return (
     <div className={styles.dashboardStudentMain}>
       <NavbarGeneral />
-
       <StudentDashboardNav />
       <Outlet />
     </div>
