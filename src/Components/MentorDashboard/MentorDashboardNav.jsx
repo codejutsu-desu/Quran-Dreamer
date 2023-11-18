@@ -1,4 +1,3 @@
-import styles from "./MentorDashboardNav.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -18,22 +17,34 @@ function MentorDashboardNav() {
   };
 
   return (
-    <div className={styles.container}>
-      <img src="/greenHomeIcon.svg" alt="" />
+    <div className="flex items-center justify-start space-x-3 p-2 pl-5 font-sans font-extrabold ">
+      {/* <img src="/greenHomeIcon.svg" alt="" /> */}
       <button
-        className={activeButton === "My Circles" ? styles.active : ""}
+        className={
+          activeButton === "My Circles"
+            ? ` border-b-2 border-solid border-theme`
+            : ""
+        }
         onClick={() => handleButtonClick("My Circles")}
       >
         My Circles
       </button>
       <button
-        className={activeButton === "My Classes" ? styles.active : ""}
+        className={
+          activeButton === "My Classes"
+            ? ` border-b-2 border-solid border-theme`
+            : ""
+        }
         onClick={() => handleButtonClick("My Classes")}
       >
         My Classes
       </button>
       <button
-        className={activeButton === "Links" ? styles.active : ""}
+        className={
+          activeButton === "Links"
+            ? ` border-b-2 border-solid border-theme`
+            : ""
+        }
         onClick={() => handleButtonClick("Links")}
       >
         Links

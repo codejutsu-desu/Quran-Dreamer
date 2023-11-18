@@ -1,5 +1,3 @@
-import styles from "./DreamCirclesCardHeader.module.css";
-
 import PropTypes from "prop-types";
 
 function DreamCirclesCardHeader({
@@ -18,19 +16,23 @@ function DreamCirclesCardHeader({
   };
 
   return (
-    <div className={styles.circleCardHeader}>
-      <div className={styles.circleNumbers}>
-        <div className={styles.circleNumbersText}>Dream Circles</div>
-        <div className={styles.circleNumbersOnly}>
+    <div className="flex max-w-[100%] justify-between px-4 pt-2 ">
+      <div className="">
+        <div className="text-xs font-bold md:text-xl lg:text-3xl xl:text-4xl">
+          Dream Circles
+        </div>
+        <div className="text-xs font-normal md:text-lg lg:text-xl xl:text-2xl ">
           There are only {filteredCircles.length} dream circles available
         </div>
       </div>
-      <div className={styles["selector-container"]}>
-        <div className={styles["filter-by-language"]}>
-          <label>Language</label>
+      <div className="flex space-x-2">
+        <div className="">
+          <label className="text-xs md:text-lg lg:text-xl xl:text-2xl">
+            Language
+          </label>
           <select
             id="language"
-            className={styles.selector}
+            className="rounded-lg border-2 border-solid border-black p-1 text-xs text-theme md:text-lg lg:text-xl xl:text-2xl"
             value={selectedLanguage}
             onChange={handleLanguageChange}
           >
@@ -41,11 +43,13 @@ function DreamCirclesCardHeader({
             <option value="3">Uzbek</option>
           </select>
         </div>
-        <div className={styles["filter-by-gender"]}>
-          <label>Gender</label>
+        <div className="">
+          <label className="text-xs md:text-lg lg:text-xl xl:text-2xl">
+            Gender
+          </label>
           <select
             id="gender"
-            className={styles.selector}
+            className="rounded-lg border-2 border-solid border-black p-1 text-xs text-theme md:text-lg lg:text-xl xl:text-2xl"
             value={selectedGender}
             onChange={handleGenderChange}
           >
