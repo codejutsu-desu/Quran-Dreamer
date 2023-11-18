@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { NavLink } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -32,28 +33,28 @@ export default function Dropdown() {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/join/2"
+                <NavLink
+                  to="/join/2"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm",
                   )}
                 >
                   Student
-                </a>
+                </NavLink>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <a
-                  href="/join/1"
+                <NavLink
+                  to="/join/1"
                   className={classNames(
                     active ? "bg-gray-100 text-gray-900" : "text-gray-700",
                     "block px-4 py-2 text-sm",
                   )}
                 >
                   Mentor
-                </a>
+                </NavLink>
               )}
             </Menu.Item>
           </div>

@@ -69,9 +69,20 @@ function Home() {
         What People Say About QuranDreamers
       </div>
       <div className="mt-4 flex flex-col items-center sm:flex-row sm:justify-around">
-        <PeoplesComment />
-        <PeoplesComment />
+        <PeoplesComment
+          name={"Sr Noorjahan"}
+          comment={
+            "Im really excited to be part of Quran Dreamers Team.  This platform is a bridge between QUR'AN and YOU! Let's study together, commit ourselves and leave an imprint for future generations.  Come join us and let's start this new thrilling adventure together!"
+          }
+        />
+        <PeoplesComment
+          name={"Sister Lakshmi"}
+          comment={
+            "Thank you for providing the Dreamers with this website. As a mentor, I am thrilled to have a place where I can contribute, sharing the knowledge we've learned in a more directed and systematic way, while at the same time hone my teaching skill. With various options of study levels, times, and languages, I really recommend this website for the Dreamers to continue their Quranic Arabic journey."
+          }
+        />
       </div>
+
       <div className="pt-4 text-center text-2xl font-bold text-black">
         Need Help?
       </div>

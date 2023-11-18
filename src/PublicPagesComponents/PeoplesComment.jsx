@@ -1,5 +1,7 @@
 import UserIcon from "../Icons/UserIcon";
-function PeoplesComment() {
+import PropTypes from "prop-types";
+
+function PeoplesComment({ name, comment }) {
   return (
     <div className="relative  w-full max-w-[26rem] shrink flex-col rounded-xl border-2 border-solid border-theme bg-transparent bg-clip-border pl-2 pr-2 text-black shadow-none">
       <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pb-3 pt-0 shadow-none">
@@ -10,7 +12,7 @@ function PeoplesComment() {
         <div className="flex w-full flex-col gap-0.5">
           <div className="flex items-center justify-between">
             <h5 className="block font-sans text-xl font-bold leading-snug tracking-normal text-black antialiased">
-              Sister Noorjahan
+              {name}
             </h5>
             <div className="5 flex items-center gap-0">
               {[...Array(5)].map((_, index) => (
@@ -38,17 +40,16 @@ function PeoplesComment() {
       </div>
       <div className="mb-6 p-0">
         <p className="block text-justify font-sans text-xs font-normal  text-inherit antialiased lg:text-xl">
-          I am delighted to be a part of this groundbreaking Quranic Arabic
-          learning website, which unites mentors, teachers, and students from
-          across the globe. What truly distinguishes this website is its
-          inclusive approach, catering to individuals of all Arabic language
-          proficiency levels, making the Quran accessible to everyone. I
-          wholeheartedly recommend it to those looking to enhance their Quranic
-          Arabic skills and deepen their faith.
+          {comment}
         </p>
       </div>
     </div>
   );
 }
+
+PeoplesComment.propTypes = {
+  name: PropTypes.string.isRequired,
+  comment: PropTypes.string.isRequired,
+};
 
 export default PeoplesComment;

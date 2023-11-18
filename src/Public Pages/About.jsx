@@ -25,9 +25,9 @@ function About() {
           src="https://www.youtube.com/embed/Spm3QqF6_q8"
           title="YouTube video player"
           // eslint-disable-next-line react/no-unknown-property
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; fullscreen; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
 
@@ -51,17 +51,17 @@ function About() {
         <div className="mt-4 text-center text-base md:text-xl xl:text-2xl">
           We are the students of Ustadh{" "}
           <a
-            className="text-link italic"
+            className="italic text-link"
             href="https://www.facebook.com/noumanbayyinah/"
           >
             Nouman Ali Khan{" "}
           </a>
           of the{" "}
-          <a className="text-link italic" href="https://www.bayyinahtv.com/">
+          <a className="italic text-link" href="https://www.bayyinahtv.com/">
             Bayyinah Institute{" "}
           </a>
           who teaches Quranic Arabic in the{" "}
-          <a className="text-link italic" href="https://dream.bayyinahtv.com/">
+          <a className="italic text-link" href="https://dream.bayyinahtv.com/">
             Dream Program.{" "}
           </a>
           We have come together to create a platform for fellow students to
