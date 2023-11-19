@@ -1,15 +1,14 @@
 import PropTypes from "prop-types";
-import styles from "./CircleAboutMentor.module.css";
 
 function CircleAboutMentor({ circle }) {
   const { owner_about_me, owner_name } = circle;
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.mentorInfo}>
-        <div className={styles.mentorAbout}>About your Mentor:</div>
-        <div className={styles.mentorName}>{owner_name}</div>
+    <div className="p-5">
+      <div className="flex w-auto text-base font-bold sm:text-lg md:text-xl lg:text-2xl ">
+        <div className="mr-3">About your Mentor:</div>
+        <div className="text-theme">{owner_name}</div>
       </div>
-      <div className={styles.mentorDetails}>{owner_about_me}</div>
+      <div className="mt-7">{owner_about_me}</div>
     </div>
   );
 }

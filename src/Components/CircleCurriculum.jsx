@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import styles from "./CircleCurriculum.module.css";
 
 function CircleCurriculum({ circle }) {
   const { category } = circle;
@@ -83,9 +82,9 @@ function CircleCurriculum({ circle }) {
   };
 
   return (
-    <div className={styles.prerequisite}>
-      <h2>Curriculum</h2>
-      <ul className={styles.prerequisiteUl}>{renderCategoryItems()}</ul>
+    <div className="ml-5 mt-5 text-base sm:text-lg md:text-xl lg:text-2xl">
+      <div className="font-bold">Curriculum</div>
+      <ul className="list-disc pl-5">{renderCategoryItems()}</ul>
     </div>
   );
 }

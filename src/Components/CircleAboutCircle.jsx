@@ -1,4 +1,3 @@
-import styles from "./CircleAboutCircle.module.css";
 import PropTypes from "prop-types";
 
 const categoryNames = {
@@ -16,10 +15,12 @@ function CircleAboutCircle({ circle }) {
   const { about_circle, category } = circle;
   const categoryName = categoryNames[category];
   return (
-    <div className={styles.aboutContainer}>
-      <div className={styles.aboutTitle}>{categoryName}</div>
+    <div className="p-5">
+      <div className="text-base font-bold text-theme sm:text-lg md:text-xl lg:text-2xl">
+        {categoryName}
+      </div>
 
-      <div className={styles.aboutDetails}>{about_circle}</div>
+      <div className="mt-5">{about_circle}</div>
     </div>
   );
 }

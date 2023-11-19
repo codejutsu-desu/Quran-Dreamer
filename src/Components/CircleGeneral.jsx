@@ -1,4 +1,3 @@
-import styles from "./CircleGeneral.module.css";
 import PropTypes from "prop-types";
 import { DateTime } from "luxon";
 
@@ -65,37 +64,37 @@ function CircleGeneral({ circle }) {
   const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
-    <div className={styles.circleGeneralContainer}>
-      <div className={styles.generalInfo}>
-        <h2>General Information</h2>
-        <div className={styles.generalInfoText}>
+    <div>
+      <div className="ml-5 mr-5 mt-5">
+        <div className="font-bold">General Information</div>
+        <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class Duration</div>
           <div>{duration}</div>
         </div>
-        <div className={styles.generalInfoText}>
+        <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class days</div>
           <div>{classDays}</div>
         </div>
-        <div className={styles.generalInfoText}>
+        <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class timing</div>
           <div>
             {from_date} to {to_date}
           </div>
         </div>
-        <div className={styles.generalInfoText}>
+        <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class length</div>
           <div>
             {startTime} to {endTime}, {userTimezone}
           </div>
         </div>
-        <div className={styles.generalInfoText}>
+        <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>About</div>
           <div>{about_circle}</div>
         </div>
       </div>
-      <div className={styles.prerequisite}>
-        <h2>Prerequisite</h2>
-        <ul className={styles.prerequisiteUl}>
+      <div className="ml-5 mt-5 text-base sm:text-lg md:text-xl lg:text-2xl ">
+        <div>Prerequisite</div>
+        <ul className="list-disc pl-5">
           <li>This Feature will be available from next version</li>
           <li>This Feature will be available from next version</li>
           <li>This Feature will be available from next version</li>

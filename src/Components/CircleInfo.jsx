@@ -9,7 +9,6 @@ import CircleCurriculum from "./CircleCurriculum";
 import CircleGeneral from "./CircleGeneral";
 import CircleAboutMentor from "./CircleAboutMentor";
 import CircleAboutCircle from "./CircleAboutCircle";
-import styles from "./CircleInfo.module.css";
 
 const categoryNames = {
   0: "Nahw Basics",
@@ -40,7 +39,7 @@ function CircleInfo() {
   const circleData = useSelector((state) => state.circleData);
 
   const isCircleJoined = joinedCircles.some(
-    (joinedCircle) => joinedCircle.id === Number(circleId)
+    (joinedCircle) => joinedCircle.id === Number(circleId),
   );
 
   const categoryName = categoryNames[circleData.category];
@@ -73,7 +72,7 @@ function CircleInfo() {
           `http://13.126.8.147/api/quran_dreamers/join_study_circle/study_circle/${circleId}`,
           {
             headers,
-          }
+          },
         )
         .then(() => {
           // Navigate after 3 seconds
@@ -100,45 +99,67 @@ function CircleInfo() {
 
   return (
     <>
-      <div className={styles.circleInfoHeader}>
-        Dream Circle/ {categoryName}
-        <button className={styles.backButtonStyle} onClick={() => navigate(-1)}>
+      <div className="flex items-center justify-around px-5 py-2">
+        <div className="text-sm font-extrabold text-black sm:text-base md:text-xl lg:text-2xl ">
+          Dream Circle/ {categoryName}
+        </div>
+        <button
+          className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
+          onClick={() => navigate(-1)}
+        >
           Back
         </button>
       </div>
 
-      <div className={styles.circleInfo}>
-        <div className={styles.infoHeader}>
-          <div className={styles.infoHeaderLeft}>
+      <div className="ml-auto mr-auto mt-5 h-auto w-auto rounded-2xl border-2 border-solid border-theme py-3 lg:w-[90%] xl:w-[80%]">
+        <div className="flex justify-between border-b-2 border-solid border-theme px-3">
+          <div className="flex space-x-3 pb-1 font-sans text-xs font-bold sm:text-sm md:text-base lg:text-lg xl:text-xl">
             <button
               onClick={() => handleTabClick("general")}
-              className={component === "general" ? styles.active : ""}
+              className={
+                component === "general"
+                  ? ` border-b-2 border-solid border-theme`
+                  : ""
+              }
             >
               General
             </button>
             <button
               onClick={() => handleTabClick("curriculum")}
-              className={component === "curriculum" ? styles.active : ""}
+              className={
+                component === "curriculum"
+                  ? ` border-b-2 border-solid border-theme`
+                  : ""
+              }
             >
               Curriculum
             </button>
             <button
               onClick={() => handleTabClick("aboutMentor")}
-              className={component === "aboutMentor" ? styles.active : ""}
+              className={
+                component === "aboutMentor"
+                  ? ` border-b-2 border-solid border-theme`
+                  : ""
+              }
             >
               About Mentor
             </button>
             <button
               onClick={() => handleTabClick("aboutCircle")}
-              className={component === "aboutCircle" ? styles.active : ""}
+              className={
+                component === "aboutCircle"
+                  ? ` border-b-2 border-solid border-theme`
+                  : ""
+              }
             >
               About Circle
             </button>
           </div>
-          <div className={styles.infoHeaderRight}>
-            <div className={styles.infoHeaderRight}>
+          <div className="pb-1">
+            <div className="">
               {isCircleJoined ? (
                 <button
+                  className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white sm:text-sm md:text-base lg:text-lg xl:text-xl"
                   onClick={() =>
                     navigate(`/appLayoutStudent/insideCircle/${circleId}`)
                   }
@@ -146,7 +167,12 @@ function CircleInfo() {
                   Joined- Know More
                 </button>
               ) : (
-                <button onClick={handleJoinCircle}>+Join Circle</button>
+                <button
+                  onClick={handleJoinCircle}
+                  className="rounded border border-theme bg-transparent px-4 py-2  text-xs font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white sm:text-sm md:text-base lg:text-lg xl:text-xl"
+                >
+                  Know More
+                </button>
               )}
             </div>
           </div>
