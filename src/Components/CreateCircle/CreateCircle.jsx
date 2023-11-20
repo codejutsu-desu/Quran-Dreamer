@@ -1,14 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
-import styles from "./CreateCircle.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import Spinner from "../../ui/Spinner";
+// import Spinner from "../../ui/Spinner";
 
 const StudyCircleForm = () => {
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const daysOfWeek = [
     "Sunday",
@@ -76,7 +75,7 @@ const StudyCircleForm = () => {
           setFormData({
             ...formData,
             pre_requisites: formData.pre_requisites.filter(
-              (prereq) => prereq !== selectedValue
+              (prereq) => prereq !== selectedValue,
             ),
           });
         }
@@ -103,8 +102,8 @@ const StudyCircleForm = () => {
           type === "number"
             ? parseInt(value)
             : type === "checkbox"
-            ? checked
-            : value,
+              ? checked
+              : value,
       });
     }
   };
@@ -129,7 +128,7 @@ const StudyCircleForm = () => {
             Authorization: `Bearer ${accessToken}`,
             "Content-Type": "application/json",
           },
-        }
+        },
       );
       setIsLoading(false);
       console.log(response);
@@ -172,172 +171,199 @@ const StudyCircleForm = () => {
   };
 
   return (
-    <div className={styles.mainContainer0}>
-      <div className={styles.mainContainer}>
-        <h2>Create Study Circle</h2>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.spinnerContainer}>
-            {isLoading && <Spinner />}
-          </div>
-          <div className={`${styles.category} ${styles.formField}`}>
-            <label>Select your circle category:</label>
-            <select
-              name="category"
-              value={formData.category}
-              onChange={handleInputChange}
-            >
-              <option value="">Select category</option>
-              <option value="0">Nahw Basics</option>
-              <option value="1">Sarf Basics</option>
-              <option value="2">Intermediate Nahw</option>
-              <option value="3">Advance Nahw</option>
-              <option value="4">Advanced Sarf </option>
-              <option value="5">Basic Reader</option>
-              <option value="6">Intermediate Reader</option>
-              <option value="7">Advanced Reader</option>
-            </select>
-          </div>
-
-          <div className={`${styles.days} ${styles.formField}`}>
-            <label>Select Days:</label>
-            {daysOfWeek.map((day, index) => (
-              <label className={styles.dayLabel} key={index}>
-                <input
-                  type="checkbox"
-                  name="days"
-                  value={index}
-                  checked={formData.days.includes(index)}
-                  onChange={handleInputChange}
-                />
-                {day}
-              </label>
-            ))}
-          </div>
-
-          <label className={`${styles.pre_requisites} ${styles.formField}`}>
-            Pre-requisites:
-            {prerequisites.map((prerequisite, index) => (
-              <label className={styles.dayLabel} key={index}>
-                <input
-                  type="checkbox"
-                  name="pre_requisites"
-                  value={index}
-                  checked={formData.pre_requisites.includes(index)}
-                  onChange={handleInputChange}
-                />
-                {prerequisite}
-              </label>
-            ))}
-          </label>
-
-          <div className={`${styles.dateFields} ${styles.formField}`}>
-            <label className={`${styles.dateLabel}`}>From Date:</label>
-            <input
-              type="date"
-              name="from_date"
-              value={formData.from_date}
-              onChange={handleInputChange}
-              pattern="\d{4}-\d{2}-\d{2}"
-              placeholder="YYYY-MM-DD"
-            />
-            <label className={`${styles.dateLabel}`}>To Date:</label>
-            <input
-              type="date"
-              name="to_date"
-              value={formData.to_date}
-              onChange={handleInputChange}
-              pattern="\d{4}-\d{2}-\d{2}"
-              placeholder="YYYY-MM-DD"
-            />
-          </div>
-
-          <div className={styles.timeField}>
-            <label className={`${styles.classTimingLabel}`}>
-              Class Timing:
-            </label>
-            <div className="time-input">
-              <input
-                type="time"
-                name="class_timing_from"
-                value={formData.times[0]}
-                onChange={handleInputChange}
-              />
-              <span>to</span>
-              <input
-                type="time"
-                name="class_timing_to"
-                value={formData.times[1]}
-                onChange={handleInputChange}
-              />
-            </div>
-          </div>
-
-          <label className={styles.formField}>
-            Class Link:
-            <input
-              type="text"
-              name="class_link"
-              value={formData.class_link}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label className={styles.formField}>
-            Maximum Students:
-            <input
-              type="number"
-              name="maximum_students"
-              value={formData.maximum_students}
-              onChange={handleInputChange}
-            />
-          </label>
-
-          <label className={styles.formField}>
-            Is Sister Only:
-            <input
-              type="checkbox"
-              name="is_sister_only"
-              checked={formData.is_sister_only}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label className={styles.formField}>
-            Is Exercise Based:
-            <input
-              type="checkbox"
-              name="is_exercised_based"
-              checked={formData.is_exercised_based}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label className={styles.formField}>
-            Language:
-            <select
-              name="language"
-              value={formData.language}
-              onChange={handleInputChange}
-            >
-              <option value="0">English</option>
-              <option value="1">Urdu</option>
-              <option value="2">Indonesian</option>
-              <option value="3">Uzbek</option>
-            </select>
-          </label>
-
-          <label className={styles.formField}>
-            Write about your circle (100-150 Characters)
-            <textarea
-              className={styles.about_circle}
-              name="about_circle"
-              value={formData.about_circle}
-              onChange={handleInputChange}
-            />
-          </label>
-          <button type="submit" className={styles.formField}>
-            Submit
-          </button>
-        </form>
-        <ToastContainer position="top-right" autoClose={3000} />
+    <div className="m-2 flex flex-col rounded-xl border-2 border-solid border-theme p-2">
+      <div className="my-3 ml-auto mr-auto text-base font-bold sm:text-lg md:text-xl lg:text-3xl xl:text-3xl">
+        Create Study Circle
       </div>
+      <form onSubmit={handleSubmit} className="space-y-2">
+        {/* <div className={styles.spinnerContainer}>
+          {isLoading && <Spinner />}
+        </div> */}
+        <div className="flex">
+          <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+            Select your circle category:
+          </label>
+          <select
+            name="category"
+            value={formData.category}
+            onChange={handleInputChange}
+            className="ml-2 rounded-lg bg-theme text-sm font-normal text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl "
+          >
+            <option value="">Select category</option>
+            <option value="0">Nahw Basics</option>
+            <option value="1">Sarf Basics</option>
+            <option value="2">Intermediate Nahw</option>
+            <option value="3">Advance Nahw</option>
+            <option value="4">Advanced Sarf </option>
+            <option value="5">Basic Reader</option>
+            <option value="6">Intermediate Reader</option>
+            <option value="7">Advanced Reader</option>
+          </select>
+        </div>
+
+        <div className="flex">
+          <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+            Select Days:
+          </label>
+          {daysOfWeek.map((day, index) => (
+            <label
+              className="ml-2 text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+              key={index}
+            >
+              <input
+                type="checkbox"
+                name="days"
+                value={index}
+                checked={formData.days.includes(index)}
+                onChange={handleInputChange}
+                className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+              />
+              {day}
+            </label>
+          ))}
+        </div>
+
+        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Pre-requisites:
+          {prerequisites.map((prerequisite, index) => (
+            <label className="" key={index}>
+              <input
+                type="checkbox"
+                name="pre_requisites"
+                value={index}
+                checked={formData.pre_requisites.includes(index)}
+                onChange={handleInputChange}
+              />
+              {prerequisite}
+            </label>
+          ))}
+        </label>
+
+        <div className="flex">
+          <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+            From Date:
+          </label>
+          <input
+            type="date"
+            name="from_date"
+            value={formData.from_date}
+            onChange={handleInputChange}
+            pattern="\d{4}-\d{2}-\d{2}"
+            placeholder="YYYY-MM-DD"
+            className=" rounded-lg bg-theme font-bold  text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          />
+          <label className="ml-3 text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+            To Date:
+          </label>
+          <input
+            type="date"
+            name="to_date"
+            value={formData.to_date}
+            onChange={handleInputChange}
+            pattern="\d{4}-\d{2}-\d{2}"
+            placeholder="YYYY-MM-DD"
+            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          />
+        </div>
+
+        <div className="flex">
+          <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+            Class Timing:
+          </label>
+          <div className="time-input">
+            <input
+              type="time"
+              name="class_timing_from"
+              value={formData.times[0]}
+              onChange={handleInputChange}
+              className="rounded-lg bg-theme text-sm font-bold  text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            />
+            <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+              to
+            </span>
+            <input
+              type="time"
+              name="class_timing_to"
+              value={formData.times[1]}
+              onChange={handleInputChange}
+              className="ml-3 rounded-lg bg-theme text-sm font-bold  text-white  sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            />
+          </div>
+        </div>
+
+        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Class Link:
+          <input
+            type="text"
+            name="class_link"
+            value={formData.class_link}
+            onChange={handleInputChange}
+            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          />
+        </label>
+        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Maximum Students:
+          <input
+            type="number"
+            name="maximum_students"
+            value={formData.maximum_students}
+            onChange={handleInputChange}
+            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          />
+        </label>
+
+        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Is Sister Only:
+          <input
+            type="checkbox"
+            name="is_sister_only"
+            checked={formData.is_sister_only}
+            onChange={handleInputChange}
+            className="text-sm  font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          />
+        </label>
+        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Is Exercise Based:
+          <input
+            type="checkbox"
+            name="is_exercised_based"
+            checked={formData.is_exercised_based}
+            onChange={handleInputChange}
+            className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          />
+        </label>
+        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Language:
+          <select
+            name="language"
+            value={formData.language}
+            onChange={handleInputChange}
+            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          >
+            <option value="0">English</option>
+            <option value="1">Urdu</option>
+            <option value="2">Indonesian</option>
+            <option value="3">Uzbek</option>
+          </select>
+        </label>
+
+        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Write about your circle (100-150 Characters)
+          <textarea
+            name="about_circle"
+            value={formData.about_circle}
+            onChange={handleInputChange}
+            className="block w-full rounded-lg bg-theme px-2 text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+          />
+        </label>
+        <button
+          type="submit"
+          className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
+        >
+          Submit
+        </button>
+      </form>
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
