@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import styles from "./AdminRequest.module.css";
 
 function AdminRequest({ request, serialNumber }) {
   const { request_type } = request;
@@ -20,10 +19,12 @@ function AdminRequest({ request, serialNumber }) {
   };
 
   return (
-    <div className={styles.requestContainer}>
-      <div className={styles.circle}>{serialNumber}</div>
-      <div className={styles.text}>{getRequestTypeText(request_type)}</div>
-      <button className={styles.viewButton}>View</button>
+    <div className=" ml-auto mr-auto flex w-3/4 justify-between rounded-lg border-2 border-solid border-theme p-2 ">
+      <div className="">{serialNumber}</div>
+      <div className="">{getRequestTypeText(request_type)}</div>
+      <button className="rounded border border-theme bg-transparent px-1 py-1 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white">
+        Know More
+      </button>
     </div>
   );
 }

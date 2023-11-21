@@ -1,4 +1,3 @@
-import styles from "./NavbarGeneral.module.css";
 import { NavLink } from "react-router-dom";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { useEffect, useState } from "react";
@@ -25,19 +24,25 @@ function NavbarGeneral() {
   }, []);
 
   return (
-    <div className="flex items-center justify-between bg-theme p-2 text-white">
+    <div className="flex w-auto items-center justify-between bg-theme p-2 text-white">
       <div className="h-full">
         <NavLink to="/">
           <img src="/HomeIcon.svg" alt="Icon" />
         </NavLink>
       </div>
-      <div className="text-2xl font-bold text-white">Dashboard</div>
-      <div className={styles.userInfo}>
+      <div className="text-base font-bold text-white md:text-lg lg:text-xl xl:text-2xl">
+        Dashboard
+      </div>
+      <div className="flex items-center">
         <MdOutlinePersonOutline className="h-full w-12 font-sans" />
 
-        <div className={styles.userNameandPosition}>
-          <div className={styles.userPosition}>{userType}</div>
-          <div className={styles.userName}>{user}</div>
+        <div className="flex flex-col items-center">
+          <div className="text-base md:text-lg lg:text-xl xl:text-2xl">
+            {userType}
+          </div>
+          <div className="text-base md:text-lg lg:text-xl xl:text-2xl">
+            {user}
+          </div>
         </div>
       </div>
     </div>

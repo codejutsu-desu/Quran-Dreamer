@@ -1,4 +1,3 @@
-import styles from "./AdminDashboardNav.module.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -21,29 +20,43 @@ function AdminDashboardNav() {
   };
 
   return (
-    <div className={styles.container}>
-      <img src="/greenHomeIcon.svg" alt="" />
+    <div className="flex items-center justify-start space-x-3 p-2 pl-5 font-sans font-extrabold">
+      {/* <img src="/greenHomeIcon.svg" alt="" /> */}
       <button
-        className={activeButton === "Main" ? styles.active : ""}
+        className={
+          activeButton === "Main" ? "border-b-2 border-solid border-theme" : ""
+        }
         onClick={() => handleButtonClick("Main")}
       >
         Main
       </button>
       <button
-        className={activeButton === "Requests" ? styles.active : ""}
+        className={
+          activeButton === "Requests"
+            ? "border-b-2 border-solid border-theme"
+            : ""
+        }
         onClick={() => handleButtonClick("Requests")}
       >
         Requests
       </button>
       <button
-        className={activeButton === "All Admins" ? styles.active : ""}
+        className={
+          activeButton === "All Admins"
+            ? "border-b-2 border-solid border-theme"
+            : ""
+        }
         onClick={() => handleButtonClick("All Admins")}
       >
         All Admins
       </button>
 
       <button
-        className={activeButton === "Groups" ? styles.active : ""}
+        className={
+          activeButton === "Groups"
+            ? "border-b-2 border-solid border-theme"
+            : ""
+        }
         onClick={() => handleButtonClick("Groups")}
       >
         Groups

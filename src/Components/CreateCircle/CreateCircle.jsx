@@ -112,7 +112,7 @@ const StudyCircleForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    // setIsLoading(true);
 
     if (!accessToken) {
       console.error("Access token not found in local storage");
@@ -130,7 +130,7 @@ const StudyCircleForm = () => {
           },
         },
       );
-      setIsLoading(false);
+      // setIsLoading(false);
       console.log(response);
 
       toast.success("Circle created successfully");
@@ -153,7 +153,7 @@ const StudyCircleForm = () => {
 
       navigate("/appLayoutMentor/approvalPending");
     } catch (error) {
-      setIsLoading(false);
+      // setIsLoading(false);
       console.error(error);
       let data = error.response.data;
       let first_error = Object.values(data)[0];
@@ -187,7 +187,7 @@ const StudyCircleForm = () => {
             name="category"
             value={formData.category}
             onChange={handleInputChange}
-            className="ml-2 rounded-lg bg-theme text-sm font-normal text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl "
+            className="ml-2 rounded-lg border-2 border-solid border-theme bg-transparent text-sm font-normal text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl "
           >
             <option value="">Select category</option>
             <option value="0">Nahw Basics</option>
@@ -250,7 +250,7 @@ const StudyCircleForm = () => {
             onChange={handleInputChange}
             pattern="\d{4}-\d{2}-\d{2}"
             placeholder="YYYY-MM-DD"
-            className=" rounded-lg bg-theme font-bold  text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="  rounded-lg border-2 border-solid border-theme bg-transparent font-bold  text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
           <label className="ml-3 text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             To Date:
@@ -262,7 +262,7 @@ const StudyCircleForm = () => {
             onChange={handleInputChange}
             pattern="\d{4}-\d{2}-\d{2}"
             placeholder="YYYY-MM-DD"
-            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="  rounded-lg border-2 border-solid border-theme bg-transparent font-bold  text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
         </div>
 
@@ -276,7 +276,7 @@ const StudyCircleForm = () => {
               name="class_timing_from"
               value={formData.times[0]}
               onChange={handleInputChange}
-              className="rounded-lg bg-theme text-sm font-bold  text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+              className="  rounded-lg border-2 border-solid border-theme bg-transparent text-sm font-bold  text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             />
             <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
               to
@@ -286,7 +286,7 @@ const StudyCircleForm = () => {
               name="class_timing_to"
               value={formData.times[1]}
               onChange={handleInputChange}
-              className="ml-3 rounded-lg bg-theme text-sm font-bold  text-white  sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+              className="  rounded-lg border-2 border-solid border-theme bg-transparent text-sm font-bold  text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             />
           </div>
         </div>
@@ -298,7 +298,7 @@ const StudyCircleForm = () => {
             name="class_link"
             value={formData.class_link}
             onChange={handleInputChange}
-            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="rounded-lg  border-2 border-solid border-theme bg-transparent text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
         </label>
         <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
@@ -308,7 +308,7 @@ const StudyCircleForm = () => {
             name="maximum_students"
             value={formData.maximum_students}
             onChange={handleInputChange}
-            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="rounded-lg  border-2 border-solid border-theme bg-transparent text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
         </label>
 
@@ -338,7 +338,7 @@ const StudyCircleForm = () => {
             name="language"
             value={formData.language}
             onChange={handleInputChange}
-            className="rounded-lg bg-theme text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="rounded-lg  border-2 border-solid border-theme bg-transparent text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           >
             <option value="0">English</option>
             <option value="1">Urdu</option>
@@ -353,12 +353,12 @@ const StudyCircleForm = () => {
             name="about_circle"
             value={formData.about_circle}
             onChange={handleInputChange}
-            className="block w-full rounded-lg bg-theme px-2 text-sm font-bold text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            className="block w-full rounded-lg border-2 border-solid border-theme bg-transparent px-2 text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
         </label>
         <button
           type="submit"
-          className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
+          className="rounded  border-2  border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
         >
           Submit
         </button>

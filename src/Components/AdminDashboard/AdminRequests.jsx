@@ -24,7 +24,7 @@ function AdminRequests() {
   }, [token]);
 
   return (
-    <div>
+    <div className="flex flex-col space-y-2">
       {requests.map((request, index) => (
         <AdminRequest key={index} request={request} serialNumber={index + 1} />
       ))}
