@@ -32,6 +32,7 @@ import AdminMain from "./Components/AdminDashboard/AdminMain";
 import AdminRequests from "./Components/AdminDashboard/AdminRequests";
 import AdminAll from "./Components/AdminDashboard/AdminAll";
 import AdminGroups from "./Components/AdminDashboard/AdminGroups";
+import RequestDetail from "./Components/AdminDashboard/RequestDetail";
 
 function App() {
   return (
@@ -95,6 +96,7 @@ function App() {
           <Route index element={<AdminMain />} />
           <Route path="main" element={<AdminMain />} />
           <Route path="requests" element={<AdminRequests />} />
+          <Route path="request/:id" element={<RequestDetail />} />
           <Route path="adminAll" element={<AdminAll />} />
           <Route path="adminGroups" element={<AdminGroups />} />
         </Route>
