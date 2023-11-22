@@ -9,6 +9,8 @@ function DreamCirclesBody() {
   const dispatch = useDispatch();
   const circleData = useSelector((state) => state.studyCircles);
   const joinedCircles = useSelector((state) => state.joinedCircles);
+  const response = useSelector((state) => state.auth);
+  console.log(response);
 
   const [selectedLanguage, setSelectedLanguage] = useState(4);
   const [selectedGender, setSelectedGender] = useState(2);
@@ -30,12 +32,12 @@ function DreamCirclesBody() {
       .filter((circle) => {
         if (selectedLanguage === 4) {
           return !joinedCircles.some(
-            (joinedCircle) => joinedCircle.id === circle.id
+            (joinedCircle) => joinedCircle.id === circle.id,
           );
         } else {
           return (
             !joinedCircles.some(
-              (joinedCircle) => joinedCircle.id === circle.id
+              (joinedCircle) => joinedCircle.id === circle.id,
             ) && circle.language === selectedLanguage
           );
         }

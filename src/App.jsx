@@ -96,7 +96,7 @@ function App() {
           <Route index element={<AdminMain />} />
           <Route path="main" element={<AdminMain />} />
           <Route path="requests" element={<AdminRequests />} />
-          <Route path="request/:id" element={<RequestDetail />} />
+          <Route path="request/:object_pk/:id" element={<RequestDetail />} />
           <Route path="adminAll" element={<AdminAll />} />
           <Route path="adminGroups" element={<AdminGroups />} />
         </Route>

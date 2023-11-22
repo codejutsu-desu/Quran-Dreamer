@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../auth";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppLayout from "../Pages/AppLayout";
+import { loginUser } from "../actions";
+import { useDispatch } from "react-redux";
 // import Spinner from "../ui/Spinner";
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const response = useSelector((state) => state.auth);
+  const dispatch = useDispatch(); // Initialize the useDispatch hook
+
   const handleJoinClickStudent = () => {
     navigate("./join/2");
   };
@@ -28,34 +28,26 @@ const Login = () => {
     });
   };
 
-  // Handler for form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Dispatch the loginUser action
-    dispatch(loginUser(formData));
-  };
+    // Dispatch the loginUser action with the form data
+    dispatch(loginUser(formData)).then(() => {
+      // Access user_type from local storage after successful login
+      const user_type = localStorage.getItem("user_type");
 
-  useEffect(() => {
-    // Handle redirection and local storage update when the loginSuccess action is dispatched
-    if (response.isAuthenticated) {
-      localStorage.setItem("token", response.token);
-      localStorage.setItem("user", response.name);
-      localStorage.setItem("user_type", response.user_type);
-
-      if (response.user_type === 2) {
+      // Navigate based on user_type
+      if (user_type === "2") {
         navigate("/appLayoutStudent");
-      } else if (response.user_type === 1) {
+      } else if (user_type === "1") {
         navigate("/appLayoutMentor");
-      } else if (response.user_type === 0) {
+      } else if (user_type === "0") {
         navigate("/adminDashboardLayout");
       } else {
         alert("Invalid user type");
       }
-    } else if (response.error) {
-      alert("Login failed. Please check your credentials.");
-    }
-  }, [response, navigate]);
+    });
+  };
 
   return (
     <AppLayout>
@@ -88,7 +80,7 @@ const Login = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="focus:ring-hoverTheme block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -104,7 +96,7 @@ const Login = () => {
                 <div className="text-sm">
                   <a
                     href="#"
-                    className="hover:text-hoverTheme font-semibold text-theme"
+                    className="font-semibold text-theme hover:text-hoverTheme"
                   >
                     Forgot password?
                   </a>
@@ -119,7 +111,7 @@ const Login = () => {
                   onChange={handleChange}
                   autoComplete="current-password"
                   required
-                  className="focus:ring-hoverTheme block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -127,7 +119,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="hover:bg-hoverTheme flex w-full justify-center rounded-md bg-theme px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-theme px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-hoverTheme focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Log in
               </button>
@@ -138,7 +130,7 @@ const Login = () => {
             Not yet signup?
             <a
               onClick={handleJoinClickStudent}
-              className="hover:text-hoverTheme font-semibold leading-6 text-theme"
+              className="font-semibold leading-6 text-theme hover:text-hoverTheme"
             >
               Join us
             </a>

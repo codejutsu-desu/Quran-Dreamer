@@ -44,7 +44,7 @@ const StudyCircleForm = () => {
     is_sister_only: false,
     is_exercised_based: false,
     language: "0",
-    is_approved: true,
+    is_approved: false,
   });
 
   const handleInputChange = (e) => {

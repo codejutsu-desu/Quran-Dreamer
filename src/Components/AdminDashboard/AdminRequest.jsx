@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 function AdminRequest({ request, serialNumber }) {
-  const { request_type, id } = request;
+  const { request_type, object_pk, id } = request;
   const navigate = useNavigate();
 
   const getRequestTypeText = (type) => {
@@ -22,11 +22,11 @@ function AdminRequest({ request, serialNumber }) {
 
   const handleClick = () => {
     // Use the Navigate function properly
-    navigate(`/adminDashboardLayout/request/${id}`);
+    navigate(`/adminDashboardLayout/request/${object_pk}/${id}`);
   };
 
   return (
-    <div className=" ml-auto mr-auto flex w-3/4 justify-between rounded-lg border-2 border-solid border-theme p-2 ">
+    <div className="ml-auto mr-auto flex w-3/4 justify-between rounded-lg border-2 border-solid border-theme p-2 ">
       <div className="">{serialNumber}</div>
       <div className="">{getRequestTypeText(request_type)}</div>
       <button
@@ -43,7 +43,8 @@ function AdminRequest({ request, serialNumber }) {
 AdminRequest.propTypes = {
   request: PropTypes.shape({
     request_type: PropTypes.number.isRequired,
-    id: PropTypes.number.isRequired, // Move id validation inside the request shape
+    object_pk: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
   }).isRequired,
   serialNumber: PropTypes.number.isRequired,
 };

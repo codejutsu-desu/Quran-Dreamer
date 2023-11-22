@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AdminRequest from "./AdminRequest";
-import { useSelector } from "react-redux";
 
 function AdminRequests() {
+  // Fetch the token from the auth reducer
+
   const [requests, setRequests] = useState([]);
-  const token = useSelector((state) => state.auth.token);
-  console.log(token);
+
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     axios
@@ -21,7 +22,7 @@ function AdminRequests() {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, [token]);
+  }, [token]); // Include token as a dependency to re-run the effect when the token changes
 
   return (
     <div className="flex flex-col space-y-2">

@@ -1,19 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react"; // Import useState
 import axios from "axios";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-
-// mentor - 0;
-// circle-1
-// file - 2;
-// recording-3
+import CircleRequest from "./CircleRequest";
 
 function RequestDetail() {
-  const token = useSelector((state) => state.auth.token);
-  console.log(token);
-  const { id } = useParams(); // Fix: Use parentheses to call useParams
+  const token = localStorage.getItem("token");
+  const { object_pk, id } = useParams();
+  const [circleResponse, setCircleResponse] = useState(null); // Use useState to store circleResponse
 
-  const fetchData = async (id) => {
+  const fetchData = async () => {
     try {
       const response = await axios.get(
         `http://13.126.8.147/api/quran_dreamers/admin_request/${id}`,
@@ -25,16 +20,41 @@ function RequestDetail() {
       );
 
       console.log("Response:", response.data);
+
+      // Move the if statement outside of the axios.get block
+      if (response.data.request_type === 1) {
+        const circleResponse = await axios.get(
+          `http://13.126.8.147/api/quran_dreamers/study_circle/${object_pk}`, // Use 'id' instead of 'response.data.request_type'
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        );
+
+        console.log("Circle Response:", circleResponse.data);
+        setCircleResponse(circleResponse.data); // Update state with circleResponse
+      }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
   useEffect(() => {
-    fetchData(id);
-  }, [id]); // Fix: Include id in the dependency array to re-run the effect when id changes
+    fetchData();
+  }, [id]);
 
-  return <div>Hello</div>;
+  return (
+    <div>
+      {circleResponse && (
+        <CircleRequest
+          object_pk={object_pk}
+          id={id}
+          formData={circleResponse}
+        />
+      )}{" "}
+    </div>
+  );
 }
 
 export default RequestDetail;

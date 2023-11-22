@@ -1,21 +1,13 @@
 // reducers.js
 import { combineReducers } from "redux";
-import authReducer from "./auth";
+import authReducer from "./authReducers";
+
 // Initial state
 const initialState = {
   studyCircles: [],
   circleData: {}, // Set circleData as an empty object
   classRecordings: [],
   joinedCircles: [],
-  auth: {
-    token: null,
-    name: null,
-    user_id: null,
-    user_type: null,
-    isAuthenticated: false,
-    isLoading: false,
-    error: null,
-  },
 };
 
 // Reducer for studyCircles
@@ -42,7 +34,7 @@ const circleReducer = (state = initialState.circleData, action) => {
 
 const classRecordingsReducer = (
   state = initialState.classRecordings,
-  action
+  action,
 ) => {
   switch (action.type) {
     case "FETCH_CLASS_RECORDINGS":
@@ -68,7 +60,7 @@ const rootReducer = combineReducers({
   circleData: circleReducer, // Use the correct property name
   classRecordings: classRecordingsReducer,
   joinedCircles: joinedCirclesReducer,
-  auth: authReducer,
+  authentication: authReducer,
 
   // Add more reducers here if needed
 });
