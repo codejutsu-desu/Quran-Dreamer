@@ -72,7 +72,7 @@ function DreamCircleCard({ circle }) {
   if (daysLeft !== "Session Expired") {
     knowMoreLink = (
       <NavLink to={`/appLayoutStudent/circleInfo/${circle.id}`}>
-        <div className="bg-hoverTheme flex h-7 w-[100px] items-center justify-center rounded-lg  px-1 text-sm font-bold text-white">
+        <div className="flex h-7 w-[100px] items-center justify-center rounded-lg bg-hoverTheme  px-1 text-sm font-bold text-white">
           Know More
         </div>
       </NavLink>

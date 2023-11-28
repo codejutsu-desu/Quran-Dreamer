@@ -20,7 +20,6 @@ const StudyCircleForm = () => {
   ];
 
   const prerequisites = [
-    "Can Read Qur'an",
     "Nahw Basics",
     "Sarf Basics",
     "Intermediate Nahw",
@@ -301,7 +300,7 @@ const StudyCircleForm = () => {
             className="rounded-lg  border-2 border-solid border-theme bg-transparent text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
         </label>
-        <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+        <label className="flex space-x-2 text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
           Maximum Students:
           <input
             type="number"

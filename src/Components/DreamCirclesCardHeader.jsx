@@ -18,16 +18,16 @@ function DreamCirclesCardHeader({
   return (
     <div className="flex max-w-[100%] justify-between px-4 pt-2 ">
       <div className="">
-        <div className="text-xs font-bold md:text-xl lg:text-3xl xl:text-4xl">
+        <div className="text-md font-bold md:text-xl lg:text-3xl xl:text-4xl">
           Dream Circles
         </div>
-        <div className="text-xs font-normal md:text-lg lg:text-xl xl:text-2xl ">
+        <div className="text-md font-normal md:text-lg lg:text-xl xl:text-2xl ">
           There are only {filteredCircles.length} dream circles available
         </div>
       </div>
       <div className="flex space-x-2">
         <div className="">
-          <label className="text-xs md:text-lg lg:text-xl xl:text-2xl">
+          <label className="text-sm md:text-lg lg:text-xl xl:text-2xl">
             Language
           </label>
           <select

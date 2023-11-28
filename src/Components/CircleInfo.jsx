@@ -171,7 +171,7 @@ function CircleInfo() {
                   onClick={handleJoinCircle}
                   className="rounded border border-theme bg-transparent px-4 py-2  text-xs font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white sm:text-sm md:text-base lg:text-lg xl:text-xl"
                 >
-                  Know More
+                  Join{" "}
                 </button>
               )}
             </div>

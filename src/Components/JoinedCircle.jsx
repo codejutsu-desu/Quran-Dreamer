@@ -70,7 +70,7 @@ function JoinedCircle({ circle }) {
   if (daysLeft !== "Session Expired") {
     knowMoreLink = (
       <NavLink to={`/appLayoutStudent/circleInfo/${circle.id}`}>
-        <div className="bg-hoverTheme flex h-7 w-[100px] items-center justify-center rounded-lg  px-1 text-sm font-bold text-white">
+        <div className="flex h-7 w-[100px] items-center justify-center rounded-lg bg-hoverTheme  px-1 text-sm font-bold text-white">
           Know More
         </div>
       </NavLink>
@@ -80,7 +80,7 @@ function JoinedCircle({ circle }) {
   return (
     <div className="m-4 flex max-h-[400px] min-h-[200px]  flex-col justify-between rounded-lg border-2 border-solid border-theme p-2 ">
       <div className="flex items-center justify-start">
-        <div className="bg-hoverTheme mr-3 flex h-10 max-w-[32px] items-center justify-center rounded-lg px-2 font-bold text-white">
+        <div className="mr-3 flex h-10 max-w-[32px] items-center justify-center rounded-lg bg-hoverTheme px-2 font-bold text-white">
           {logoInitials}
         </div>
         <div>
