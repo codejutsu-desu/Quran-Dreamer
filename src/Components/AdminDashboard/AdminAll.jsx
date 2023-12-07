@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./AdminAll.module.css";
 
 function AdminAll() {
   const [adminData, setAdminData] = useState([]);
@@ -36,24 +35,34 @@ function AdminAll() {
   }, [token]);
 
   return (
-    <table className={styles.adminTable}>
-      <thead>
-        <tr>
-          <th>Sr</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Email Verified</th>
+    <table className="w-full overflow-x-scroll text-left text-xs text-gray-500 rtl:text-right">
+      <thead className="bg-gray-50 text-xs uppercase text-gray-700">
+        <tr className="text-xs">
+          {/* <th scope="col" className="px-6 py-3">
+              Sr
+            </th> */}
+          <th scope="col" className="px-6 py-3">
+            Name
+          </th>
+          <th scope="col" className="px-6 py-3">
+            Email
+          </th>
+          <th scope="col" className="px-6 py-3">
+            Email Verified
+          </th>
         </tr>
       </thead>
       <tbody>
         {adminData.map((row) => (
-          <tr key={row.sr}>
-            <td>{row.sr}</td>
-            <td>
+          <tr key={row.sr} className="border-b bg-white">
+            {/* <td className="px-6 py-4 text-xs">{row.sr}</td> */}
+            <td className="px-6 py-4 text-xs">
               {row.first_name} {row.last_name}
             </td>
-            <td>{row.email}</td>
-            <td>{row.isEmailVerified ? "Yes" : "No"}</td>
+            <td className="text-wrap px-6 py-4 text-sm">{row.email}</td>
+            <td className="px-6 py-4 text-xs">
+              {row.isEmailVerified ? "Yes" : "No"}
+            </td>
           </tr>
         ))}
       </tbody>

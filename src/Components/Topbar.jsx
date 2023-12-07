@@ -27,9 +27,13 @@ function Topbar() {
 
         {token ? (
           <>
-            {user_type !== "0" && (
+            {user_type !== "0" ? (
               <NavLink to="/appLayoutStudent" className="flex items-center">
                 <li>All Circles</li>
+              </NavLink>
+            ) : (
+              <NavLink to="./adminDashboardLayout">
+                <li>Dashboard</li>
               </NavLink>
             )}
             <li className="cursor-pointer" onClick={handleLogout}>

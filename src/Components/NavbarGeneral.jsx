@@ -24,7 +24,7 @@ function NavbarGeneral() {
   }, []);
 
   return (
-    <div className="flex w-auto items-center justify-between bg-theme p-2 text-white">
+    <div className="flex w-full items-center justify-between bg-theme p-2 text-white">
       <div className="h-full">
         <NavLink to="/">
           <img src="/HomeIcon.svg" alt="Icon" />

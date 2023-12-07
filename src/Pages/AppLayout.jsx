@@ -1,11 +1,10 @@
 import Bottombar from "../Components/Bottombar";
 import Topbar from "../Components/Topbar";
-import styles from "./AppLayout.module.css";
 import PropTypes from "prop-types";
 
 function AppLayout({ children }) {
   return (
-    <div className={styles.appLayout}>
+    <div className="min-h-screen flex-col justify-between">
       <Topbar />
       <main>{children}</main>
       <Bottombar />
