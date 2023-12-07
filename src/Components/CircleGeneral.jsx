@@ -66,7 +66,9 @@ function CircleGeneral({ circle }) {
   return (
     <div>
       <div className="ml-5 mr-5 mt-5">
-        <div className="font-bold">General Information</div>
+        <div className="font-bold sm:text-lg md:text-xl lg:text-2xl">
+          General Information
+        </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class Duration</div>
           <div>{duration}</div>
@@ -76,13 +78,13 @@ function CircleGeneral({ circle }) {
           <div>{classDays}</div>
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
-          <div>Class timing</div>
+          <div>Class length</div>
           <div>
             {from_date} to {to_date}
           </div>
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
-          <div>Class length</div>
+          <div>Class timing</div>
           <div>
             {startTime} to {endTime}, {userTimezone}
           </div>

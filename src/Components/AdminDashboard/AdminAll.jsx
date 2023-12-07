@@ -35,19 +35,19 @@ function AdminAll() {
   }, [token]);
 
   return (
-    <table className="w-full overflow-x-scroll text-left text-xs text-gray-500 rtl:text-right">
-      <thead className="bg-gray-50 text-xs uppercase text-gray-700">
-        <tr className="text-xs">
+    <table className="mx-2 w-full overflow-x-scroll text-left text-xs text-black rtl:text-right md:text-lg xl:text-xl">
+      <thead className="bg-white text-xs uppercase text-black md:text-lg xl:text-xl">
+        <tr className="text-xs md:text-lg xl:text-xl">
           {/* <th scope="col" className="px-6 py-3">
               Sr
             </th> */}
-          <th scope="col" className="px-6 py-3">
+          <th scope="col" className="">
             Name
           </th>
-          <th scope="col" className="px-6 py-3">
+          <th scope="col" className="">
             Email
           </th>
-          <th scope="col" className="px-6 py-3">
+          <th scope="col" className="">
             Email Verified
           </th>
         </tr>
@@ -56,11 +56,13 @@ function AdminAll() {
         {adminData.map((row) => (
           <tr key={row.sr} className="border-b bg-white">
             {/* <td className="px-6 py-4 text-xs">{row.sr}</td> */}
-            <td className="px-6 py-4 text-xs">
+            <td className=" py-4 text-xs md:text-lg xl:text-xl">
               {row.first_name} {row.last_name}
             </td>
-            <td className="text-wrap px-6 py-4 text-sm">{row.email}</td>
-            <td className="px-6 py-4 text-xs">
+            <td className="text-wrap py-4 text-xs  md:text-lg xl:text-xl">
+              {row.email}
+            </td>
+            <td className="py-4 text-xs md:text-lg xl:text-xl">
               {row.isEmailVerified ? "Yes" : "No"}
             </td>
           </tr>

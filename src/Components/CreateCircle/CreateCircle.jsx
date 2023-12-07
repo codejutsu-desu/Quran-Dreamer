@@ -30,6 +30,8 @@ const StudyCircleForm = () => {
     "Advanced Reader",
   ];
 
+  const [isUnlimited, setIsUnlimited] = useState(false);
+
   const [formData, setFormData] = useState({
     days: [],
     from_date: "",
@@ -170,7 +172,7 @@ const StudyCircleForm = () => {
   };
 
   return (
-    <div className="m-2 flex flex-col rounded-xl border-2 border-solid border-theme p-2">
+    <div className="m-2 flex min-h-screen flex-col rounded-xl border-2 border-solid border-theme p-2">
       <div className="my-3 ml-auto mr-auto text-base font-bold sm:text-lg md:text-xl lg:text-3xl xl:text-3xl">
         Create Study Circle
       </div>
@@ -300,16 +302,30 @@ const StudyCircleForm = () => {
             className="rounded-lg  border-2 border-solid border-theme bg-transparent text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
         </label>
-        <label className="flex space-x-2 text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-          Maximum Students:
+        <label className="mr-1 text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+          Limit Maximum Student:
           <input
-            type="number"
-            name="maximum_students"
-            value={formData.maximum_students}
-            onChange={handleInputChange}
-            className="rounded-lg  border-2 border-solid border-theme bg-transparent text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            type="checkbox"
+            name="is_unlimited_student_limit"
+            checked={isUnlimited}
+            onChange={(e) => setIsUnlimited(e.target.checked)} // Update state on change
+            className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl"
           />
         </label>
+        {isUnlimited && (
+          <label className="flex  space-x-2 text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
+            Maximum Students:
+            <input
+              type="number"
+              name="maximum_students"
+              value={formData.maximum_students}
+              min={1}
+              max={Number.MAX_SAFE_INTEGER}
+              onChange={handleInputChange}
+              className="rounded-lg  border-2 border-solid border-theme bg-transparent text-sm font-bold text-black sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+            />
+          </label>
+        )}
 
         <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
           Is Sister Only:
