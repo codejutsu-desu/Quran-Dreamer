@@ -84,7 +84,9 @@ function CircleCurriculum({ circle }) {
   return (
     <div className="ml-5 mt-5 text-base sm:text-lg md:text-xl lg:text-2xl">
       <div className="font-bold">Curriculum</div>
-      <ul className="list-disc pl-5">{renderCategoryItems()}</ul>
+      <ul className="list-disc pl-5 text-start text-xs sm:text-sm md:text-lg lg:text-xl">
+        {renderCategoryItems()}
+      </ul>
     </div>
   );
 }

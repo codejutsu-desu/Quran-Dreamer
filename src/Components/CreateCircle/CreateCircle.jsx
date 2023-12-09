@@ -154,19 +154,18 @@ const StudyCircleForm = () => {
 
       navigate("/appLayoutMentor/approvalPending");
     } catch (error) {
-      // setIsLoading(false);
       console.error(error);
       let data = error.response.data;
       let first_error = Object.values(data)[0];
 
       if (first_error && first_error.length > 0) {
-        // Display the first error
-        console.log(first_error[0]);
-        alert("Error creating circle: " + first_error[0]);
+        toast.error("Error creating circle: " + first_error[0], {
+          position: "top-center",
+          hideProgressBar: true,
+          autoClose: 3000,
+        });
       } else {
-        // Handle the case where there are no errors or the structure is unexpected
-        console.error("Unexpected error response structure:", data);
-        alert("Unexpected error creating circle.");
+        toast.error("Unexpected error creating circle.");
       }
     }
   };

@@ -4,6 +4,8 @@ import AppLayout from "./AppLayout";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../ui/Spinner";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUpForm = () => {
   const { user_type } = useParams();
@@ -48,29 +50,49 @@ const SignUpForm = () => {
     try {
       const response = await axios.post(
         "http://13.126.8.147/api/quran_dreamers/signup/",
-        formData
+        formData,
       );
       setIsLoading(false);
 
       if (response.data) {
-        alert("Sign up successful.");
+        toast.success("Sign up successful.");
         navigate("/login");
       }
     } catch (error) {
-      console.error(error);
+      console.error(error.response.data);
       setIsLoading(false);
       if (error.response.data.email) {
-        alert("Sign up failed: " + error.response.data.email[0]);
+        toast.error("Sign up failed: " + error.response.data.email[0], {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+        });
       } else if (error.response.data.non_field_errors) {
-        alert("Sign up failed: " + error.response.data.non_field_errors[0]);
+        toast.error(
+          "Sign up failed: " + error.response.data.non_field_errors[0],
+          {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: true,
+          },
+        );
+      } else if (error.response.data.about_me) {
+        toast.error(`Sign up failed: ${error.response.data.about_me[0]} `, {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: true,
+        });
       } else {
-        alert("Sign up failed for some reason");
+        let data = error.response.data;
+        let first_error = Object.values(data)[0];
+        toast.error(first_error[0]);
       }
     }
   };
 
   return (
     <AppLayout>
+      <ToastContainer />
       <div className={styles.signupTitle}>Sign Up As {userType}</div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>

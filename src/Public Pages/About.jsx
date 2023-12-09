@@ -3,7 +3,7 @@ import AppLayout from "../Pages/AppLayout";
 function About() {
   return (
     <AppLayout>
-      <div className="flex flex-col items-center space-y-2 pl-3 pr-3">
+      <div className="ml-auto mr-auto mt-3 flex w-3/4 flex-col items-center justify-center space-y-2 rounded-lg border-2 border-solid border-theme pl-3 pr-3">
         <p className=" md xl text-center  text-lg font-extrabold text-theme md:text-2xl xl:text-3xl ">
           Understand the Quran, Conquer the World! <br />
         </p>

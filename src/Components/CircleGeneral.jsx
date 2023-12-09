@@ -71,32 +71,38 @@ function CircleGeneral({ circle }) {
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class Duration</div>
-          <div>{duration}</div>
+          <div className="text-center text-xs sm:text-sm md:text-lg lg:text-xl ">
+            {duration}
+          </div>
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class days</div>
-          <div>{classDays}</div>
+          <div className="text-center text-xs sm:text-sm md:text-lg lg:text-xl ">
+            {classDays}
+          </div>
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class length</div>
-          <div>
+          <div className="text-center text-xs sm:text-sm md:text-lg lg:text-xl ">
             {from_date} to {to_date}
           </div>
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>Class timing</div>
-          <div>
+          <div className="text-center text-xs sm:text-sm md:text-lg lg:text-xl ">
             {startTime} to {endTime}, {userTimezone}
           </div>
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>About</div>
-          <div>{about_circle}</div>
+          <div className="text-center text-xs sm:text-sm md:text-lg lg:text-xl ">
+            {about_circle}
+          </div>
         </div>
       </div>
       <div className="ml-5 mt-5 text-base sm:text-lg md:text-xl lg:text-2xl ">
         <div>Prerequisite</div>
-        <ul className="list-disc pl-5">
+        <ul className="list-disc pl-5 text-start text-xs sm:text-sm md:text-lg lg:text-xl">
           <li>This Feature will be available from next version</li>
           <li>This Feature will be available from next version</li>
           <li>This Feature will be available from next version</li>
