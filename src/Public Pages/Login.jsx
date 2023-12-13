@@ -40,7 +40,7 @@ const Login = () => {
       if (user_type === "2") {
         navigate("/appLayoutStudent");
       } else if (user_type === "1") {
-        navigate("/appLayoutMentor");
+        navigate("/dashboardMentorLayout");
       } else if (user_type === "0") {
         navigate("/adminDashboardLayout");
       } else {
