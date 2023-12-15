@@ -35,6 +35,7 @@ import AdminGroups from "./Components/AdminDashboard/AdminGroups";
 import RequestDetail from "./Components/AdminDashboard/RequestDetail";
 import ResetPassword from "./Public Pages/ResetPassword";
 import PasswordReset from "./Public Pages/PasswordReset";
+import MentorExperience from "./Components/MentorDashboard/MentorExperience";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="resetPass" element={<ResetPassword />} />
         <Route path="newPass/:reset_token" element={<PasswordReset />} />
         <Route path="join/:user_type" element={<Signup />} />
+        <Route path="join/mentorExperience" element={<MentorExperience />} />
 
         {/* miscellaneous routes */}
         <Route path="notes" element={<Notes />} />
