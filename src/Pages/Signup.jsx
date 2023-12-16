@@ -53,10 +53,11 @@ const SignUpForm = () => {
         formData,
       );
       setIsLoading(false);
+      console.log(response.data.is_experienced);
 
-      if (response.data) {
+      if (response.data.is_experienced === true) {
         toast.success("Sign up successful.");
-        navigate("/login");
+        navigate("/join/mentorExperience");
       }
     } catch (error) {
       console.error(error.response.data);

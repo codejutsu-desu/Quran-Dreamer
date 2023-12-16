@@ -18,22 +18,18 @@ function Bottombar() {
             rel="noreferrer"
             className="h-full w-10"
           >
-            <img
-              src="/Instagram Icon.svg"
-              alt="Instagram"
-              className="h-full w-full "
-            />
+            <img src="/insta.svg" alt="Instagram" className="h-full w-full " />
           </a>
           <a
             href="https://www.youtube.com/@QuranDreamers/featured"
             target="_blank"
             rel="noreferrer"
-            className="h-full w-10 object-cover"
+            className="h-full w-10 "
           >
             <img
-              src="/youtubeicon.svg"
+              src="/ytIcon.svg"
               alt="YouTube"
-              className="h-full w-full"
+              className="h-full w-full object-cover"
             />
           </a>
         </span>
