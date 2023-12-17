@@ -147,3 +147,15 @@ export const loginUser = (credentials) => async (dispatch) => {
     dispatch(loginFailure(error.message));
   }
 };
+
+// authActions.js for signup
+
+export const signUpSuccess = (userData) => ({
+  type: "SIGN_UP_SUCCESS",
+  payload: userData,
+});
+
+export const signUpFailure = (error) => ({
+  type: "SIGN_UP_FAILURE",
+  payload: error,
+});

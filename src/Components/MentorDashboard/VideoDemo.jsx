@@ -1,14 +1,42 @@
 import { useNavigate } from "react-router-dom";
 import Bottombar from "../Bottombar";
 import Topbar from "../Topbar";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import { signUpFailure } from "../../actions";
 
 function VideoDemo() {
   const navigate = useNavigate();
-  const handleClick = (e) => {
-    if (e === "Yes") {
-      navigate("join/mentorExperience/mentorPending");
-    } else if (e === "No") {
-      navigate("/dashboardMentorLayout");
+  const userData = useSelector((state) => state.auth.userData);
+  const dispatch = useDispatch();
+  const handleClick = async (e) => {
+    try {
+      const modifiedUserData = {
+        ...userData,
+        is_experienced: false,
+      };
+
+      if (e === "Yes") {
+        console.log("Form Data:", userData);
+
+        // Make the post request using form data
+        const response = await axios.post(
+          "http://13.126.8.147/api/quran_dreamers/signup/",
+          userData,
+        );
+        console.log(response);
+        navigate("/join/mentorExperience/mentorPending");
+      } else if (e === "No") {
+        const response = await axios.post(
+          "http://13.126.8.147/api/quran_dreamers/signup/",
+          modifiedUserData,
+        );
+        console.log(response);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.error(error.response.data);
+      dispatch(signUpFailure(error.response.data)); // Dispatch failure action
     }
   };
 

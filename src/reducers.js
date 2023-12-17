@@ -1,13 +1,14 @@
 // reducers.js
 import { combineReducers } from "redux";
-import authReducer from "./authReducers";
+// import authReducer from "./authReducers";
 
 // Initial state
 const initialState = {
   studyCircles: [],
-  circleData: {}, // Set circleData as an empty object
+  circleData: {},
   classRecordings: [],
   joinedCircles: [],
+  userData: null,
 };
 
 // Reducer for studyCircles
@@ -54,13 +55,33 @@ const joinedCirclesReducer = (state = initialState.joinedCircles, action) => {
   }
 };
 
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "SIGN_UP_SUCCESS":
+      return {
+        ...state,
+        userData: action.payload,
+        error: null,
+      };
+    case "SIGN_UP_FAILURE":
+      return {
+        ...state,
+        userData: null,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
 // Combine reducers if you have multiple reducers
 const rootReducer = combineReducers({
   studyCircles: studyCirclesReducer,
   circleData: circleReducer, // Use the correct property name
   classRecordings: classRecordingsReducer,
   joinedCircles: joinedCirclesReducer,
-  authentication: authReducer,
+  // authentication: authReducer,
+  auth: authReducer,
 
   // Add more reducers here if needed
 });
