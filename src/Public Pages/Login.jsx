@@ -80,7 +80,7 @@ const Login = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-2 border-theme py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ const Login = () => {
                 <div className="text-sm">
                   <a
                     href="#"
-                    className="font-semibold text-theme hover:text-hoverTheme"
+                    className=" font-semibold text-theme hover:text-hoverTheme"
                   >
                     Forgot password?
                   </a>
@@ -111,7 +111,7 @@ const Login = () => {
                   onChange={handleChange}
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md  border-2 border-theme py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
                 />
               </div>
             </div>

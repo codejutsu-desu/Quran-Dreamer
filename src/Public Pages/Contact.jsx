@@ -1,8 +1,11 @@
 import axios from "axios";
 import AppLayout from "../Pages/AppLayout";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,11 +24,25 @@ function Contact() {
     e.preventDefault();
 
     try {
-      // Make the POST request
+      const authToken = localStorage.getItem("token");
+      const headers = {
+        Authorization: `Bearer ${authToken}`,
+        "Content-Type": "application/json",
+      };
+
       const response = await axios.post(
         "http://13.126.8.147/api/quran_dreamers/contact/",
         formData,
+        { headers },
       );
+
+      toast.success("Sent your message", {
+        duration: 2000,
+        position: "top-center",
+        onClose: () => {
+          navigate("/");
+        },
+      });
 
       console.log(response.data);
 
@@ -36,13 +53,14 @@ function Contact() {
         message: "",
       });
     } catch (error) {
-      // Handle errors (you can log them for now)
+      toast.error("Error sending the message");
       console.error(error);
     }
   };
 
   return (
     <AppLayout>
+      <Toaster />
       <div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full max-w-[550px]">
           <form onSubmit={handleSubmit}>
@@ -115,8 +133,8 @@ function Contact() {
               ></textarea>
             </div>
             <div>
-              <button className="hover:shadow-form bg- rounded-md px-8 py-3 text-base font-semibold text-white outline-none">
-                Submit
+              <button className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white">
+                Submit{" "}
               </button>
             </div>
           </form>
