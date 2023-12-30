@@ -38,6 +38,7 @@ import PasswordReset from "./Public Pages/PasswordReset";
 import MentorExperience from "./Components/MentorDashboard/MentorExperience";
 import VideoDemo from "./Components/MentorDashboard/VideoDemo";
 import MentorPending from "./Components/MentorDashboard/MentorPending";
+import Contact from "./Public Pages/Contact";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
       <Routes>
         {/* guest routes */}
         <Route path="/" element={<Home />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
 
         {/* login and signup */}

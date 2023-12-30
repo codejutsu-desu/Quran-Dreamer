@@ -51,9 +51,7 @@ label {
   font-weight: 700;
 }
 
-.inputGroup input[type="text"],
-input[type="email"],
-input[type="password"],
+.inputGroup input,
 .gender,
 .about_me {
   width: 100%;
