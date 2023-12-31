@@ -4,11 +4,9 @@ import axios from "axios";
 
 function PasswordReset() {
   const Navigate = useNavigate();
-  const { resetToken } = useParams();
-  const [userId, setUserId] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const { token, uid } = useParams();
+  const [new_password1, setnew_password1] = useState("");
+  const [new_password2, setnew_password2] = useState("");
 
   const handleResetPassword = async () => {
     try {
@@ -16,10 +14,10 @@ function PasswordReset() {
       const response = await axios.post(
         "http://13.126.8.147/api/quran_dreamers/password/reset/confirm/",
         {
-          userId,
-          resetToken,
-          password,
-          confirmPassword,
+          uid,
+          token,
+          new_password1,
+          new_password2,
         },
       );
 
@@ -33,7 +31,6 @@ function PasswordReset() {
       console.error("Error resetting password:", error);
 
       // Display error message to the user
-      setError("Password reset failed. Please try again.");
     }
   };
 
@@ -58,10 +55,10 @@ function PasswordReset() {
               <input
                 type="password"
                 name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={new_password1}
+                onChange={(e) => setnew_password1(e.target.value)}
                 required
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
+                className="block  w-full  rounded-md border-2 border-theme py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -77,10 +74,10 @@ function PasswordReset() {
               <input
                 type="password"
                 name="confirmPassword"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={new_password2}
+                onChange={(e) => setnew_password2(e.target.value)}
                 required
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
+                className="block w-full  rounded-md  border-2 border-theme py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
               />
             </div>
           </div>
@@ -95,10 +92,6 @@ function PasswordReset() {
             </button>
           </div>
         </form>
-
-        {error && (
-          <p className="mt-4 text-center text-sm text-red-500">{error}</p>
-        )}
       </div>
     </div>
   );

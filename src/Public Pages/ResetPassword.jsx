@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AppLayout from "../Pages/AppLayout";
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 
 function ResetPassword() {
   const [email, setEmail] = useState("");
@@ -17,7 +17,11 @@ function ResetPassword() {
         },
       );
 
-      toast.success("Circle created successfully");
+      toast.success("Check your email", {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
       console.log("Reset Password Response:", response.data);
     } catch (error) {
       toast.error("Error while sending request ", {
@@ -30,6 +34,7 @@ function ResetPassword() {
 
   return (
     <AppLayout>
+      <Toaster />
       <div className="flex min-h-full flex-1 flex-col justify-center pb-10  font-sans ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className=" text-center text-2xl font-bold leading-9 tracking-tight text-black">
@@ -56,7 +61,7 @@ function ResetPassword() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
+                  className="block w-full  rounded-md border-2 border-theme py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -72,7 +77,10 @@ function ResetPassword() {
 
           <p className="mt-10 text-center text-sm text-theme">
             Remember password?
-            <a className="font-semibold leading-6 text-theme hover:text-hoverTheme">
+            <a
+              href="/login"
+              className="cursor-pointer font-semibold leading-6 text-theme hover:text-hoverTheme"
+            >
               Log In
             </a>
           </p>

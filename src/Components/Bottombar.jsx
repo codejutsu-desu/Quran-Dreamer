@@ -1,6 +1,6 @@
 function Bottombar() {
   return (
-    <footer className="text flex h-20 items-center  justify-between border-t border-solid border-gray-300 bg-theme  p-2 font-bold text-white">
+    <footer className="text  bottom-0 flex h-20 w-full items-center  justify-between border-t border-solid border-gray-300 bg-theme  p-2 font-bold text-white">
       <div className="md:w-15 h-3/4  w-10 xl:h-full xl:w-20">
         <img
           src="/logo.png"

@@ -88,10 +88,10 @@ function Home() {
       </div>
 
       <div className="mt-2 flex justify-center space-x-2">
-        <a href="mailto:contact.qurandreamers@gmail.com">
+        <a href="/contact">
           <img src="/Mail Icon (homepage).svg" alt="Email" />
         </a>
-        <a href="mailto:contact.qurandreamers@gmail.com">
+        <a href="/contact">
           <img src="/Q.A (homepage icon).svg" alt="Email" />
         </a>
       </div>

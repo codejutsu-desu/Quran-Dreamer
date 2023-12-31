@@ -53,7 +53,7 @@ function App() {
 
         <Route path="login" element={<Login />} />
         <Route path="resetPass" element={<ResetPassword />} />
-        <Route path="newPass/:reset_token" element={<PasswordReset />} />
+        <Route path="newPass/:uid/:token" element={<PasswordReset />} />
         <Route path="join/:user_type" element={<Signup />} />
         <Route path="join/mentorExperience" element={<MentorExperience />} />
         <Route path="join/mentorExperience/videoDemo" element={<VideoDemo />} />

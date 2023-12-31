@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function AppLayout({ children }) {
   return (
-    <div className="min-h-screen flex-col justify-between">
+    <div className="h-screen flex-col justify-between">
       <Topbar />
       <main>{children}</main>
       <Bottombar />

@@ -10,7 +10,7 @@ const Login = () => {
   const dispatch = useDispatch(); // Initialize the useDispatch hook
 
   const handleJoinClickStudent = () => {
-    navigate("./join/2");
+    navigate("/join/2");
   };
 
   // State to manage form input values
@@ -95,7 +95,7 @@ const Login = () => {
                 </label>
                 <div className="text-sm">
                   <a
-                    href="#"
+                    href="/resetPass"
                     className=" font-semibold text-theme hover:text-hoverTheme"
                   >
                     Forgot password?
@@ -130,7 +130,7 @@ const Login = () => {
             Not yet signup?
             <a
               onClick={handleJoinClickStudent}
-              className="font-semibold leading-6 text-theme hover:text-hoverTheme"
+              className="cursor-pointer font-semibold leading-6 text-theme hover:text-hoverTheme"
             >
               Join us
             </a>
