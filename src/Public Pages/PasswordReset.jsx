@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"; // Make sure to use React Router for navigation
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 function PasswordReset() {
   const Navigate = useNavigate();
@@ -10,7 +11,7 @@ function PasswordReset() {
 
   const handleResetPassword = async () => {
     try {
-      // Make Axios POST request to reset password
+      // Make Axios POST request to reset assword
       const response = await axios.post(
         "http://13.126.8.147/api/quran_dreamers/password/reset/confirm/",
         {
@@ -23,19 +24,20 @@ function PasswordReset() {
 
       // Handle the response as needed
       console.log("Password Reset Response:", response.data);
-
-      // Redirect to login page or any other page after successful password reset
       Navigate("/login");
     } catch (error) {
       // Handle errors
-      console.error("Error resetting password:", error);
-
-      // Display error message to the user
+      toast.error(error.response.data.new_password2[0], {
+        position: "top-center",
+        hideProgressBar: true,
+        autoClose: 3000,
+      });
     }
   };
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center pb-10 font-sans">
+      <Toaster />
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-black">
           Reset Your Password

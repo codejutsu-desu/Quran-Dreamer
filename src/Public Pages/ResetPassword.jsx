@@ -29,6 +29,7 @@ function ResetPassword() {
         hideProgressBar: true,
         autoClose: 3000,
       });
+      console, error(error);
     }
   };
 
