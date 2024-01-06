@@ -11,11 +11,14 @@ function AdminRequests() {
 
   useEffect(() => {
     axios
-      .get("http://13.126.8.147/api/quran_dreamers/admin_requests/", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      .get(
+        "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/admin_requests/",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      })
+      )
       .then((response) => {
         setRequests(response.data);
       })

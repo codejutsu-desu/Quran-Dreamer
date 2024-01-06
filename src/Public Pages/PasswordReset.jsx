@@ -12,7 +12,7 @@ function PasswordReset() {
     try {
       // Make Axios POST request to reset password
       const response = await axios.post(
-        "http://13.126.8.147/api/quran_dreamers/password/reset/confirm/",
+        "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/password/reset/confirm/",
         {
           uid,
           token,

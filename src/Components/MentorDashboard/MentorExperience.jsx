@@ -22,7 +22,7 @@ function MentorExperience() {
         console.log("Form Data:", userData);
 
         const response = await axios.post(
-          "http://13.126.8.147/api/quran_dreamers/signup/",
+          "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
           userData,
         );
 
@@ -34,7 +34,7 @@ function MentorExperience() {
       } else if (experience === "Less than 6 months") {
         console.log("Form Data:", modifiedUserData);
         const response = await axios.post(
-          "http://13.126.8.147/api/quran_dreamers/signup/",
+          "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
           modifiedUserData,
         );
 

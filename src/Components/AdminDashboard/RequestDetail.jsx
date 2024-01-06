@@ -11,7 +11,7 @@ function RequestDetail() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://13.126.8.147/api/quran_dreamers/admin_request/${id}`,
+        `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/admin_request/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -24,7 +24,7 @@ function RequestDetail() {
       // Move the if statement outside of the axios.get block
       if (response.data.request_type === 1) {
         const circleResponse = await axios.get(
-          `http://13.126.8.147/api/quran_dreamers/study_circle/${object_pk}`, // Use 'id' instead of 'response.data.request_type'
+          `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/study_circle/${object_pk}`, // Use 'id' instead of 'response.data.request_type'
           {
             headers: {
               Authorization: `Bearer ${token}`,

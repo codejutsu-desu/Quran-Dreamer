@@ -61,7 +61,7 @@ function CircleRequest({ formData, object_pk, id }) {
   const handleAccept = async () => {
     try {
       const response = await axios.get(
-        `http://13.126.8.147/api/quran_dreamers/reply_request/admin_request/${id}?action=accept&type=1&object_pk=${object_pk}`,
+        `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/reply_request/admin_request/${id}?action=accept&type=1&object_pk=${object_pk}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

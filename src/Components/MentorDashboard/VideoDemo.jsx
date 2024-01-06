@@ -21,14 +21,14 @@ function VideoDemo() {
 
         // Make the post request using form data
         const response = await axios.post(
-          "http://13.126.8.147/api/quran_dreamers/signup/",
+          "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
           userData,
         );
         console.log(response);
         navigate("/join/mentorExperience/mentorPending");
       } else if (e === "No") {
         const response = await axios.post(
-          "http://13.126.8.147/api/quran_dreamers/signup/",
+          "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
           modifiedUserData,
         );
         console.log(response);
