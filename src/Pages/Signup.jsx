@@ -61,7 +61,7 @@ const SignUpForm = () => {
       }
     } else {
       const response = await axios.post(
-        "http://13.126.8.147/api/quran_dreamers/signup/",
+        "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
         formData,
       );
       console.log(response);

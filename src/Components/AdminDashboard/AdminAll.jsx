@@ -13,11 +13,14 @@ function AdminAll() {
     }
 
     axios
-      .get("http://13.126.8.147/api/quran_dreamers/admins_list", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      .get(
+        "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/admins_list",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      })
+      )
       .then((response) => {
         // Assuming the response data is an array of admins
         const admins = response.data;

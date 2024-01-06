@@ -69,7 +69,7 @@ function CircleInfo() {
       // Perform the axios request
       axios
         .get(
-          `http://13.126.8.147/api/quran_dreamers/join_study_circle/study_circle/${circleId}`,
+          `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/join_study_circle/study_circle/${circleId}`,
           {
             headers,
           },

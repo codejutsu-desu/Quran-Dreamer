@@ -8,7 +8,7 @@ export const fetchStudyCircles = (token) => async (dispatch) => {
       Authorization: `Bearer ${token}`,
     };
     const response = await axios.get(
-      "http://13.126.8.147/api/quran_dreamers/study_circles/",
+      "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/study_circles/",
       {
         headers: headers,
       },
@@ -27,7 +27,7 @@ export const fetchCircleData = (token, circleId) => async (dispatch) => {
       Authorization: `Bearer ${token}`,
     };
     const response = await axios.get(
-      `http://13.126.8.147/api/quran_dreamers/study_circle/${circleId}`,
+      `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/study_circle/${circleId}`,
       {
         headers: headers,
       },
@@ -46,7 +46,7 @@ export const fetchClassRecordings = (token, circleId) => async (dispatch) => {
       Authorization: `Bearer ${token}`,
     };
     const response = await axios.get(
-      `http://13.126.8.147/api/quran_dreamers/class_recordings/study_circle/${circleId}`,
+      `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/class_recordings/study_circle/${circleId}`,
       {
         headers: headers,
       },
@@ -69,7 +69,7 @@ export const fetchJoinedCircle = (token) => async (dispatch) => {
 
     // Make the GET request to your API endpoint
     const response = await axios.get(
-      "http://13.126.8.147/api/quran_dreamers/study_circles_joined",
+      "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/study_circles_joined",
       {
         headers,
       },
@@ -112,7 +112,7 @@ export const loginUser = (credentials) => async (dispatch) => {
     dispatch(loginRequest());
 
     const response = await axios.post(
-      "http://13.126.8.147/api/quran_dreamers/login/",
+      "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/login/",
       credentials,
       {
         headers: {
