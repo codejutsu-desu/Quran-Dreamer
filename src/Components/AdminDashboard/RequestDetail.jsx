@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react"; // Import useState
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CircleRequest from "./CircleRequest";
+import MentorRequest from "./MentorRequest";
 
 function RequestDetail() {
   const token = localStorage.getItem("token");
   const { object_pk, id } = useParams();
-  const [circleResponse, setCircleResponse] = useState(null); // Use useState to store circleResponse
+  const [circleResponse, setCircleResponse] = useState(null);
+  const [mentorResponse, setMentorResponse] = useState(null);
 
   const fetchData = async () => {
     try {
@@ -21,10 +23,9 @@ function RequestDetail() {
 
       console.log("Response:", response.data);
 
-      // Move the if statement outside of the axios.get block
       if (response.data.request_type === 1) {
         const circleResponse = await axios.get(
-          `http://13.126.8.147/api/quran_dreamers/study_circle/${object_pk}`, // Use 'id' instead of 'response.data.request_type'
+          `http://13.126.8.147/api/quran_dreamers/study_circle/${object_pk}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -33,7 +34,19 @@ function RequestDetail() {
         );
 
         console.log("Circle Response:", circleResponse.data);
-        setCircleResponse(circleResponse.data); // Update state with circleResponse
+        setCircleResponse(circleResponse.data);
+      } else if (response.data.request_type === 0) {
+        const mentorResponse = await axios.get(
+          `http://13.126.8.147/api/quran_dreamers/study_circle/${object_pk}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          },
+        );
+        setMentorResponse(mentorResponse.data);
+        console.log("Mentor Response:", mentorResponse.data);
+        // Handle mentorResponse as needed
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -52,7 +65,11 @@ function RequestDetail() {
           id={id}
           formData={circleResponse}
         />
-      )}{" "}
+      )}
+
+      {mentorResponse && (
+        <MentorRequest object_pk={object_pk} id={id} mentor={mentorResponse} />
+      )}
     </div>
   );
 }

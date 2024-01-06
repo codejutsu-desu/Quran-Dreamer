@@ -24,9 +24,7 @@ function Contact() {
     e.preventDefault();
 
     try {
-      const authToken = localStorage.getItem("token");
       const headers = {
-        Authorization: `Bearer ${authToken}`,
         "Content-Type": "application/json",
       };
 
