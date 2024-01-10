@@ -37,10 +37,9 @@ function MentorExperience() {
           "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
           modifiedUserData,
         );
+        console.log(response.data);
 
-        if (response.data) {
-          navigate("/join/mentorExperience/mentorPending");
-        }
+        navigate("/join/mentorExperience/mentorPending");
       }
     } catch (error) {
       console.error(error.response.data);

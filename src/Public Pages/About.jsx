@@ -5,7 +5,7 @@ function About() {
     <AppLayout>
       <div className="ml-auto mr-auto mt-3 flex w-3/4 flex-col items-center justify-center space-y-2 rounded-lg border-2 border-solid border-theme pl-3 pr-3">
         <p className=" md xl text-center  text-lg font-extrabold text-theme md:text-2xl xl:text-3xl ">
-          Understand the Quran, Conquer the World! <br />
+          Understand the Quran, Inspire the World! <br />
         </p>
         <p className="text-center text-base md:text-lg xl:text-2xl ">
           <span className="font-bold">Our Vision</span> is to provide a global

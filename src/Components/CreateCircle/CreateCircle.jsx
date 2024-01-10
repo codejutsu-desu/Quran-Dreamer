@@ -40,7 +40,7 @@ const StudyCircleForm = () => {
     pre_requisites: [],
     about_circle: "",
     class_link: "",
-    maximum_students: "",
+    maximum_students: "0",
     category: "",
     is_sister_only: false,
     is_exercised_based: false,

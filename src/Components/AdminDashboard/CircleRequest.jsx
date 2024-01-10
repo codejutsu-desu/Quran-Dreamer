@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 
 function CircleRequest({ formData, object_pk, id }) {
   const token = localStorage.getItem("token");
@@ -80,6 +81,7 @@ function CircleRequest({ formData, object_pk, id }) {
 
   return (
     <div className="m-2 flex flex-col rounded-xl border-2 border-solid border-theme p-2">
+      <Toaster />
       <div className="my-3 ml-auto mr-auto text-base font-bold sm:text-lg md:text-xl lg:text-3xl xl:text-3xl">
         Study Circle Information
       </div>
