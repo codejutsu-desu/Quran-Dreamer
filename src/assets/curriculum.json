@@ -1,0 +1,777 @@
+{
+  "Basic Nahw": {
+    "1": {
+      "Title": "Introduction",
+      "Subtopics": [
+        {
+          "a": "Types of words"
+        },
+        {
+          "b": "Muslimun Chart"
+        }
+      ]
+    },
+    "2": {
+      "Title": "Four Properties",
+      "Subtopics": [
+        {
+          "a": "Status",
+          "i": ["Light Vs. heavy", "Flexibility"]
+        },
+        {
+          "b": "Gender"
+        },
+        {
+          "c": "Number"
+        },
+        {
+          "d": "Type"
+        }
+      ]
+    },
+    "3": {
+      "Title": "Pronouns"
+    },
+    "4": {
+      "Title": "Fragments",
+      "Subtopics": [
+        {
+          "a": "Harf of Jarr (HoJ)"
+        },
+        {
+          "b": "Harf of Nasb (HoN)"
+        },
+        {
+          "c": "Idhafah"
+        },
+        {
+          "d": "Mawsoof Sifa"
+        },
+        {
+          "e": "Ismul Ishara and Musharun Ilaihi"
+        },
+        {
+          "f": "Asmaul khamsa"
+        },
+        {
+          "g": "Kullu application"
+        }
+      ]
+    },
+    "5": {
+      "Title": "Jumlah Ismiyyah",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "Finding the invisible 'is'"
+        },
+        {
+          "c": "Grammatical Labeling"
+        }
+      ]
+    }
+  },
+  "Intermediate Nahw Topics": {
+    "1": {
+      "Title": "Jumlah Ismiyyah",
+      "Subtopics": [
+        {
+          "a": "Abnormal sentence structures"
+        },
+        {
+          "b": "“He Has” and “there is” sentences"
+        },
+        {
+          "c": "Complex sentences"
+        }
+      ]
+    },
+    "2": {
+      "Title": "Jumlah Fi’liyyah",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "Fi’l Madhi"
+        },
+        {
+          "c": "Fi’l mudare’",
+          "i": [
+            "Light & lightest Harf",
+            "Faa’il Nun attawkeed",
+            "Maf’ool",
+            "Abnormal sentence structure",
+            "Complex sentences",
+            "Difference between asmaa and af’aal"
+          ]
+        }
+      ]
+    },
+    "3": {
+      "Title": "Passive",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "Transitivity & intransitivity"
+        },
+        {
+          "c": "Rhetorical benefits of Passives"
+        }
+      ]
+    },
+    "4": {
+      "Title": "Negation",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "Negating JF"
+        },
+        {
+          "c": "Negating JI"
+        },
+        {
+          "d": "Absolute negation"
+        },
+        {
+          "e": "Shared tools of negation"
+        }
+      ]
+    },
+    "5": {
+      "Title": "Kaana & her sisters",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "Abnormal Sentence structure"
+        },
+        {
+          "c": "Complex sentence structure"
+        },
+        {
+          "d": "Negation"
+        }
+      ]
+    },
+    "6": {
+      "Title": "Compound Isms",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "نأ & نأ"
+        },
+        {
+          "c": "Tools that create compound MI"
+        },
+        {
+          "d": "Actual Masdar Vs Compound Masdar"
+        },
+        {
+          "e": "Compound Ism with نإ"
+        }
+      ]
+    },
+    "7": {
+      "Title": "Huroof Basics",
+      "Subtopics": [
+        {
+          "a": "Harf ‘atf"
+        },
+        {
+          "b": "Questioning Words"
+        },
+        {
+          "c": "Laam of Emphasis"
+        },
+        {
+          "d": "Huruuf Zaida"
+        },
+        {
+          "e": "Yaa Annisba"
+        }
+      ]
+    }
+  },
+  " Basic Sarf Topics": {
+    "1": {
+      "Title": "Introduction to Sarf",
+      "Subtopics": [
+        {
+          "a": "What is sarf"
+        },
+        {
+          "b": "و دﻣﺎﺟ قﺗﺷﻣ"
+        },
+        {
+          "c": "Contents and Container"
+        },
+        {
+          "d": "دﯾزﻣﻟا و درﺟﻣﻟا ﮫﯾﻓ"
+        },
+        {
+          "e": "Chapter Summary"
+        }
+      ]
+    },
+    "2": {},
+    "3": {
+      "Title": "ﮫﯾﻓ دﯾزﻣ ﻲﺛﻼﺛ Families (II– X)",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "Family II"
+        },
+        {
+          "c": "Family III"
+        },
+        {
+          "d": "Family IV"
+        },
+        {
+          "e": "Family V"
+        },
+        {
+          "f": "Family VI"
+        },
+        {
+          "g": "Family VII"
+        },
+        {
+          "h": "Family VIII"
+        },
+        {
+          "i": "Family IX"
+        },
+        {
+          "j": "درﺟﻣ Family X ﻲﺛﻼﺛ"
+        }
+      ]
+    },
+    "4": {
+      "Title": "Differentiating between clans"
+    },
+    "5": {
+      "Title": "Other ﻎﯾﺻ that look the same across families"
+    }
+  },
+
+  "Advance sarf Topics": {
+    "1": {
+      "Title": "Section A",
+      "Subtopics": [
+        {
+          "1": {
+            "Title": "The irregularities in SARF , Classification",
+            "Reference": "Chapter 4 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "زوﻣﮭﻣﻟا"
+              },
+              {
+                "b": "فﺎﺿﻣﻟا"
+              },
+              {
+                "c": "لﺗﻌﻣﻟا",
+                "i": [
+                  "لﺎﺛﻣﻟا",
+                  "فوﺟﻷا",
+                  "صﻗﺎﻧﻟا",
+                  "فﯾﻔﻠﻟا قورﻔﻣﻟا",
+                  "فﯾﻔﻠﻟا نورﻘﻣﻟا"
+                ]
+              }
+            ]
+          },
+          "2": {
+            "Title": "The Mahmuz",
+            "Reference": "Chapter 5 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Big Families ،ذﺧآ ،نﻣآ ذﺧﺗا"
+              },
+              {
+                "b": "Small Families ،لﻛٵ لﺳ"
+              }
+            ]
+          },
+          "3": {
+            "Title": "The Misaal",
+            "Reference": "Chapter 6 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Big Families"
+              },
+              {
+                "b": "AlMisaalWaoee/Yaee ،سﺟوٵ ،نﻘﯾٵ ،دﺣﺗا دﻗوﺗﺳا نﻘﯾﺗﺳا"
+              },
+              {
+                "c": "Small Families"
+              },
+              {
+                "d": "AlMisaalWaoeeدﻋو"
+              },
+              {
+                "e": "AlMisaalYaeeسﺋﯾ"
+              }
+            ]
+          },
+          "4": {
+            "Title": "The Mudaaf",
+            "Reference": "Chapter 7 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Big Families ،فﻔﺧ /قﺎﺷ ،جﺎﺣ /بﺣٵ ،رﺳٵ ،ددﻌﺗ ،جﺎﺣﺗ ،قﺷﻧا ،زﺗھا رﻘﺗﺳا"
+              },
+              {
+                "b": "Small Families ،كﺷ ،سﻣ ،لظ زﻋ"
+              }
+            ]
+          },
+          "5": {
+            "Title": "The Ajwaaf",
+            "Reference": "Chapter 8 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Big Families دارٵ / ،مﺎﻗٵ ثﺎﻐﺗﺳا / ،مﺎﻘﺗﺳا ،رﺎﮭﻧا رﺎﺗﺧا"
+              },
+              {
+                "b": "Small Families ،لﺎﻗ ،لﺎﻧ عﺎﺑ"
+              }
+            ]
+          },
+          "6": {
+            "Title": "The Naqis",
+            "Reference": "Chapter 9 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Big Families ،ﯽﻣﺳ ،یدﺎﻧ ،ﯽﻘﻟٵ /ﯽﻛزﺗ ،ﯽﻟوﺗ /ﯽﺿارﺗ ،ﯽﺻاوﺗ /ﯽﻐﺑﻧا ،ﯽﻠﺟﻧا /یرﺗﻓا"
+              },
+              {
+                "b": "Small Families ،ﺎﻋد ،ﯽﻐط ،یدھ ﻲﺳﻧ"
+              }
+            ]
+          },
+          "7": {
+            "Title": "The Lafeef",
+            "Reference": "Chapter 10 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Mafruk ،ﯽﺣوٵ ،ﯽﻗو ﻲﻟو"
+              },
+              {
+                "b": "Makrun ،یوﺎﺳ"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "2": {
+      "Title": "Section B",
+      "Subtopics": [
+        {
+          "1": {
+            "Title": "Rubaee (4 root letters)",
+            "Reference": "Chapter 11 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "RubaeeMujaridرﺛﻌﺑ"
+              },
+              {
+                "b": "RubaeeMazeedFihiرﻌﺷﻗا"
+              }
+            ]
+          }
+        },
+        {
+          "2": {
+            "Title": "Uses for SARF Words",
+            "Reference": "Chapter 12 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Nouns as Sifaa"
+              },
+              {
+                "b": "Words that behave like verbs"
+              },
+              {
+                "c": "Uses of Masdars (Mafool Lahu, Mafool Mutlaq)"
+              },
+              {
+                "d": "The Compound Ism"
+              }
+            ]
+          }
+        },
+        {
+          "3": {
+            "Title": "The Plural Patterns",
+            "Reference": "Chapter 13 Sarf Textbook",
+            "Subtopics": [
+              {
+                "a": "Sound Plurals"
+              },
+              {
+                "b": "Broken Plurals (Mushtaq, Jamid)"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "Advance Nahw and Advance Structures Topics": {
+    "1": {
+      "Title": "Ism Mawsool wa Silatuhu",
+      "Subtopics": [
+        {
+          "a": "Usage",
+          "i": {
+            "On a sentence-level, it can act as a": [
+              "لﻋﺎﻓ",
+              "لوﻌﻔﻣ",
+              "أدﺗﺑﻣ",
+              "رﺑﺧ"
+            ],
+            "On a fragment-level, it can act as a": [
+              "ﺔﻔﺻ",
+              "ﮫﯾﻟإ فﺎﺿﻣ",
+              "مﺳا نإ",
+              "رورﺟﻣرﺎﺟ"
+            ]
+          }
+        },
+        {
+          "b": "Recognizing the ﺎﻋ",
+          "i": ["Attached", "Detached", "Inside", "Implied"]
+        },
+        {
+          "c": "Constructing the ﺎﻋ"
+        }
+      ]
+    },
+    "2": {
+      "Title": "Compound Sifah",
+      "Subtopics": [
+        {
+          "a": "Types of ﺔﻔﺻ",
+          "i": ["دﺋ", "دﺋ"]
+        },
+        {
+          "b": "Isms that can be sifah",
+          "i": ["درﻔﻣﻟا", "ﮫﺗﻠﺻو", "مﺳﻻا", "لوﺻوﻣﻟا", "مﺳﻻا"]
+        },
+        {
+          "c": "Sentences that can be sifah",
+          "i": ["ﺔﯾﻣﺳﻻا", "ﺔﯾﻠﻌﻔﻟا", "ﺔﻠﻣﺟﻟا", "ﺔﻠﻣﺟﻟا"]
+        },
+        {
+          "iii": "Fragments that can be sifah",
+          "iv": ["ﺔﻓﺎﺿﻹا", "رورﺟﻣﻟاو", "ﺔﻠﻣﺟﻟا", "رﺎﺟﻟا"]
+        }
+      ]
+    },
+    "3": {
+      "Title": "تاودأ",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "تاودأ رﯾﻏ ﺔﻣزﺎﺟ",
+          "i": ["( نإ) نﻣ , ﺎﻣ , (ﺎﻣﻧﯾا"]
+        },
+        {
+          "c": "تاودأ رﯾﻏ ﺔﻣزﺎﺟ",
+          "i": ["( وﻟ , اذإ )", "( ﺔﻠﻣﺟ ﺔﯾﻣﺳا when it comes with اذإ)"]
+        },
+        {
+          "d": "رﻣﻷا باوﺟو رﻣﻷا"
+        },
+        {
+          "e": "بﻠطﻟا باوﺟﻟاو بﻠطﻟا"
+        }
+      ]
+    },
+    "4": {
+      "Title": "لﺎﺣ",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "مﺳا as a لﺎﺣ"
+        },
+        {
+          "c": "ﺔﻠﻣﺟﻟا ﺔﯾﻠﻌﻔﻟا as a لﺎﺣ",
+          "i": ["لﻌﻔﻟا عرﺎﺿﻣﻟا", "لﻌﻔﻟا ﻲﺿﺎﻣﻟا"]
+        },
+        {
+          "d": "ﺔﻠﻣﺟﻟا ﺔﯾﻣﺳﻻا as a لﺎﺣﻟا"
+        },
+        {
+          "e": "Four ways to construct لﺎﺣ"
+        },
+        {
+          "f": "A لﺎﺣ in ﺔﻠﻣﺟﻟا ﺔﯾﻣﺳﻻا"
+        },
+        {
+          "g": "دﻗ(Qad)"
+        }
+      ]
+    },
+    "5": {
+      "Title": "زﯾﯾﻣﺗﻟا",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "ءﺎﻣﺳأ that take زﯾﯾﻣﺗ"
+        },
+        {
+          "c": "ءﺎﻣﺳأ لﯾﺿﻔﺗﻟا"
+        },
+        {
+          "d": "Numbers (11+)"
+        },
+        {
+          "e": "لﺎﻌﻓأ that take زﯾﯾﻣﺗ"
+        }
+      ]
+    },
+    "6": {
+      "Title": "ددﻌﻟا ﻲﻓ نآرﻘﻟا",
+      "Subtopics": [
+        {
+          "a": "Numbers 1-2"
+        },
+        {
+          "b": "Numbers 3-10"
+        },
+        {
+          "c": "Numbers 11-12"
+        },
+        {
+          "d": "Number 19"
+        },
+        {
+          "e": "Numbers 20-80"
+        },
+        {
+          "f": "Number 99"
+        },
+        {
+          "g": "Numbers 100, 200"
+        },
+        {
+          "h": "Number 300",
+          "i": ["Numbers 1,000 AND 2,000"]
+        },
+        {
+          "j": "Numbers 3,000 AND 5,000"
+        },
+        {
+          "k": "Number 50,000"
+        },
+        {
+          "l": "Number 100,000",
+          "i": ["Ordinal Numbers", "Fractions"]
+        }
+      ]
+    },
+    "7": {
+      "Title": "لﺎﻌﻓأ عورﺷﻟا",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "لﺎﻌﻓأ عورـﺷﻟا ﻲﻓ نآرﻘﻟا"
+        },
+        {
+          "c": "لﺎﻌﻓأ عورـﺷﻟا in other literatures"
+        }
+      ]
+    },
+    "8": {
+      "Title": "لﺎﻌﻓأ بﺟﻌﺗﻟا",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "مﻌﻧ و سءب"
+        },
+        {
+          "c": "ءﺎﺳ و نﺳﺣ"
+        },
+        {
+          "d": "ﺎﻣ ﮫﻠﻌﻓأ"
+        },
+        {
+          "e": "لﻌﻓأ ﮫﺑ"
+        }
+      ]
+    },
+    "9": {
+      "Title": "لدﺑﻟا",
+      "Subtopics": [
+        {
+          "a": "Introduction"
+        },
+        {
+          "b": "لدﺑﻟا ﻲﻓ نآرﻘﻟا",
+          "i": ["لدﺑﻟا ضﻌﺑﻟا", "لدﺑﻟا لﺎﻣﺗﺷﻻا"]
+        },
+        {
+          "c": "لدﺑﻟا طﻠﻐﻟا"
+        },
+        {
+          "d": "فطﻋ"
+        }
+      ]
+    }
+  },
+  " Basic Reader Topics": {
+    "1": {
+      "Title": "Chapter1. ﺎﻧأ تﻧأو (YouandI)"
+    },
+    "2": {
+      "Title": "Chapter2. ذﺎﺗﺳﻷا بﻟﺎطﻟاو (Studentandteacher)"
+    },
+    "3": {
+      "Title": "Chapter3. ﻲﻓ دﮭﻌﻣﻟا (At theInstitute)"
+    },
+    "4": {
+      "Title": "Chapter4. ﻲﻓ بﺗﻛﻣﻟا (At theoffice)"
+    },
+    "5": {
+      "Title": "Chapter5. مﺎﻣأ ءﺎﻧﺑﻟا دﯾدﺟﻟا (Infrontof thenewbuilding)"
+    },
+    "6": {
+      "Title": "Chapter6. ةدﺎﮭﺷ ﺔﯾﻌﻣﺎﺟ (Collegedegree)"
+    },
+    "7": {
+      "Title": "Chapter7. ف رﺎطﻣﻟا (At theairport)"
+    },
+    "8": {
+      "Title": "Chapter8. لﺎﺻﺗﻟا مﻷﺎﺑ (Callingmother)"
+    },
+    "9": {
+      "Title": "Chapter9. جرﺎﻋ دﯾﻌﺳو (AarijandSaeed)"
+    },
+    "10": {
+      "Title": "Chapter10. رﺎﺑﺧأ نﻣ سﻟاد (NewsfromDallas)"
+    },
+    "11": {
+      "Title": "Chapter11.نﺎﺗﻘﯾدﺻ(Twofriends)"
+    },
+    "12": {
+      "Title": "Chapter12.ةرﻣﻌﻟا (‘Umrah)"
+    },
+    "13": {
+      "Title": "Chapter13. ﺦﯾﺷﻟا دﺑﻋ رﺻﺎﻧﻟا (ShaykhAbdulNasirJangda)"
+    },
+    "14": {
+      "Title": "Chapter14.نﺎﺣﺗﻣﻻا (Theexam)"
+    },
+    "15": {
+      "Title": "Chapter15. ﻲﻓ دﺟﺳﻣﻟا (At themasjid)"
+    },
+    "16": {
+      "Title": "Chapter16.مﻛﺣ(Wisdoms)"
+    },
+    "17": {
+      "Title": "Chapter17. ﻲﻓ ﻰﻔﺷﺗﺳﻣﻟا (At thehospital)"
+    },
+    "18": {
+      "Title": "Chapter18. ﻲﻓ مﻌطﻣﻟا (At therestaurant)"
+    },
+    "19": {
+      "Title": "Chapter19.تﻻﺎﺳر(Messages)"
+    },
+    "20": {
+      "Title": "Chapter20. ﺦﯾﺷﻟا وﺑأ نﺳﺣﻟا يودﻧﻟا (ShaykhAbulHasanAn-Nadawee)"
+    }
+  },
+  "Intermediate Reader Topics": {
+    "21": {
+      "Title": "Chapter.21–ﻊﺋﺎﺑ مﺎﻧﺻﻷا"
+    },
+    "22": {
+      "Title": "Chapter.22–مﯾھارﺑإ رﺳﻛﯾ مﺎﻧﺻﻷا"
+    },
+    "23": {
+      "Title": "Chapter.23–نﻣ لﻌﻓ ؟اذھ"
+    },
+    "24": {
+      "Title": "Chapter.24–ﻲﺑر ﷲ"
+    },
+    "25": {
+      "Title": "Chapter.25–رﺎﻧ ةدرﺎﺑ"
+    },
+    "26": {
+      "Title": "Chapter.26–مﺎﻣأ دورﻣﻧ"
+    },
+    "27": {
+      "Title": "Chapter.27–ﻰﻟإ ﺔﻛﻣ"
+    },
+    "28": {
+      "Title": "Chapter.28–مﺎﻧﻣ مﯾھارﺑإ"
+    },
+    "29": {
+      "Title": "Chapter.29-ﺔﺑﻌﻛﻟا"
+    },
+    "30": {
+      "Title": "Chapter.30–ﺔﻠﯾﺣ نﺎطﯾﺷﻟا"
+    },
+    "31": {
+      "Title": "Chapter.31–ﺔﺻﻗ حوﻧ"
+    },
+    "32": {
+      "Title": "Chapter.32–نﺑا حوﻧ"
+    },
+    "33": {
+      "Title": "Chapter.33–نارﻔﻛ دﺎﻋ"
+    },
+    "34": {
+      "Title": "Chapter.34–ةوﻋد دوھ"
+    },
+    "35": {
+      "Title": "Chapter.35–ﺔﺑﻗﺎﻋ دﺎﻋ"
+    },
+    "36": {
+      "Title": "Chapter.36-ةرﺟھ"
+    },
+    "37": {
+      "Title": "Chapter.37–ﺔﻧﯾدﻣﻟا ةروﻧﻣﻟا"
+    },
+    "38": {
+      "Title": "Chapter.38–وﺑأ ﺔﺣﻠط رﺎﺻﻧﻷا–ءزﺟﻟا لاوﻷا"
+    },
+    "39": {
+      "Title": "Chapter.39-وﺑأ ﺔﺣﻠط رﺎﺻﻧﻷا–ءزﺟﻟا ﻲﻧﺎﺛﻟا"
+    },
+    "40": {
+      "Title": "Chapter.40–رﯾﻣﻋ"
+    }
+  },
+  "Advance Reader": {
+    "7": {
+      "Title": "Those who are keeping up with the live classes. Chapter1. رﯾﺑﻌﺗﻟا"
+    }
+  }
+}
