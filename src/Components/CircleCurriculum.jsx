@@ -1,92 +1,51 @@
+import React from "react";
 import PropTypes from "prop-types";
+import curriculum from "../Files/curriculum.json";
 
 function CircleCurriculum({ circle }) {
   const { category } = circle;
 
-  const renderCategoryItems = () => {
-    switch (category) {
-      case 0:
-        return (
-          <>
-            <li>Introduction</li>
-            <li>4 Properties</li>
-            <li>Pronouns</li>
-            <li>Fragments</li>
-            <li>Jumlah Ismiyyah</li>
-          </>
-        );
-      case 1:
-        return (
-          <>
-            <li>Jumlah Ismiyya</li>
-            <li>Jumlah Filiyya</li>
-            <li>Passive Negation</li>
-            <li>Kaana and her sisters</li>
-            <li>Compound Ism</li>
-            <li>Huroof Basics</li>
-          </>
-        );
-      case 2:
-        return (
-          <>
-            <li>Introduction to Sarf</li>
-            <li>ثلاثي مزيد فيه Families (II - X)</li>
-            <li>ثلاثي مجرد Families (ن ض ف س ح ك)</li>
-            <li>Differentiating between clans</li>
-            <li>Other صيغ that look the same across families</li>
-          </>
-        );
-      case 3:
-        return (
-          <>
-            <li>The irregularities in SARF, Classification</li>
-            <li>The Mahmuz</li>
-            <li>The Misaal</li>
-            <li>The Mudaaf</li>
-            <li>The Ajwaaf</li>
-            <li>The Naqis</li>
-            <li>The Lafeef</li>
-            <li>Rubaee (4 root letters)</li>
-            <li>Uses for SARF Words</li>
-            <li>The Plural Patterns</li>
-          </>
-        );
-      case 4:
-        return (
-          <>
-            <li>Ism mawsool wa silatuhu</li>
-            <li>المتعدِّي بحرف</li>
-          </>
-        );
-      case 5:
-        return (
-          <>
-            <li>You, I</li>
-          </>
-        );
-      case 6:
-        return (
-          <>
-            <li>Chapter 21</li>
-          </>
-        );
-      case 7:
-        return (
-          <>
-            <li>Up to date</li>
-          </>
-        );
-      default:
-        return <li>No curriculum available for this category</li>;
-    }
-  };
+  let curriculumData;
+
+  // Check the category and import the relevant curriculum
+  if (category === 0) {
+    curriculumData = curriculum["Basic Nahw"];
+  } else if (category === 1) {
+    curriculumData = curriculum["Intermediate Nahw Topics"];
+  } else if (category === 2) {
+    curriculumData = curriculum["Basic Sarf Topics"];
+  } else if (category === 3) {
+    curriculumData = curriculum["Advance Sarf Topics"];
+  } else if (category === 4) {
+    curriculumData = curriculum["Advance Nahw and Advance Structures Topics"];
+  } else if (category === 5) {
+    curriculumData = curriculum["Basic Reader Topics"];
+  } else if (category === 6) {
+    curriculumData = curriculum["Intermediate Reader Topics"];
+  } else if (category === 7) {
+    curriculumData = curriculum["Advance Reader"];
+  }
 
   return (
     <div className="ml-5 mt-5 text-base sm:text-lg md:text-xl lg:text-2xl">
       <div className="font-bold">Curriculum</div>
-      <ul className="list-disc pl-5 text-start text-xs sm:text-sm md:text-lg lg:text-xl">
-        {renderCategoryItems()}
-      </ul>
+      {Object.keys(curriculumData).map((key) => {
+        const topic = curriculumData[key];
+        return (
+          <div key={key}>
+            <div className="text-theme underline sm:text-sm md:text-lg lg:text-xl ">
+              {topic.Title}
+            </div>
+            {topic.Subtopics && (
+              <ul className="sm:text-xs md:text-base lg:text-lg ">
+                {topic.Subtopics.map((subtopic, index) => (
+                  <li key={index}>{subtopic.a || subtopic.b || subtopic.c}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
