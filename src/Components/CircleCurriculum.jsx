@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import curriculum from "../Files/curriculum.json";
 
@@ -7,7 +6,6 @@ function CircleCurriculum({ circle }) {
 
   let curriculumData;
 
-  // Check the category and import the relevant curriculum
   if (category === 0) {
     curriculumData = curriculum["Basic Nahw"];
   } else if (category === 1) {
@@ -43,6 +41,26 @@ function CircleCurriculum({ circle }) {
                 ))}
               </ul>
             )}
+
+            {/* Check if there are nested subtopics and render them */}
+            {topic.Subtopics &&
+              topic.Subtopics.some((subtopic) => subtopic.Subtopics) &&
+              topic.Subtopics.map((subtopic, index) => (
+                <div key={index}>
+                  <div className="font-bold">{subtopic.Title}</div>
+                  {subtopic.Subtopics && (
+                    <ul className="sm:text-xs md:text-base lg:text-lg ">
+                      {subtopic.Subtopics.map((nestedSubtopic, nIndex) => (
+                        <li key={nIndex}>
+                          {nestedSubtopic.a ||
+                            nestedSubtopic.b ||
+                            nestedSubtopic.c}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
           </div>
         );
       })}
