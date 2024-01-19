@@ -69,6 +69,23 @@ const authReducer = (state = initialState, action) => {
         userData: null,
         error: action.payload,
       };
+    case "LOGIN_REQUEST":
+      return {
+        ...state,
+        error: null,
+      };
+    case "LOGIN_SUCCESS":
+      return {
+        ...state,
+        userData: action.payload,
+        error: null,
+      };
+    case "LOGIN_FAILURE":
+      return {
+        ...state,
+        userData: null,
+        error: action.payload,
+      };
     default:
       return state;
   }

@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import AppLayout from "../Pages/AppLayout";
 import { loginUser } from "../actions";
 import { useDispatch } from "react-redux";
-// import Spinner from "../ui/Spinner";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Initialize the useDispatch hook
+  const dispatch = useDispatch();
 
   const handleJoinClickStudent = () => {
     navigate("/join/2");
@@ -31,26 +31,36 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Dispatch the loginUser action with the form data
-    dispatch(loginUser(formData)).then(() => {
+    try {
+      // Dispatch the loginUser action with the form data
+      await dispatch(loginUser(formData));
+
       // Access user_type from local storage after successful login
       const user_type = localStorage.getItem("user_type");
 
-      // Navigate based on user_type
-      if (user_type === "2") {
-        navigate("/appLayoutStudent");
-      } else if (user_type === "1") {
-        navigate("/dashboardMentorLayout");
-      } else if (user_type === "0") {
-        navigate("/adminDashboardLayout");
+      // Check if user_type exists
+      if (user_type) {
+        // Navigate based on user_type
+        if (user_type === "2") {
+          navigate("/appLayoutStudent");
+        } else if (user_type === "1") {
+          navigate("/dashboardMentorLayout");
+        } else if (user_type === "0") {
+          navigate("/adminDashboardLayout");
+        }
       } else {
-        alert("Invalid user type");
+        console.log("take from");
       }
-    });
+    } catch (error) {
+      toast.error(error);
+      console.log("Error:", error);
+    }
   };
 
   return (
     <AppLayout>
+      <Toaster />
+
       <div className="flex min-h-full flex-1 flex-col justify-center pb-10  font-sans ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className=" text-center text-2xl font-bold leading-9 tracking-tight text-black">
@@ -63,9 +73,6 @@ const Login = () => {
             className="relative space-y-6 font-sans"
             onSubmit={handleSubmit}
           >
-            {/* {response.isLoading && (
-              <Spinner className="z-999 absolute left-1/2 top-1/2 flex  transform items-center justify-center" />
-            )} */}
             <div>
               <label
                 htmlFor="email"
