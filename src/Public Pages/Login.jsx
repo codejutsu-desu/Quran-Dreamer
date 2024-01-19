@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppLayout from "../Pages/AppLayout";
 import { loginUser } from "../actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const error = useSelector((state) => state.auth.error);
 
   const handleJoinClickStudent = () => {
     navigate("/join/2");
@@ -49,19 +50,29 @@ const Login = () => {
           navigate("/adminDashboardLayout");
         }
       } else {
-        console.log("take from");
+        handleLoginFailure();
       }
     } catch (error) {
       toast.error(error);
       console.log("Error:", error);
     }
   };
+  const handleLoginFailure = () => {
+    if (error) {
+      toast.error(error.response.data.non_field_errors[0]);
+    }
+  };
+
+  useEffect(() => {
+    if (error) {
+      handleLoginFailure();
+    }
+  }, [error]);
 
   return (
     <AppLayout>
       <Toaster />
-
-      <div className="flex min-h-full flex-1 flex-col justify-center pb-10  font-sans ">
+      <div className="s mx-2 mt-5 h-screen flex-col justify-between ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className=" text-center text-2xl font-bold leading-9 tracking-tight text-black">
             Login to your account

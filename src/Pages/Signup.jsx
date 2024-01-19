@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUpSuccess, signUpFailure } from "../actions";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 import styles from "./Signup.module.css";
 import AppLayout from "./AppLayout";
@@ -60,17 +61,22 @@ const SignUpForm = () => {
         dispatch(signUpFailure(error.response.data));
       }
     } else {
-      const response = await axios.post(
-        "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
-        formData,
-      );
-      console.log(response);
-      navigate("/login");
+      try {
+        const response = await axios.post(
+          "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
+          formData,
+        );
+        console.log(response);
+        navigate("/login");
+      } catch (error) {
+        toast.error(error.response.data.non_field_errors[0]);
+      }
     }
   };
 
   return (
     <AppLayout>
+      <Toaster />
       <div className={styles.signupTitle}>Sign Up As {userType}</div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>

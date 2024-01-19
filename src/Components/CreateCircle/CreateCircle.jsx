@@ -155,11 +155,12 @@ const StudyCircleForm = () => {
       navigate("/appLayoutMentor/approvalPending");
     } catch (error) {
       console.error(error);
+      console.log(error.response.data);
       let data = error.response.data;
       let first_error = Object.values(data)[0];
 
       if (first_error && first_error.length > 0) {
-        toast.error("Error creating circle: " + first_error[0], {
+        toast.error(+first_error[0], {
           position: "top-center",
           hideProgressBar: true,
           autoClose: 3000,
