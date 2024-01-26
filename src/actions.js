@@ -60,7 +60,6 @@ export const fetchClassRecordings = (token, circleId) => async (dispatch) => {
 // Define action types
 export const FETCH_JOINED_CIRCLE = "FETCH_JOINED_CIRCLE"; // Rename the action type
 
-// Action creator for fetching joined circles
 export const fetchJoinedCircle = (token) => async (dispatch) => {
   try {
     const headers = {

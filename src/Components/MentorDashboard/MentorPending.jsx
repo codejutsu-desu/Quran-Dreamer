@@ -20,8 +20,8 @@ function MentorPending() {
             you should maintain, which skills you should improve, or any other
             (related) questions, through the DEMO our Teaching Support Team will
             help you assess your teaching technique. We have well-known,
-            experienced fellow students that are ready to help; Sr. Ilham from
-            Kenya, Br. Basit from Pakistan,...
+            experienced fellow students that are ready to help from all around
+            the globe.
           </div>
           <div className="mx-2 mt-2 rounded-lg p-2 text-center text-base font-semibold text-black md:text-lg lg:text-xl xl:text-2xl">
             Stay tuned
