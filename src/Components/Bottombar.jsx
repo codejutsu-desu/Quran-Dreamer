@@ -1,4 +1,6 @@
 function Bottombar() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="text  bottom-0 flex h-20 w-full items-center  justify-between border-t border-solid border-gray-300 bg-theme  p-2 font-bold text-white">
       <div className="md:w-15 h-3/4  w-10 xl:h-full xl:w-20">
@@ -44,7 +46,7 @@ function Bottombar() {
             Privacy Policy
           </a>
           <br />
-          Copyright @ 2023 QuranDreamers
+          Copyright @ {currentYear} QuranDreamers
         </p>
       </div>
     </footer>
