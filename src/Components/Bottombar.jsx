@@ -1,15 +1,17 @@
+import { NavLink } from "react-router-dom";
+
 function Bottombar() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="text  bottom-0 flex h-20 w-full items-center  justify-between border-t border-solid border-gray-300 bg-theme  p-2 font-bold text-white">
-      <div className="md:w-15 h-3/4  w-10 xl:h-full xl:w-20">
+      <NavLink to="/" className=" h-full w-[70px]  ">
         <img
           src="/logo.png"
           alt=""
-          className="h-full w-full cursor-pointer rounded-2xl object-cover"
+          className="h-full cursor-pointer rounded-lg  object-fill transition-all  hover:scale-110 "
         />
-      </div>
+      </NavLink>
 
       <div className="h-full">
         <p className="text-center">Reach us</p>
@@ -20,7 +22,11 @@ function Bottombar() {
             rel="noreferrer"
             className="h-full w-10"
           >
-            <img src="/insta.svg" alt="Instagram" className="h-full w-full " />
+            <img
+              src="/insta.svg"
+              alt="Instagram"
+              className="h-full w-full object-fill "
+            />
           </a>
           <a
             href="https://www.youtube.com/@QuranDreamers/featured"
@@ -31,7 +37,7 @@ function Bottombar() {
             <img
               src="/ytIcon.svg"
               alt="YouTube"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-fill"
             />
           </a>
         </span>

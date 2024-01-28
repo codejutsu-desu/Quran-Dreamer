@@ -11,12 +11,12 @@ function Topbar() {
   };
 
   return (
-    <header className="xl-h-[100px] flex h-10 items-center justify-between border-b border-solid border-gray-300 p-1  font-sans sm:h-[60px] lg:h-[80px]">
-      <NavLink to="/" className="h-full ">
+    <header className="xl-h-[150px] flex h-10 items-center justify-between border-b border-solid border-gray-300 p-1  font-sans sm:h-[60px] lg:h-[80px]">
+      <NavLink to="/" className=" h-full w-[70px]  ">
         <img
           src="/logo.png"
           alt=""
-          className=" hover:scale-120 object-covers h-full w-auto transform cursor-pointer rounded-2xl transition-transform"
+          className="h-full cursor-pointer object-fill transition-all  hover:scale-110 "
         />
       </NavLink>
 

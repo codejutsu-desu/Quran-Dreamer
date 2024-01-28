@@ -3,8 +3,6 @@ import axios from "axios";
 import AdminRequest from "./AdminRequest";
 
 function AdminRequests() {
-  // Fetch the token from the auth reducer
-
   const [requests, setRequests] = useState([]);
 
   const token = localStorage.getItem("token");

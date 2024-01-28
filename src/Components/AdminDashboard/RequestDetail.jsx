@@ -46,7 +46,6 @@ function RequestDetail() {
         );
         setMentorResponse(mentorResponse.data);
         console.log("Mentor Response:", mentorResponse.data);
-        // Handle mentorResponse as needed
       }
     } catch (error) {
       console.error("Error fetching data:", error);
