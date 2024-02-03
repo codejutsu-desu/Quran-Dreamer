@@ -57,7 +57,11 @@ const SignUpForm = () => {
           navigate("/join/mentorExperience");
         }
       } catch (error) {
-        console.error(error.response.data);
+        if (error.response.data.non_field_errors[0]) {
+          toast.error(error.response.data.non_field_errors[0]);
+        } else {
+          toast.error(error.response.data.email[0]);
+        }
         dispatch(signUpFailure(error.response.data));
       }
     } else {
@@ -69,7 +73,16 @@ const SignUpForm = () => {
         console.log(response);
         navigate("/login");
       } catch (error) {
-        toast.error(error.response.data.non_field_errors[0]);
+        if (
+          error.response.data.non_field_errors &&
+          error.response.data.non_field_errors[0]
+        ) {
+          toast.error(error.response.data.non_field_errors[0]);
+        } else if (error.response.data.email && error.response.data.email[0]) {
+          toast.error(error.response.data.email[0]);
+        } else {
+          toast.error("An unexpected error occurred.");
+        }
       }
     }
   };
