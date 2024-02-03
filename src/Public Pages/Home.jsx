@@ -2,8 +2,22 @@ import { useNavigate } from "react-router-dom";
 import AppLayout from "../Pages/AppLayout";
 import PeoplesComment from "../PublicPagesComponents/PeoplesComment";
 import CircleCard from "../Components/Reusable Components/CircleCard";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchStudyCircles } from "../actions";
+import { useEffect } from "react";
 
 function Home() {
+  const dispatch = useDispatch();
+  const circleData = useSelector((state) => state.studyCircles);
+  console.log(circleData);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(fetchStudyCircles(token));
+    }
+  }, [dispatch]);
+
   const navigate = useNavigate();
   const handleJoinClickMentor = () => {
     navigate("./join/1");
@@ -52,11 +66,12 @@ function Home() {
         <div className="text-center font-sans text-3xl font-semibold text-black">
           Explore our circle
         </div>
-        <div className="flex flex-col justify-around   md:flex-row md:justify-around">
-          <CircleCard />
-          <CircleCard />
-          {/* <CircleCard className="hidden" /> */}
+        <div className="flex flex-col justify-around md:flex-row md:justify-around">
+          {circleData.map((circle, index) => (
+            <CircleCard key={index} circleData={circle} />
+          ))}
         </div>
+
         <button
           onClick={handleJoinClickStudent}
           className="ml-auto mr-auto mt-2 w-20 rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"

@@ -8,7 +8,6 @@ import styles from "./DreamCirclesBody.module.css";
 function DreamCirclesBody() {
   const dispatch = useDispatch();
   const circleData = useSelector((state) => state.studyCircles);
-  console.log(circleData);
   const joinedCircles = useSelector((state) => state.joinedCircles);
 
   const [selectedLanguage, setSelectedLanguage] = useState(4);

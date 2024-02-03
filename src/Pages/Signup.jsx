@@ -53,14 +53,18 @@ const SignUpForm = () => {
     if (user_type === "1") {
       try {
         if (formData) {
-          dispatch(signUpSuccess(formData));
           navigate("/join/mentorExperience");
         }
       } catch (error) {
-        if (error.response.data.non_field_errors[0]) {
+        if (
+          error.response.data.non_field_errors &&
+          error.response.data.non_field_errors[0]
+        ) {
           toast.error(error.response.data.non_field_errors[0]);
-        } else {
+        } else if (error.response.data.email && error.response.data.email[0]) {
           toast.error(error.response.data.email[0]);
+        } else {
+          toast.error("An unexpected error occurred.");
         }
         dispatch(signUpFailure(error.response.data));
       }

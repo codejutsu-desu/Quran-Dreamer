@@ -1,40 +1,121 @@
-import styles from "./CircleCard.module.css";
-function CircleCard() {
-  return (
-    <div className="relative flex  max-w-2xl flex-col space-x-2 rounded-xl border-2 border-solid border-theme bg-transparent bg-clip-border p-4 pl-2 pr-2 text-black shadow-none">
-      <div className={styles.title}>
-        <div className={styles.sectionLogo}>NB</div>
-        <div className={styles.titleName}>
-          <div className="font-sans text-sm font-semibold md:text-lg xl:text-xl">
-            Nahw Basic
-          </div>
-          <div className="font-sans text-xs sm:text-base md:text-lg">
-            Sister Hana
-          </div>
-        </div>
-      </div>
-      <div className="mt-2 text-sm md:text-lg xl:text-xl">
-        The study covers all the basics of Nahw
-      </div>
+import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
-      <div className={styles.progresBar}>
-        <div className={styles.membersandpercentage}>
-          <div className={styles.members}>6 Members</div>
-          <div className={styles.percentage}>15%</div>
-        </div>
-        <div className={styles.progressContainer}>
-          <div className={styles.progress} style={{ width: "15%" }}></div>
-        </div>
-      </div>
+const categoryNames = {
+  0: "Nahw Basics",
+  1: "Sarf Basic",
+  2: "Intermediate Nahw",
+  3: "Advance Nahw",
+  4: "Advanced Sarf",
+  5: "Basic Reader",
+  6: "Intermediate Reader",
+  7: "Advanced Reader",
+};
 
-      <div className={styles.cardBottom}>
-        <button className="rounded border border-theme bg-transparent px-1 py-1 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-4 xl:py-4">
+function extractInitials(name) {
+  // Split the name into words
+  const words = name.split(" ");
+  // Extract the first letter of each word
+  const initials = words.map((word) => word[0]);
+  // Join the initials to form the logo
+  return initials.join("");
+}
+
+function calculateTimePercentage(fromDate, toDate) {
+  const from = new Date(fromDate);
+  const to = new Date(toDate);
+  const today = new Date();
+
+  const totalTime = to - from;
+  const timePassed = today - from;
+
+  if (today <= from) {
+    return 0;
+  } else if (today >= to) {
+    return 100;
+  }
+
+  return ((timePassed / totalTime) * 100).toFixed(2);
+}
+
+function calculateDaysLeft(toDate) {
+  const to = new Date(toDate);
+  const today = new Date();
+
+  if (today >= to) {
+    return "Session Expired";
+  }
+
+  const timeDifference = to - today;
+  const daysLeft = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+  return `${daysLeft} days left`;
+}
+function CircleCard({ circleData }) {
+  const {
+    owner_name,
+    about_circle,
+    category,
+    from_date,
+    to_date,
+    num_joined_users,
+  } = circleData;
+
+  const categoryName = categoryNames[category];
+  const logoInitials = extractInitials(categoryName);
+  const percentage = calculateTimePercentage(from_date, to_date);
+  const daysLeft = calculateDaysLeft(to_date);
+
+  let knowMoreLink = null;
+
+  if (daysLeft !== "Session Expired") {
+    knowMoreLink = (
+      <NavLink to={`/appLayoutStudent/circleInfo/${circleData.id}`}>
+        <div className="flex h-7 w-[100px] items-center justify-center rounded-lg bg-hoverTheme  px-1 text-sm font-bold text-white">
           Know More
-        </button>
-        <div className={styles.daysLeft}>26 Members</div>
+        </div>
+      </NavLink>
+    );
+  }
+
+  return (
+    <div className="m-4 flex max-h-[400px] max-w-[300px] flex-col justify-between rounded-lg border-2 border-solid border-theme p-2 ">
+      <div className="flex items-center justify-start">
+        <div className="mr-3 flex h-10 max-w-[32px] items-center justify-center rounded-lg bg-theme px-2 font-bold text-white">
+          {logoInitials}
+        </div>
+        <div>
+          <div className="text-xl font-bold">{categoryName}</div>
+          <div className="text-lg font-normal">{owner_name}</div>
+        </div>
+      </div>
+      <div className="mt-3">{about_circle}</div>
+
+      <div className="w-full">
+        <div className="flex justify-between">
+          <div className="p-2 font-bold">{num_joined_users}</div>
+          <div className="p-2 text-right font-bold">{percentage}%</div>
+        </div>
+        <div className="relative h-5 rounded-lg bg-green-100">
+          <div
+            className="h-full  rounded-lg bg-theme"
+            style={{ width: `${percentage}%` }}
+          ></div>
+        </div>
+      </div>
+
+      <div className="mt-3 flex justify-between">
+        {knowMoreLink}
+        <div className="flex h-7 w-[100px] items-center justify-center rounded-lg bg-gray-300  px-1 text-xs font-bold text-black">
+          {daysLeft}
+        </div>
       </div>
     </div>
   );
 }
+
+CircleCard.propTypes = {
+  circleData: PropTypes.object.isRequired,
+};
 
 export default CircleCard;
