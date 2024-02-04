@@ -66,7 +66,7 @@ function Home() {
         <div className="text-center font-sans text-3xl font-semibold text-black">
           Explore our circle
         </div>
-        <div className="flex flex-col justify-around md:flex-row md:justify-around">
+        <div className="flex  justify-center">
           {circleData.map((circle, index) => (
             <CircleCard key={index} circleData={circle} />
           ))}
