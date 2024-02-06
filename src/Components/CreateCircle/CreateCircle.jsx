@@ -29,6 +29,8 @@ const StudyCircleForm = () => {
     "Intermediate Reader",
     "Advanced Reader",
     "Advanced Structures",
+    "EMSA",
+    "Quran",
   ];
 
   const [isUnlimited, setIsUnlimited] = useState(false);
@@ -201,6 +203,8 @@ const StudyCircleForm = () => {
             <option value="6">Intermediate Reader</option>
             <option value="7">Advanced Reader</option>
             <option value="8">Advanced Structures</option>
+            <option value="9">EMSA</option>
+            <option value="10">Quran</option>
           </select>
         </div>
 

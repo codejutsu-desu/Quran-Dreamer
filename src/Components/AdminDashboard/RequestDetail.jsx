@@ -13,7 +13,7 @@ function RequestDetail() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `http://13.126.8.147/api/quran_dreamers/admin_request/${id}`,
+        `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/admin_request/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -25,7 +25,7 @@ function RequestDetail() {
 
       if (response.data.request_type === 1) {
         const circleResponse = await axios.get(
-          `http://13.126.8.147/api/quran_dreamers/study_circle/${object_pk}`, // Use 'id' instead of 'response.data.request_type'
+          `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/study_circle/${object_pk}`, // Use 'id' instead of 'response.data.request_type'
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -37,7 +37,7 @@ function RequestDetail() {
         setCircleResponse(circleResponse.data);
       } else if (response.data.request_type === 0) {
         const mentorResponse = await axios.get(
-          `http://13.126.8.147/api/quran_dreamers/user/${object_pk}`,
+          `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/user/${object_pk}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

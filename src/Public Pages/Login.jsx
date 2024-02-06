@@ -38,6 +38,8 @@ const Login = () => {
 
       // Access user_type from local storage after successful login
       const user_type = localStorage.getItem("user_type");
+      const is_experienced = localStorage.getItem("is_experienced");
+      console.log(is_experienced);
 
       // Check if user_type exists
       if (user_type) {
@@ -45,7 +47,11 @@ const Login = () => {
         if (user_type === "2") {
           navigate("/appLayoutStudent");
         } else if (user_type === "1") {
-          navigate("/dashboardMentorLayout");
+          if (is_experienced === true) {
+            navigate("/dashboardMentorLayout");
+          } else {
+            toast.error("Wait for verification");
+          }
         } else if (user_type === "0") {
           navigate("/adminDashboardLayout");
         }
@@ -87,7 +93,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block font-sans text-sm font-medium leading-6 text-black"
+                className="block p-2 font-sans text-sm font-medium leading-6 text-black"
               >
                 Email address
               </label>
@@ -98,7 +104,7 @@ const Login = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="block w-full rounded-md border-2 border-theme py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-2 border-theme p-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -129,7 +135,7 @@ const Login = () => {
                   onChange={handleChange}
                   autoComplete="current-password"
                   required
-                  className="block w-full rounded-md  border-2 border-theme py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-2  border-theme p-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-white placeholder:text-white focus:ring-2 focus:ring-inset focus:ring-hoverTheme sm:text-sm sm:leading-6"
                 />
               </div>
             </div>

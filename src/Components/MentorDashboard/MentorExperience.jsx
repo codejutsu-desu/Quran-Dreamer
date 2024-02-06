@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 function MentorExperience() {
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
+  console.log(userData);
 
   const handleExperienceClick = async (experience) => {
     try {

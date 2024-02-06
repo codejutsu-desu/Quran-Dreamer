@@ -25,6 +25,26 @@ function MentorRequest({ mentor, object_pk, id }) {
       console.error("Error:", error);
     }
   };
+  const handleReject = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.get(
+        `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/reply_request/admin_request/${id}?action=reject&type=0&object_pk=${object_pk}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+        navigate("/adminDashboardLayout/requests"),
+      );
+
+      // Handle the response as needed
+      console.log("Response:", response.data);
+    } catch (error) {
+      // Handle errors
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <div className=" border-2 border-solid border-theme p-5 ">
@@ -50,8 +70,16 @@ function MentorRequest({ mentor, object_pk, id }) {
           onClick={handleAccept}
           className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
         >
-          Accept{" "}
-        </button>{" "}
+          Accept
+        </button>
+        <button
+          onClick={handleReject}
+          className="ml-3 rounded border border-theme bg-transparent px-4 py-2
+          font-semibold text-black hover:border-transparent hover:bg-theme
+          hover:text-white"
+        >
+          Reject
+        </button>
       </div>
     </div>
   );

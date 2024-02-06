@@ -53,6 +53,7 @@ const SignUpForm = () => {
     if (user_type === "1") {
       try {
         if (formData) {
+          dispatch(signUpSuccess(formData));
           navigate("/join/mentorExperience");
         }
       } catch (error) {

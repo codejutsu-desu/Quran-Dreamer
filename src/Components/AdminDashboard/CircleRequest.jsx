@@ -78,6 +78,25 @@ function CircleRequest({ formData, object_pk, id }) {
       console.error("Error:", error);
     }
   };
+  const handleReject = async () => {
+    try {
+      const response = await axios.get(
+        `https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/reply_request/admin_request/${id}?action=reject&type=1&object_pk=${object_pk}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+        navigate("/adminDashboardLayout/requests"),
+      );
+
+      // Handle the response as needed
+      console.log("Response:", response.data);
+    } catch (error) {
+      // Handle errors
+      toast.error("Error occured");
+    }
+  };
 
   return (
     <div className="m-2 flex flex-col rounded-xl border-2 border-solid border-theme p-2">
@@ -181,6 +200,12 @@ function CircleRequest({ formData, object_pk, id }) {
         className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
       >
         Accept the circle request
+      </button>
+      <button
+        onClick={handleReject}
+        className="ml-3 rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
+      >
+        Reject the circle request
       </button>
     </div>
   );

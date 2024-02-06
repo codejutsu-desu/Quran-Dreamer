@@ -129,6 +129,7 @@ export const loginUser = (credentials) => async (dispatch) => {
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", data.name);
       localStorage.setItem("user_type", data.user_type);
+      localStorage.setItem("is_experienced", data.is_experienced);
 
       dispatch(loginSuccess(data));
       console.log("User data:", data);
