@@ -10,17 +10,24 @@ const categoryNames = {
   5: "Basic Reader",
   6: "Intermediate Reader",
   7: "Advanced Reader",
+  8: "Advanced Structures",
+  9: "EMSA",
+  10: "Quran",
 };
 
 function extractInitials(name) {
   // Split the name into words
   const words = name.split(" ");
-  // Extract the first letter of each word
-  const initials = words.map((word) => word[0]);
-  // Join the initials to form the logo
-  return initials.join("");
-}
 
+  // Check if the name has two words
+  if (words.length === 2) {
+    // Extract the first letter of each word and join
+    return words.map((word) => word[0]).join("");
+  } else {
+    // Extract the first letter of the entire name
+    return name[0];
+  }
+}
 function calculateTimePercentage(fromDate, toDate) {
   const from = new Date(fromDate);
   const to = new Date(toDate);

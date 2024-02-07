@@ -1,12 +1,11 @@
 import { Outlet } from "react-router-dom";
 import NavbarGeneral from "../NavbarGeneral";
 import SidebarGeneral from "../SidebarGeneral";
-import styles from "./AppLayoutStudent.module.css";
 function AppLayoutStudent() {
   return (
-    <div className={styles.dreamCirclesContainer}>
+    <div className="flex">
       <SidebarGeneral />
-      <div className={styles.mainContainer}>
+      <div className="flex-1">
         <NavbarGeneral />
         <Outlet />
       </div>
