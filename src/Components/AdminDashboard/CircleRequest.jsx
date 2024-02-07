@@ -201,18 +201,20 @@ function CircleRequest({ formData, object_pk, id }) {
           <span className="ml-2">{about_circle || "Not specified"}</span>
         </div>
       </div>
-      <button
-        onClick={handleAccept}
-        className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
-      >
-        Accept the circle request
-      </button>
-      <button
-        onClick={handleReject}
-        className="ml-3 rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
-      >
-        Reject the circle request
-      </button>
+      <div className="flex ">
+        <button
+          onClick={handleAccept}
+          className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
+        >
+          Accept the circle request
+        </button>
+        <button
+          onClick={handleReject}
+          className="ml-3 rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
+        >
+          Reject the circle request
+        </button>
+      </div>
     </div>
   );
 }

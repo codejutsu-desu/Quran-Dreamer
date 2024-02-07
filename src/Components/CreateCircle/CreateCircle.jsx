@@ -1,13 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-// import Spinner from "../../ui/Spinner";
 
 const StudyCircleForm = () => {
   const navigate = useNavigate();
-  // const [isLoading, setIsLoading] = useState(false);
 
   const daysOfWeek = [
     "Sunday",
@@ -157,32 +154,33 @@ const StudyCircleForm = () => {
 
       navigate("/appLayoutMentor/approvalPending");
     } catch (error) {
-      console.error(error);
       console.log(error.response.data);
       let data = error.response.data;
       let first_error = Object.values(data)[0];
 
       if (first_error && first_error.length > 0) {
-        toast.error(+first_error[0], {
+        toast.error(first_error[0], {
           position: "top-center",
           hideProgressBar: true,
           autoClose: 3000,
         });
       } else {
-        toast.error("Unexpected error creating circle.");
+        toast.error("Unexpected error creating circle.", {
+          position: "top-center",
+          hideProgressBar: true,
+          autoClose: 3000,
+        });
       }
     }
   };
 
   return (
     <div className="m-2 flex min-h-screen flex-col rounded-xl border-2 border-solid border-theme p-2">
+      <Toaster />
       <div className="my-3 ml-auto mr-auto text-base font-bold sm:text-lg md:text-xl lg:text-3xl xl:text-3xl">
         Create Study Circle
       </div>
       <form onSubmit={handleSubmit} className="space-y-2">
-        {/* <div className={styles.spinnerContainer}>
-          {isLoading && <Spinner />}
-        </div> */}
         <div className="flex">
           <label className="text-sm font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
             Select your circle category:
@@ -384,7 +382,6 @@ const StudyCircleForm = () => {
           Submit
         </button>
       </form>
-      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 };
