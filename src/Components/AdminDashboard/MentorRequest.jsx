@@ -15,15 +15,13 @@ function MentorRequest({ mentor, object_pk, id }) {
             Authorization: `Bearer ${token}`,
           },
         },
-        navigate("/adminDashboardLayout/requests"),
       );
-
-      // Handle the response as needed
       console.log("Response:", response.data);
     } catch (error) {
-      // Handle errors
+      toast.error("error occured");
       console.error("Error:", error);
     }
+    navigate("/adminDashboardLayout/requests");
   };
   const handleReject = async () => {
     try {
@@ -89,6 +87,6 @@ export default MentorRequest;
 
 MentorRequest.propTypes = {
   mentor: PropTypes.object.isRequired,
-  object_pk: PropTypes.number.isRequired,
-  id: PropTypes.number.isRequired,
+  object_pk: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };

@@ -47,7 +47,7 @@ const Login = () => {
         if (user_type === "2") {
           navigate("/appLayoutStudent");
         } else if (user_type === "1") {
-          if (is_experienced === true) {
+          if (is_experienced === "true") {
             navigate("/dashboardMentorLayout");
           } else {
             toast.error("Wait for verification");

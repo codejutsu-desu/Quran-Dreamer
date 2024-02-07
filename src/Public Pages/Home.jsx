@@ -62,7 +62,7 @@ function Home() {
           </button>
         </div>
       </div>
-      <div className="mb-4 ml-auto mr-auto mt-4 flex w-auto flex-col items-stretch space-y-2  rounded-lg border-2 border-solid border-theme pb-2">
+      {/* <div className="mb-4 ml-auto mr-auto mt-4 flex w-auto flex-col items-stretch space-y-2  rounded-lg border-2 border-solid border-theme pb-2">
         <div className="text-center font-sans text-3xl font-semibold text-black">
           Explore our circle
         </div>
@@ -78,7 +78,7 @@ function Home() {
         >
           Join!
         </button>
-      </div>
+      </div> */}
 
       <div className=" mt-4 text-center font-sans text-2xl font-semibold text-black lg:text-4xl">
         What People Say About QuranDreamers

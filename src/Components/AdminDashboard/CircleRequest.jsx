@@ -30,6 +30,9 @@ function CircleRequest({ formData, object_pk, id }) {
     "Basic Reader",
     "Intermediate Reader",
     "Advanced Reader",
+    "Advanced Structures",
+    "EMSA",
+    "Quran",
   ];
 
   const getCategoryText = (value) => {
@@ -57,6 +60,9 @@ function CircleRequest({ formData, object_pk, id }) {
     "Basic Reader",
     "Intermediate Reader",
     "Advanced Reader",
+    "Advanced Structures",
+    "EMSA",
+    "Quran",
   ];
 
   const handleAccept = async () => {
@@ -68,7 +74,6 @@ function CircleRequest({ formData, object_pk, id }) {
             Authorization: `Bearer ${token}`,
           },
         },
-        navigate("/adminDashboardLayout/requests"),
       );
 
       // Handle the response as needed
@@ -77,6 +82,7 @@ function CircleRequest({ formData, object_pk, id }) {
       // Handle errors
       console.error("Error:", error);
     }
+    navigate("/adminDashboardLayout/requests");
   };
   const handleReject = async () => {
     try {
@@ -228,8 +234,8 @@ CircleRequest.propTypes = {
     about_circle: PropTypes.string,
     owner_name: PropTypes.string,
   }).isRequired,
-  object_pk: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  object_pk: PropTypes.number,
+  id: PropTypes.number,
 };
 
 export default CircleRequest;

@@ -10,6 +10,9 @@ const categoryNames = {
   5: "Basic Reader",
   6: "Intermediate Reader",
   7: "Advanced Reader",
+  8: "Advanced Structures",
+  9: "EMSA",
+  10: "Quran",
 };
 
 function extractInitials(name) {

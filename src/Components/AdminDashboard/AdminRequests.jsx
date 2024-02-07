@@ -23,7 +23,7 @@ function AdminRequests() {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }, [token]); // Include token as a dependency to re-run the effect when the token changes
+  }, []); // Include token as a dependency to re-run the effect when the token changes
 
   return (
     <div className="flex flex-col space-y-2">

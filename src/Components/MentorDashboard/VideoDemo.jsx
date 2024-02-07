@@ -29,7 +29,7 @@ function VideoDemo() {
       } else if (e === "No") {
         const response = await axios.post(
           "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
-          modifiedUserData,
+          userData,
         );
         console.log(response);
         navigate("/login");
