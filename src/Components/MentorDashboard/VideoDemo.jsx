@@ -22,7 +22,7 @@ function VideoDemo() {
         // Make the post request using form data
         const response = await axios.post(
           "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
-          userData,
+          modifiedUserData,
         );
         console.log(response);
         navigate("/join/mentorExperience/mentorPending");
