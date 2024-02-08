@@ -22,6 +22,12 @@ function CircleCurriculum({ circle }) {
     curriculumData = curriculum["Intermediate Reader Topics"];
   } else if (category === 7) {
     curriculumData = curriculum["Advance Reader"];
+  } else if (category === 8) {
+    curriculumData = curriculum["Advance Structures"];
+  } else if (category === 9) {
+    curriculumData = curriculum["EMSA"];
+  } else if (category === 10) {
+    curriculumData = curriculum["Quran"];
   }
 
   return (

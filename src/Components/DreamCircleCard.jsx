@@ -87,7 +87,7 @@ function DreamCircleCard({ circle }) {
   }
 
   return (
-    <div className="m-4 flex max-h-[400px] max-w-[300px] flex-col justify-between rounded-lg border-2 border-solid border-theme p-2 ">
+    <div className="m-4 flex max-h-[800px] max-w-[500px] flex-col justify-between rounded-lg border-2 border-solid border-theme p-2 ">
       <div className="flex items-center justify-start">
         <div className="mr-3 flex h-10 max-w-[32px] items-center justify-center rounded-lg bg-theme px-2 font-bold text-white">
           {logoInitials}
@@ -97,7 +97,7 @@ function DreamCircleCard({ circle }) {
           <div className="text-lg font-normal">{owner_name}</div>
         </div>
       </div>
-      <div className="mt-3">{about_circle}</div>
+      <div className="mt-3 text-xs lg:text-sm xl:text-base">{about_circle}</div>
 
       <div className="w-full">
         <div className="flex justify-between">

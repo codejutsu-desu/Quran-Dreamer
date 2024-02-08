@@ -18,21 +18,21 @@ function DreamCirclesCardHeader({
   return (
     <div className="flex max-w-[100%] justify-between px-4 pt-2 ">
       <div className="">
-        <div className="text-md font-bold md:text-xl lg:text-3xl xl:text-4xl">
+        <div className="text-xs font-bold md:text-base lg:text-xl ">
           Dream Circles
         </div>
-        <div className="text-md font-normal md:text-lg lg:text-xl xl:text-2xl ">
+        <div className="text-xs font-normal md:text-base lg:text-xl  ">
           There are only {filteredCircles.length} dream circles available
         </div>
       </div>
       <div className="flex space-x-2">
         <div className="">
-          <label className="text-sm md:text-lg lg:text-xl xl:text-2xl">
+          <label className="text-xs md:text-sm lg:text-base xl:text-xl">
             Language
           </label>
           <select
             id="language"
-            className="rounded-lg border-2 border-solid border-black p-1 text-xs text-theme md:text-lg lg:text-xl xl:text-2xl"
+            className="rounded-lg border-2 border-solid border-black p-1 text-xs text-theme md:text-base lg:text-xl"
             value={selectedLanguage}
             onChange={handleLanguageChange}
           >
@@ -44,7 +44,7 @@ function DreamCirclesCardHeader({
           </select>
         </div>
         <div className="">
-          <label className="text-xs md:text-lg lg:text-xl xl:text-2xl">
+          <label className="text-xs md:text-sm lg:text-base xl:text-xl">
             Gender
           </label>
           <select

@@ -3,7 +3,6 @@ import DreamCirclesCardHeader from "../DreamCirclesCardHeader";
 import DreamCircleCards from "../DreamCircleCards";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJoinedCircle, fetchStudyCircles } from "../../actions";
-import styles from "./DreamCirclesBody.module.css";
 
 function DreamCirclesBody() {
   const dispatch = useDispatch();
@@ -62,7 +61,7 @@ function DreamCirclesBody() {
   }, [dispatch]);
 
   return (
-    <div style={styles.circlesBodyContainer}>
+    <div className="flex flex-col">
       <DreamCirclesCardHeader
         selectedLanguage={selectedLanguage}
         selectedGender={selectedGender}

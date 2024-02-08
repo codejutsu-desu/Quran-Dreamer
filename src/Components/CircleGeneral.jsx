@@ -95,7 +95,7 @@ function CircleGeneral({ circle }) {
         </div>
         <div className="mt-5 flex justify-between text-base sm:text-lg md:text-xl lg:text-2xl ">
           <div>About</div>
-          <div className="text-center text-xs sm:text-sm md:text-lg lg:text-xl ">
+          <div className="ml-3 text-start text-xs sm:text-sm md:text-base lg:text-xl ">
             {about_circle}
           </div>
         </div>
