@@ -40,7 +40,7 @@ function InsideCircle() {
           </div>
           <div className={styles.navBack}>
             <button
-              className={styles.backButtonStyle}
+              className="rounded border border-theme bg-transparent px-4 py-2 font-semibold text-black hover:border-transparent hover:bg-theme hover:text-white"
               onClick={() => navigate(-1)}
             >
               Back

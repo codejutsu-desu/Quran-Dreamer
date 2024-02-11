@@ -16,7 +16,7 @@ function LiveClasses({ circle }) {
 
   useEffect(() => {
     if (token) {
-      dispatch(fetchClassRecordings(token, circleId)); // Assuming you have access to circleId
+      dispatch(fetchClassRecordings(token, circleId));
     }
   }, [dispatch, token, circleId]);
 
@@ -31,7 +31,11 @@ function LiveClasses({ circle }) {
             *Note: Join live classes at sharp time given otherwise you can take
             them later as recorded lectures.
           </p>
-          <p> {class_link} </p>
+          <p className="mr-2 font-medium text-blue-600 hover:underline dark:text-blue-500">
+            <a href={class_link} target="_blank" rel="noopener noreferrer">
+              {class_link}
+            </a>
+          </p>
         </div>
         <div className={styles.record}>
           <h3>Recorded class</h3>
