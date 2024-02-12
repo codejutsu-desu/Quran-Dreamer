@@ -34,7 +34,7 @@ function getDayName(dayNumber) {
 }
 
 function convertToUserLocalTime(time, timezone) {
-  const start = DateTime.fromISO(time);
+  const start = DateTime.fromISO(time, { zone: "UTC" });
   const localTime = start.setZone(timezone);
   return localTime.toLocaleString(DateTime.TIME_SIMPLE);
 }
@@ -42,10 +42,11 @@ function convertToUserLocalTime(time, timezone) {
 function CircleGeneral({ circle }) {
   const { from_date, to_date, about_circle, days, times } = circle;
   console.log(times);
+  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  console.log(userTimezone);
   const classDays = Array.isArray(days)
     ? days.map((dayNumber) => getDayName(dayNumber)).join(", ")
     : "N/A";
-
   const duration =
     Array.isArray(times) && times.length >= 2
       ? calculateTimeDuration(times[0], times[1])
@@ -53,15 +54,13 @@ function CircleGeneral({ circle }) {
 
   const startTime =
     Array.isArray(times) && times.length > 0
-      ? convertToUserLocalTime(times[0], circle.timezone)
+      ? convertToUserLocalTime(times[0], userTimezone)
       : "N/A";
 
   const endTime =
     Array.isArray(times) && times.length > 1
-      ? convertToUserLocalTime(times[1], circle.timezone)
+      ? convertToUserLocalTime(times[1], userTimezone)
       : "N/A";
-
-  const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   return (
     <div>
