@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { DateTime } from "luxon";
 
 const StudyCircleForm = () => {
   const navigate = useNavigate();
@@ -82,19 +83,13 @@ const StudyCircleForm = () => {
         }
       }
     } else if (name === "class_timing_from" || name === "class_timing_to") {
-      const localTime = value;
-      const [hours, minutes] = localTime.split(":");
-      const localDateTime = new Date();
-      localDateTime.setUTCHours(hours);
-      localDateTime.setUTCMinutes(minutes);
-      const utcTime = localDateTime.toISOString().substring(11, 16);
+      console.log(value);
+      const newTimes = [...formData.times];
+      newTimes[name === "class_timing_from" ? 0 : 1] = value;
 
       setFormData({
         ...formData,
-        times: [
-          name === "class_timing_from" ? utcTime : formData.times[0],
-          name === "class_timing_to" ? utcTime : formData.times[1],
-        ],
+        times: newTimes,
       });
     } else {
       setFormData({
@@ -112,8 +107,15 @@ const StudyCircleForm = () => {
   const accessToken = localStorage.getItem("token");
 
   const handleSubmit = async (e) => {
+    const localTimeZone = DateTime.local().zoneName;
+
+    const utcTimes = formData.times.map((time) =>
+      DateTime.fromFormat(time, "HH:mm", { zone: localTimeZone })
+        .toUTC()
+        .toFormat("HH:mm"),
+    );
+
     e.preventDefault();
-    // setIsLoading(true);
 
     if (!accessToken) {
       console.error("Access token not found in local storage");
@@ -123,7 +125,10 @@ const StudyCircleForm = () => {
     try {
       const response = await axios.post(
         "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/study_circles/",
-        formData,
+        {
+          ...formData,
+          times: utcTimes,
+        },
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -131,8 +136,7 @@ const StudyCircleForm = () => {
           },
         },
       );
-      // setIsLoading(false);
-      console.log(response);
+      console.log(formData, response);
 
       toast.success("Circle created successfully");
 
@@ -140,7 +144,7 @@ const StudyCircleForm = () => {
         days: [],
         from_date: "2023-06-27",
         to_date: "2023-06-29",
-        times: ["14:00", "18:00"],
+        times: ["00:00", "00:00"],
         pre_requisites: [],
         about_circle: "",
         class_link: "",
