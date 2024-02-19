@@ -22,7 +22,7 @@ function SidebarGeneral() {
             </NavLink>
           </li>
           {user_type === "1" ? (
-            <li className="mt-4">
+            <li className="mt-5">
               <NavLink to="/dashboardMentorLayout">
                 <div
                   href="#"
