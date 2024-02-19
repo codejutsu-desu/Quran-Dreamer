@@ -25,11 +25,12 @@ function NavbarGeneral() {
 
   return (
     <div className="flex w-full items-center justify-between bg-theme p-2 text-white">
-      <div className="h-full">
+      <div className=" h-full ">
         <NavLink to="/">
           <img src="/HomeIcon.svg" alt="Icon" />
         </NavLink>
       </div>
+
       <div className="text-base font-bold text-white md:text-lg lg:text-xl xl:text-2xl">
         Dashboard
       </div>

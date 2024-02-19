@@ -7,7 +7,7 @@ function SidebarGeneral() {
   return (
     <aside
       id="logo-sidebar"
-      className=" flex min-h-screen  w-[100px] justify-center bg-black pt-5 transition-transform  sm:w-[150px] lg:w-[200px] xl:w-[250px] "
+      className="  flex min-h-screen  w-[100px] justify-center bg-black pt-5 transition-transform  sm:w-[150px] lg:w-[200px] xl:w-[250px] "
       aria-label="Sidebar"
     >
       <div className=" h-full shrink   bg-transparent   ">
