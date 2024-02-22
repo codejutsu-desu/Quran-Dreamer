@@ -63,7 +63,7 @@ function App() {
         />
 
         {/* miscellaneous routes */}
-        <Route path="notes" element={<Notes />} />
+        {/* <Route path="notes" element={<Notes />} /> */}
         <Route path="files" element={<StudentsNoteFiles />} />
         <Route path="events" element={<Events />} />
 
@@ -73,6 +73,7 @@ function App() {
           <Route index element={<DreamCirclesBody />} />
           <Route path="circleInfo/:circleId" element={<CircleInfo />} />
           <Route path="insideCircle/:circleId" element={<InsideCircle />} />
+          <Route path="insideCircle/:circleId/notes" element={<Notes />} />
         </Route>
 
         {/* Feature Coming */}

@@ -1,13 +1,10 @@
-import StudentNote from "../Components/StudentNote";
 import StudentNotesSearch from "../Components/StudentNotesSearch";
-import AppLayout from "./AppLayout";
 
 function Notes() {
   return (
-    <AppLayout>
+    <div>
       <StudentNotesSearch />
-      <StudentNote />
-    </AppLayout>
+    </div>
   );
 }
 

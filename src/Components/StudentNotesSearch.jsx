@@ -1,23 +1,29 @@
-import styles from "./StudentNotesSearch.module.css";
 function StudentNotesSearch() {
   return (
-    <div className={styles.studentNotesField}>
-      <p className={styles.notesTitle}>Student Notes</p>
-      <div className={styles.inputSearch}>
-        <input
-          type="text"
-          className={styles.titleInput}
-          placeholder="Search by title"
-        />
+    <div>
+      <input
+        type="text"
+        className="m-auto mb-5 mt-5  block w-[500px] rounded-md border-2 border-theme p-2 active:border-hoverTheme"
+        placeholder="Search by title"
+      />
+      <div className="m-auto flex w-[600px] flex-col items-center justify-center space-y-2">
+        <div className="h-12  w-full rounded-md bg-theme  p-2 text-white ">
+          {" "}
+          Book 1 pdf
+        </div>
+        <div className="h-12  w-full rounded-md bg-theme  p-2 text-white ">
+          {" "}
+          Book 1 pdf
+        </div>
+        <div className="h-12  w-full rounded-md bg-theme  p-2 text-white ">
+          {" "}
+          Book 1 pdf
+        </div>
+        <div className="h-12  w-full rounded-md bg-theme  p-2 text-white ">
+          {" "}
+          Book 1 pdf
+        </div>
       </div>
-
-      <select name="Filter by category" id="filter" className={styles.filter}>
-        <option value="0">Filter by category</option>
-        <option value="1">Nahw</option>
-        <option value="2">Sarf</option>
-        <option value="3">Advance Sarf</option>
-        <option value="4">Advance Nahw</option>
-      </select>
     </div>
   );
 }
