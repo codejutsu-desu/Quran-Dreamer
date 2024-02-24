@@ -39,6 +39,8 @@ import MentorExperience from "./Components/MentorDashboard/MentorExperience";
 import VideoDemo from "./Components/MentorDashboard/VideoDemo";
 import MentorPending from "./Components/MentorDashboard/MentorPending";
 import Contact from "./Public Pages/Contact";
+import Uplod from "./Components/MentorDashboard/Upload";
+import Upload from "./Components/MentorDashboard/Upload";
 
 function App() {
   return (
@@ -95,6 +97,7 @@ function App() {
           <Route path="createCircle" element={<CreateCircleMentor />} />
           <Route path="createCircle2" element={<ProvideLink />} />
           <Route path="approvalPending" element={<Pending />} />
+          <Route path="uploadNotes" element={<Upload />} />
         </Route>
 
         {/* dashboard for mentor */}

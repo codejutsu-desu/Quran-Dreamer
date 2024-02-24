@@ -28,7 +28,12 @@ function Topbar() {
         {token ? (
           <>
             {user_type !== "0" ? (
-              <NavLink to="/appLayoutStudent" className="flex items-center">
+              <NavLink
+                to={
+                  user_type === "2" ? "/appLayoutStudent" : "/appLayoutMentor"
+                }
+                className="flex items-center"
+              >
                 <li>All Circles</li>
               </NavLink>
             ) : (

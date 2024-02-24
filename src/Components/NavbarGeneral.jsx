@@ -12,7 +12,6 @@ function NavbarGeneral() {
     const storedUserType = localStorage.getItem("user_type");
     if (storedUser) {
       setUser(storedUser);
-      // Set userType based on the storedUserType value
       if (storedUserType === "1") {
         setUserType("Mentor");
       } else if (storedUserType === "2") {
