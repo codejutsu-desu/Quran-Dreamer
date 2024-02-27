@@ -97,7 +97,7 @@ function SidebarGeneral() {
             </NavLink>
           )}
           {user_type === "1" && (
-            <li className="mt-4">
+            <div className="mt-4">
               <NavLink to={`uploadNotes`}>
                 <li className="mt-4">
                   <div
@@ -119,7 +119,7 @@ function SidebarGeneral() {
                   </div>
                 </li>
               </NavLink>
-            </li>
+            </div>
           )}
         </ul>
       </div>
