@@ -2,16 +2,13 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./Public Pages/About";
 import Home from "./Public Pages/Home";
-import Events from "./Pages/Events";
 import Login from "./Public Pages/Login";
 import PageNotFound from "./Pages/PageNotFound";
 import Notes from "./Pages/Notes";
-import StudentsNoteFiles from "./Pages/StudentsNoteFiles";
 import Signup from "./Pages/Signup";
 import CircleInfo from "./Components/CircleInfo";
 import StudyCircleForm from "./Components/CreateCircle/CreateCircle";
 import InsideCircle from "./Components/InsideCircle/InsideCircle";
-
 import FinalCreateCircle from "./Components/CreateCircle/FinalCreateCircle";
 import AppLayoutMentor from "./Components/MentorDashboard/AppLayoutMentor";
 import ProvideLink from "./Components/MentorDashboard/ProvideLink";
@@ -39,8 +36,8 @@ import MentorExperience from "./Components/MentorDashboard/MentorExperience";
 import VideoDemo from "./Components/MentorDashboard/VideoDemo";
 import MentorPending from "./Components/MentorDashboard/MentorPending";
 import Contact from "./Public Pages/Contact";
-import Uplod from "./Components/MentorDashboard/Upload";
 import Upload from "./Components/MentorDashboard/Upload";
+import PrivateRoutes from "./utils/PrivateRoutes";
 
 function App() {
   return (
@@ -52,7 +49,6 @@ function App() {
         <Route path="about" element={<About />} />
 
         {/* login and signup */}
-
         <Route path="login" element={<Login />} />
         <Route path="resetPass" element={<ResetPassword />} />
         <Route path="newPass/:uid/:token" element={<PasswordReset />} />
@@ -64,18 +60,14 @@ function App() {
           element={<MentorPending />}
         />
 
-        {/* miscellaneous routes */}
-        {/* <Route path="notes" element={<Notes />} /> */}
-        <Route path="files" element={<StudentsNoteFiles />} />
-        <Route path="events" element={<Events />} />
-
         {/* App Layout for student */}
-
-        <Route path="appLayoutStudent" element={<AppLayoutStudent />}>
-          <Route index element={<DreamCirclesBody />} />
-          <Route path="circleInfo/:circleId" element={<CircleInfo />} />
-          <Route path="insideCircle/:circleId" element={<InsideCircle />} />
-          <Route path="insideCircle/:circleId/notes" element={<Notes />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="appLayoutStudent" element={<AppLayoutStudent />}>
+            <Route index element={<DreamCirclesBody />} />
+            <Route path="circleInfo/:circleId" element={<CircleInfo />} />
+            <Route path="insideCircle/:circleId" element={<InsideCircle />} />
+            <Route path="insideCircle/:circleId/notes" element={<Notes />} />
+          </Route>
         </Route>
 
         {/* Feature Coming */}
@@ -83,41 +75,45 @@ function App() {
         <Route path="notAvailable" element={<FeatureComingSoon />} />
 
         {/* dashboard for student */}
-
-        <Route path="studentDashboard" element={<DashboardLayoutStudent />}>
-          <Route index element={<JoinedCircles />} />
-          <Route path="joinedCircles" element={<JoinedCircles />} />
-          <Route path="myClasses" element={<MyClasses />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="studentDashboard" element={<DashboardLayoutStudent />}>
+            <Route index element={<JoinedCircles />} />
+            <Route path="joinedCircles" element={<JoinedCircles />} />
+            <Route path="myClasses" element={<MyClasses />} />
+          </Route>
         </Route>
 
         {/* app layout for mentor */}
-
-        <Route path="appLayoutMentor" element={<AppLayoutMentor />}>
-          <Route index element={<StudyCircleForm />} />
-          <Route path="createCircle" element={<CreateCircleMentor />} />
-          <Route path="createCircle2" element={<ProvideLink />} />
-          <Route path="approvalPending" element={<Pending />} />
-          <Route path="uploadNotes" element={<Upload />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="appLayoutMentor" element={<AppLayoutMentor />}>
+            <Route index element={<StudyCircleForm />} />
+            <Route path="createCircle" element={<CreateCircleMentor />} />
+            <Route path="createCircle2" element={<ProvideLink />} />
+            <Route path="approvalPending" element={<Pending />} />
+            <Route path="uploadNotes" element={<Upload />} />
+          </Route>
         </Route>
 
         {/* dashboard for mentor */}
-
-        <Route path="dashboardMentorLayout" element={<DashboardLayout />}>
-          <Route index element={<MyClassesMentor />} />
-          <Route path="myOwnCircles" element={<MyOwnCircles />} />
-          <Route path="myCircles" element={<MyClassesMentor />} />
-          <Route path="myLinks" element={<MyLinkMentor />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="dashboardMentorLayout" element={<DashboardLayout />}>
+            <Route index element={<MyClassesMentor />} />
+            <Route path="myOwnCircles" element={<MyOwnCircles />} />
+            <Route path="myCircles" element={<MyClassesMentor />} />
+            <Route path="myLinks" element={<MyLinkMentor />} />
+          </Route>
         </Route>
 
         {/* Admin Dashboard */}
-
-        <Route path="adminDashboardLayout" element={<AdminDashboardLayout />}>
-          <Route index element={<AdminMain />} />
-          <Route path="main" element={<AdminMain />} />
-          <Route path="requests" element={<AdminRequests />} />
-          <Route path="request/:object_pk/:id" element={<RequestDetail />} />
-          <Route path="adminAll" element={<AdminAll />} />
-          <Route path="adminGroups" element={<AdminGroups />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="adminDashboardLayout" element={<AdminDashboardLayout />}>
+            <Route index element={<AdminMain />} />
+            <Route path="main" element={<AdminMain />} />
+            <Route path="requests" element={<AdminRequests />} />
+            <Route path="request/:object_pk/:id" element={<RequestDetail />} />
+            <Route path="adminAll" element={<AdminAll />} />
+            <Route path="adminGroups" element={<AdminGroups />} />
+          </Route>
         </Route>
 
         <Route path="finalCreateCircle" element={<FinalCreateCircle />} />
