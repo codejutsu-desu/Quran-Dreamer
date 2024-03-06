@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 import { MdOutlinePersonOutline } from "react-icons/md";
 import { useEffect, useState } from "react";
+import { AlignJustify } from "lucide-react";
 
-function NavbarGeneral() {
+function NavbarGeneral({ setOpen, open }) {
   const [user, setUser] = useState("");
   const [userType, setUserType] = useState("");
 
   useEffect(() => {
-    // Fetch user and userType from local storage
     const storedUser = localStorage.getItem("user");
     const storedUserType = localStorage.getItem("user_type");
     if (storedUser) {
@@ -24,6 +24,9 @@ function NavbarGeneral() {
 
   return (
     <div className="flex w-full items-center justify-between bg-theme p-2 text-white">
+      <div onClick={setOpen} className="mr-4 hover:cursor-pointer md:hidden">
+        <AlignJustify />
+      </div>
       <div className=" h-full ">
         <NavLink to="/">
           <img src="/HomeIcon.svg" alt="Icon" />

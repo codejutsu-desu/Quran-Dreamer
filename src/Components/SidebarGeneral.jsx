@@ -1,16 +1,42 @@
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-function SidebarGeneral() {
+function SidebarGeneral({ open, onClose }) {
   const user_type = localStorage.getItem("user_type");
   let { circleId } = useParams();
+  console.log(open);
 
   return (
     <aside
       id="logo-sidebar"
-      className="  flex min-h-screen  w-[100px] justify-center bg-black pt-5 transition-transform  sm:w-[150px] lg:w-[200px] xl:w-[250px] "
-      aria-label="Sidebar"
+      className={`${
+        open ? "flex" : "hidden"
+      }   min-h-screen w-[100px]  justify-center bg-black pt-5 transition-transform sm:w-[150px]  md:flex lg:w-[200px] xl:w-[250px]`}
     >
+      {open ? (
+        <div
+          className="absolute left-28 top-1 cursor-pointer"
+          onClick={onClose}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-x-circle 
+          "
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="m15 9-6 6" />
+            <path d="m9 9 6 6" />
+          </svg>
+        </div>
+      ) : null}
       <div className=" h-full shrink   bg-transparent   ">
         <ul className="space-y-8 ">
           <li className="mt-4">
