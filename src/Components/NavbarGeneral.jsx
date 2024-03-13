@@ -24,9 +24,11 @@ function NavbarGeneral({ setOpen, open }) {
 
   return (
     <div className="flex w-full items-center justify-between bg-theme p-2 text-white">
-      <div onClick={setOpen} className="mr-4 hover:cursor-pointer md:hidden">
-        <AlignJustify />
-      </div>
+      {!open && (
+        <div onClick={setOpen} className="mr-4 hover:cursor-pointer md:hidden">
+          <AlignJustify />
+        </div>
+      )}
       <div className=" h-full ">
         <NavLink to="/">
           <img src="/HomeIcon.svg" alt="Icon" />

@@ -16,12 +16,12 @@ function MentorRequest({ mentor, object_pk, id }) {
           },
         },
       );
+      navigate("/adminDashboardLayout/requests");
       console.log("Response:", response.data);
     } catch (error) {
       toast.error("error occured");
       console.error("Error:", error);
     }
-    navigate("/adminDashboardLayout/requests");
   };
   const handleReject = async () => {
     try {

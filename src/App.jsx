@@ -66,7 +66,7 @@ function App() {
             <Route index element={<DreamCirclesBody />} />
             <Route path="circleInfo/:circleId" element={<CircleInfo />} />
             <Route path="insideCircle/:circleId" element={<InsideCircle />} />
-            <Route path="insideCircle/:circleId/notes" element={<Notes />} />
+            <Route path="allNotes" element={<Notes />} />
           </Route>
         </Route>
 

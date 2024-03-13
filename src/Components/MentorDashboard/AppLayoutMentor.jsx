@@ -2,14 +2,17 @@ import { Outlet } from "react-router-dom";
 import NavbarGeneral from "../NavbarGeneral";
 import SidebarGeneral from "../SidebarGeneral";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function AppLayoutMentor() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="flex">
-      <SidebarGeneral />
+      <SidebarGeneral open={open} onClose={() => setOpen(false)} />
       <div className="flex-1">
-        <NavbarGeneral />
+        <NavbarGeneral open={open} setOpen={() => setOpen(true)} />
         <div className="flex justify-around p-3">
           <div className="text-md mt-3 font-bold md:text-base lg:text-lg xl:text-xl">
             Mentor

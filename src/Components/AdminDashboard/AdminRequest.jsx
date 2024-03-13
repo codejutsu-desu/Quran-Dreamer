@@ -21,7 +21,6 @@ function AdminRequest({ request, serialNumber }) {
   };
 
   const handleClick = () => {
-    // Use the Navigate function properly
     navigate(`/adminDashboardLayout/request/${object_pk}/${id}`);
   };
 
