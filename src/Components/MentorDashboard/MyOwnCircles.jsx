@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchStudyCircles } from "../../actions"; // Import your action
-import MyOwnCircle from "./MyOwnCircle"; // Import the MyOwnCircle component
+import { fetchStudyCircles } from "../../actions";
+import MyOwnCircle from "./MyOwnCircle";
 import styles from "./MyOwnCircles.module.css";
 
 function MyOwnCircles() {
   const dispatch = useDispatch();
-  const token = localStorage.getItem("token"); // Get user token from local storage
-  const user = localStorage.getItem("user"); // Get user from local storage
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("user");
 
   useEffect(() => {
     if (token) {
