@@ -11,7 +11,7 @@ function MyOwnCircles() {
 
   useEffect(() => {
     if (token) {
-      dispatch(fetchStudyCircles(token)); // Dispatch the action to fetch study circles
+      dispatch(fetchStudyCircles(token));
     }
   }, [dispatch, token]);
 

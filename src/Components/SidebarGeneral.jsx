@@ -63,7 +63,7 @@ function SidebarGeneral({ open, onClose }) {
               </NavLink>
               <div className="mt-4">
                 <NavLink to={`allNotes`}>
-                  <li className="mt-4">
+                  <div className="mt-4">
                     <div
                       href="allNotes"
                       className="group flex items-center rounded-lg px-1 text-white hover:bg-theme"
@@ -74,7 +74,7 @@ function SidebarGeneral({ open, onClose }) {
                         Upload Notes{" "}
                       </span>
                     </div>
-                  </li>
+                  </div>
                 </NavLink>
               </div>
             </li>

@@ -38,6 +38,7 @@ import MentorPending from "./Components/MentorDashboard/MentorPending";
 import Contact from "./Public Pages/Contact";
 import Upload from "./Components/MentorDashboard/Upload";
 import PrivateRoutes from "./utils/PrivateRoutes";
+import EditCircle from "./Components/MentorDashboard/EditCircle";
 
 function App() {
   return (
@@ -99,6 +100,7 @@ function App() {
           <Route path="dashboardMentorLayout" element={<DashboardLayout />}>
             <Route index element={<MyClassesMentor />} />
             <Route path="myOwnCircles" element={<MyOwnCircles />} />
+            <Route path="editMyOwnCircle/:circleId" element={<EditCircle />} />
             <Route path="myCircles" element={<MyClassesMentor />} />
             <Route path="myLinks" element={<MyLinkMentor />} />
           </Route>

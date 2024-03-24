@@ -121,12 +121,12 @@ function MyOwnCircle({ circle }) {
           onClick={toggleModal}
           className="absolute right-1 transform cursor-pointer duration-150 hover:scale-125"
         >
-          <X color="#ff0000" />
+          <X color="#e72727" />
         </div>
       </div>
       {isModalOpen && (
         <div className="absolute left-0 right-0 top-0 z-50  block  h-[calc(100%-1rem)] max-h-full w-full items-center justify-center overflow-y-auto overflow-x-hidden md:inset-0">
-          <div className="relative max-h-full w-full max-w-2xl p-4">
+          <div className="relative m-auto h-1/2 w-full max-w-2xl p-4">
             <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">
               <div className="flex items-center justify-between rounded-t border-b p-4 dark:border-gray-600 md:p-5">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -196,6 +196,12 @@ function MyOwnCircle({ circle }) {
           {daysLeft}
         </div>
       </div>
+      <NavLink
+        to={`/dashboardMentorLayout/editMyOwnCircle/${circle.id}`}
+        className="mt-3 rounded-lg bg-red-400 text-center hover:cursor-pointer "
+      >
+        Edit
+      </NavLink>
     </div>
   );
 }
