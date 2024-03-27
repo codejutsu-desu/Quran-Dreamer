@@ -48,7 +48,7 @@ const EditCircle = () => {
     is_sister_only: false,
     is_exercised_based: false,
     language: "0",
-    is_approved: false,
+    is_approved: true,
   });
 
   const handleInputChange = (e) => {
@@ -140,7 +140,7 @@ const EditCircle = () => {
       );
       console.log(formData, response);
 
-      toast.success("Circle created successfully");
+      toast.success("Circle edited successfully");
 
       setFormData({
         days: [],

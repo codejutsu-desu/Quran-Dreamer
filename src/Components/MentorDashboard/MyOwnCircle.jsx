@@ -198,7 +198,7 @@ function MyOwnCircle({ circle }) {
       </div>
       <NavLink
         to={`/dashboardMentorLayout/editMyOwnCircle/${circle.id}`}
-        className="mt-3 rounded-lg bg-red-400 text-center hover:cursor-pointer "
+        className="mt-3 w-1/4 rounded-lg bg-red-600 text-center font-bold text-white hover:cursor-pointer "
       >
         Edit
       </NavLink>
