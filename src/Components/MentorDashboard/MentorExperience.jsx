@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
 function MentorExperience() {
@@ -20,12 +20,13 @@ function MentorExperience() {
       };
 
       if (experience === "More than 1 year") {
-        console.log("Form Data:", userData);
+        // console.log("Form Data:", userData);
 
         const response = await axios.post(
           "https://fmr4zl8hr6.execute-api.ap-south-1.amazonaws.com/v1/signup/",
           userData,
         );
+        console.log(response);
 
         if (response.data) {
           navigate("/login");
@@ -44,12 +45,13 @@ function MentorExperience() {
       }
     } catch (error) {
       console.error(error.response.data);
+      toast.error(error.response.data.email[0]);
     }
   };
 
   return (
     <div className="flex min-h-screen flex-col justify-between">
-      <ToastContainer />
+      <Toaster />
       <Topbar />
       <div className="text-center text-xl font-semibold lg:text-2xl xl:text-3xl">
         Sign up as Mentor
