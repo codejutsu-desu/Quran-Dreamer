@@ -4,6 +4,8 @@ import Topbar from "../Topbar";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { signUpFailure } from "../../actions";
+import toast, { Toaster } from "react-hot-toast";
+import "react-toastify/dist/ReactToastify.css";
 
 function VideoDemo() {
   const navigate = useNavigate();
@@ -36,12 +38,13 @@ function VideoDemo() {
       }
     } catch (error) {
       console.error(error.response.data);
-      dispatch(signUpFailure(error.response.data)); // Dispatch failure action
+      toast.error(error.response.data.email[0]);
     }
   };
 
   return (
     <div className="flex min-h-screen flex-col justify-between">
+      <Toaster />
       <Topbar />
       <div className="my-2 text-center text-lg font-semibold md:text-xl lg:text-2xl xl:text-3xl">
         Sign Up as Mentor
